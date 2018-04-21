@@ -1,0 +1,39 @@
+<Du_lieu>
+
+ <Quan_dai >
+  <Thuong_hieu Ten="Adachi" Ma_so="ADACHI">
+    <Loai Ten="Quần jean Adachi nam" Ma_so="QUAN_JEAN_ADACHI_NAM">
+      <San_pham Ten="Quần jean na" Ma_so="QUAN_JEAN_NA" Don_gia_ban="22900000" Don_gia_nhap="18000000" Doanh_thu="0" Giam_gia="true" Don_gia_giam_gia="10000000">
+        <Mo_ta_san_pham>
+          - Thiết kế với áo sơ mi form basic hiện đại. Đen thời thượng.
+        </Mo_ta_san_pham>
+        <Mau_sac Mau="Đỏ" So_luong_ton="30" So_cua_hang_con_size_M="2" So_cua_hang_con_size_L="2" So_cua_hang_con_size_XL="0">
+          <Con_hang>
+            <Cua_hang Ma_cua_hang="CUA_HANG_01" Ten="YaMe Q.10: 770F, Sư Vạn Hạnh (nd), P.12" So_luong_ton_size_M="5" So_luong_ton_size_L="5" So_luong_ton_size_XL="5" />
+              <Cua_hang Ma_cua_hang="CUA_HANG_02" Ten="YaMe Q.10: 286, 3 tháng 2, P.12"  So_luong_ton_size_M="5" So_luong_ton_size_L="5" So_luong_ton_size_XL="5" />
+          </Con_hang>
+          <Danh_sach_ban_hang>
+              <Ban_hang Ngay="2017-6-1" Don_gia="9990000" So_luong="1" Tien="9990000" Size="M" Ma_cua_hang="CUA_HANG_01"/>
+            </Danh_sach_ban_hang>
+            <Danh_sach_nhap_hang>
+               <Nhap_hang Ngay="2017-5-4" Don_gia="18000000" So_luong="70" Tien="1603000000" Size="M" Ma_cua_hang="CUA_HANG_01"/>
+            </Danh_sach_nhap_hang>
+        </Mau_sac>
+        <Mau_sac Mau="Xanh">
+          ...
+        </Mau_sac>
+      </San_pham>
+      <San_pham Ten="Quần jean na" Ma_so="QUAN_JEAN_NA" Don_gia_ban="22900000" Don_gia_nhap="18000000" Doanh_thu="0" Giam_gia="true" Don_gia_giam_gia="10000000">
+        ....
+      </San_pham>
+    </Loai >
+    <Loai Ten="Quần jean Adachi nữ" Ma_so="QUAN_JEAN_ADACHI_NU">
+      
+    </Loai>
+  </Thuong_hieu>
+  <Thuong_hieu  Ten="Quần jean No Style" Ma_so="QUAN_JEAN_NO_STYLE">
+    ...
+  </Thuong_hieu>
+ </Quan_dai>
+
+</Du_lieu>
