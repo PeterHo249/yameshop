@@ -1,0 +1,110 @@
+Dữ liệu cần lưu trữ gồm:
+    - Danh sách cửa hàng
+    - Danh sách nhân viên
+    - Danh sách tài khoản
+    - Danh sách hóa đơn
+    - Danh sách sản phẩm
+
+Các id được thiết kế như sau:
+    - id của cửa hàng: shopXXX
+    - id của nhân viên: staffXXX
+    - id tài khoản: accountXXX
+    - id sản phẩm: AABBXXXXSSCCC
+        + AA là mã nhóm sản phẩm
+        + BB là mã nhóm sản phẩm con
+        + XXXX là số thứ tự của sản phẩm
+        + SS là kích thước của sản phẩm (xs, ss, mm, ll, xl) chỉ dùng trong hóa đơn
+        + CCC là mã màu sắc - chỉ dùng trong hóa đơn
+
+Cách tổ chức id cho các sản phẩm:
+- Chỉ sử dụng 2 cấp sản phẩm. Vd: áo thun -> áo mabu
+- Mỗi cấp thì ký hiệu bằng 2 ký tự để làm id
+- Tổ chức thư mục chứa hình ảnh như sau:
+    tên nhóm
+        tên nhóm con
+            số thứ tự sản phẩm
+                hình.png
+- Đặt tên hình theo quy ước: AABBXXXX_ZZ với ZZ là số thứ tự của hình. Hình mã 0 là hình dùng để đại diện cho sản phẩm.
+
+Cấu trúc folder để tổ chức dữ liệu như sau:
++ data
+---- shop
+-------- shop_list.xml
+---- staff
+-------- staff_list.xml
+---- account
+-------- account_list.xml
+---- bill
+-------- bill_list.xml
+---- new_trend
+-------- new_trend_product.xml
+---- product
+-------- ao_thun
+------------ no_style
+---------------- product_list.xml
+------------ mabu
+---------------- product_list.xml
+-------- ao_khoac
+------------ no_style
+---------------- product_list.xml
+------------ mabu
+---------------- product_list.xml
+
+
+chi tiết tổ chức các file dữ liệu
+
+** shop_list.xml
+<shop_list>
+    <shop id="" name="" address=""/>
+</shop_list>
+
+** staff_list.xml
+<staff_list>
+    <staff id="" name="" role=""/>
+</staff_list>
+
+** account_list.xml
+<account_list>
+    <account username="" name="" password="" role=""/>
+</account_list>
+*** role là loại tài khoản, có 3 giá trị là guest, staff, manager
+
+** product_list.xml
+<product_list>
+    <product id="" name="" in_price="" out_price="" inventory_num="" in_stock="">
+        <description>
+
+        </description>
+        <size id="" inventory_num="">
+            <color id="" name="" inventory_num="">
+                <shop id="" inventory_num=""/>
+            </color>
+        </size>
+    </product>
+</product_list>
+*** Giải thích tham số:
+++++++ in_price, out_price là đơn giá nhập, xuất
+++++++ inventory_num là số lượng hàng tồn kho
+++++++ in_stock là tình trạng còn kinh doanh hay không
+
+** bill_list.xml
+<bill_list>
+    <bill id="" staff_id="" shop_id="" date="" revenue="" total="" type="">
+        <item product_id="" count=""/>
+    </bill>
+</bill_list>
+*** Giải thích tham số
++++++++ type là loại hóa đơn, in là hóa đơn nhập, out là hóa đơn bán
++++++++ total là tổng tiền, tính bằng đơn giá * số lượng
++++++++ revenue là doanh thu, tính bằng (đơn giá xuất - đơn giá nhập) * số lượng
+
+
+** new_trend_product.xml
+<new_trend_product>
+    <new_product>
+        <item id=""/>
+    </new_product>
+    <trend_product>
+        <item id=""/>
+    </trend_product>
+</new_trend_product>
