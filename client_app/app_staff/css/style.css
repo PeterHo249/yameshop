@@ -74,40 +74,4 @@ body {
     padding-bottom: 20px;
 }
 
-#useful-info h3 {
-    font-size: 1.2em;
-    padding-bottom: 0px;
-    margin-bottom: 3px;
-}
-
-#useful-info p {
-    text-align: justify;
-}
-
-#useful-info a {
-    color: #888;
-}
-
-#useful-info a:hover {
-    color: #fff;
-}
-
-#phone-number {
-    font-weight: bold;
-}
-
-hr {
-    border-color: white;
-}
-
-#shop-list-title {
-    font-size: 1.5em;
-    text-align: center;
-    padding-bottom: 10px;
-}
-
-#shop-list h3 {
-    font-size: 1.1em;
-}
-
 /* END FOOTER */
