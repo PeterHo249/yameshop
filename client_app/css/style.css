@@ -44,15 +44,91 @@ body {
     background-color: #444444;
 }
 
-
-
 /* END HEADER */
 
 /* BODY */
 
 #main-content {
-    height: 1000px;
+    padding-top: 90px;
+    padding-bottom: 15px;
 }
+
+#carousel-catalog {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* Product slider */
+
+.tcb-product-slider {
+    background: rgba(208, 208, 208, 0.2);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.tcb-product-slider .carousel-control-prev,
+.tcb-product-slider .carousel-control-next {
+    width: 5%;
+}
+
+#product-slider-title {
+    font-size: 1.8em;
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+.tcb-product-item a {
+    color: #147196;
+}
+
+.tcb-product-item a:hover {
+    text-decoration: none;
+}
+
+.tcb-product-item .tcb-hline {
+    margin: 10px 0;
+    height: 1px;
+    background: #ccc;
+}
+
+@media all and (max-width: 768px) {
+    .tcb-product-item {
+        margin-bottom: 30px;
+    }
+}
+
+.tcb-product-photo {
+    text-align: center;
+    height: 180px;
+    background: #fff;
+}
+
+.tcb-product-photo img {
+    height: 100%;
+    display: inline-block;
+}
+
+.tcb-product-info {
+    background: #f0f0f0;
+    padding: 15px;
+}
+
+.tcb-product-title h4 {
+    margin-top: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.tcb-product-price {
+    color: firebrick;
+    font-size: 18px;
+}
+
+/* End Product silder */
 
 /* END BODY */
 

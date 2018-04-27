@@ -10,7 +10,7 @@ var port = 3000;
 app.createServer((req, res) => {
     console.log(`${req.method} ${req.url}`);
 
-    let req_url = (req.url == '/') ? '/app_guest/index.html' : req.url;
+    let req_url = (req.url == '/') ? '/index_guest.html' : req.url;
 
     let file_extension = req.url.lastIndexOf('.');
     let header_type = (file_extension == -1 && req.url != '/') ? 'text/plain' : {
