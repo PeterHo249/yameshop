@@ -1,0 +1,35 @@
+<staff_list>
+<!-- Mỗi cửa hàng có 1 tài khoản nhân viên -->
+    <staff id="Nhan_Vien_0" name="Trần Mạnh Chung" role="Nhân viên"/>
+    <staff id="Nhan_Vien_1" name="Hồ Xuân Dũng" role="Nhân viên"/>
+    <staff id="Nhan_Vien_2" name="Nguyễn Văn A" role="Nhân viên"/>
+    <staff id="Nhan_Vien_3" name="Nguyễn Văn B" role="Nhân viên"/>
+    <staff id="Nhan_Vien_4" name="Nguyễn Văn C" role="Nhân viên"/>
+    <staff id="Nhan_Vien_5" name="Nguyễn Văn D" role="Nhân viên"/>
+    <staff id="Nhan_Vien_6" name="Nguyễn Văn E" role="Nhân viên"/>
+    <staff id="Nhan_Vien_7" name="Nguyễn Văn F" role="Nhân viên"/>
+    <staff id="Nhan_Vien_8" name="Nguyễn Văn G" role="Nhân viên"/>
+    <staff id="Nhan_Vien_9" name="Nguyễn Văn H" role="Nhân viên"/>
+    <staff id="Nhan_Vien_10" name="Nguyễn Văn I" role="Nhân viên"/>
+    <staff id="Nhan_Vien_11" name="Nguyễn Văn J" role="Nhân viên"/>
+    <staff id="Nhan_Vien_12" name="Nguyễn Văn K" role="Nhân viên"/>
+    <staff id="Nhan_Vien_13" name="Nguyễn Văn L" role="Nhân viên"/>
+    <staff id="Nhan_Vien_14" name="Nguyễn Văn M" role="Nhân viên"/>
+    <staff id="Nhan_Vien_15" name="Nguyễn Văn N" role="Nhân viên"/>
+    <staff id="Nhan_Vien_16" name="Nguyễn Văn O" role="Nhân viên"/>
+    <staff id="Nhan_Vien_17" name="Nguyễn Văn P" role="Nhân viên"/>
+    <staff id="Nhan_Vien_18" name="Nguyễn Văn Q" role="Nhân viên"/>
+    <staff id="Nhan_Vien_19" name="Nguyễn Văn R" role="Nhân viên"/>
+    <staff id="Nhan_Vien_20" name="Nguyễn Văn S" role="Nhân viên"/>
+    <staff id="Nhan_Vien_21" name="Nguyễn Văn T" role="Nhân viên"/>
+    <staff id="Nhan_Vien_22" name="Nguyễn Văn U" role="Nhân viên"/>
+    <staff id="Nhan_Vien_23" name="Nguyễn Văn V" role="Nhân viên"/>
+    <staff id="Nhan_Vien_24" name="Nguyễn Văn W" role="Nhân viên"/>
+    <staff id="Nhan_Vien_25" name="Nguyễn Văn X" role="Nhân viên"/>
+    <staff id="Nhan_Vien_26" name="Nguyễn Văn Y" role="Nhân viên"/>
+    <staff id="Nhan_Vien_27" name="Nguyễn Văn Z" role="Nhân viên"/>
+    <staff id="Nhan_Vien_28" name="Nguyễn Thị A" role="Nhân viên"/>
+    <staff id="Nhan_Vien_29" name="Nguyễn Thị B" role="Nhân viên"/>
+<!-- Quản lý -->
+    <staff id="Quan_Ly" name="Cao Tiến D" role="Quản lý"/>
+</staff_list>

@@ -1,0 +1,35 @@
+<account_list>
+<!-- Staff account -->
+    <account username="tranmanhchung" name="Trần Mạnh Chung" password="tranmanhchung" role="staff"/>
+    <account username="hoxuandung" name="Hồ Xuân Dũng" password="hoxuandung" role="staff"/>
+    <account username="nguyenvana" name="Nguyễn Văn A" password="nguyenvana" role="staff"/>
+    <account username="nguyenvanb" name="Nguyễn Văn B" password="nguyenvanb" role="staff"/>
+    <account username="nguyenvanc" name="Nguyễn Văn C" password="nguyenvanc" role="staff"/>
+    <account username="nguyenvand" name="Nguyễn Văn D" password="nguyenvand" role="staff"/>
+    <account username="nguyenvane" name="Nguyễn Văn E" password="nguyenvane" role="staff"/>
+    <account username="nguyenvanf" name="Nguyễn Văn F" password="nguyenvanf" role="staff"/>
+    <account username="nguyenvang" name="Nguyễn Văn G" password="nguyenvang" role="staff"/>
+    <account username="nguyenvanh" name="Nguyễn Văn H" password="nguyenvanh" role="staff"/>
+    <account username="nguyenvani" name="Nguyễn Văn I" password="nguyenvani" role="staff"/>
+    <account username="nguyenvanj" name="Nguyễn Văn J" password="nguyenvanj" role="staff"/>
+    <account username="nguyenvank" name="Nguyễn Văn K" password="nguyenvank" role="staff"/>
+    <account username="nguyenvanl" name="Nguyễn Văn L" password="nguyenvanl" role="staff"/>
+    <account username="nguyenvanm" name="Nguyễn Văn M" password="nguyenvanm" role="staff"/>
+    <account username="nguyenvann" name="Nguyễn Văn N" password="nguyenvann" role="staff"/>
+    <account username="nguyenvano" name="Nguyễn Văn O" password="nguyenvano" role="staff"/>
+    <account username="nguyenvanp" name="Nguyễn Văn P" password="nguyenvanp" role="staff"/>
+    <account username="nguyenvanq" name="Nguyễn Văn Q" password="nguyenvanq" role="staff"/>
+    <account username="nguyenvanr" name="Nguyễn Văn R" password="nguyenvanr" role="staff"/>
+    <account username="nguyenvans" name="Nguyễn Văn S" password="nguyenvans" role="staff"/>
+    <account username="nguyenvant" name="Nguyễn Văn T" password="nguyenvant" role="staff"/>
+    <account username="nguyenvanu" name="Nguyễn Văn U" password="nguyenvanu" role="staff"/>
+    <account username="nguyenvanv" name="Nguyễn Văn V" password="nguyenvanv" role="staff"/>
+    <account username="nguyenvanw" name="Nguyễn Văn W" password="nguyenvanw" role="staff"/>
+    <account username="nguyenvanx" name="Nguyễn Văn X" password="nguyenvanx" role="staff"/>
+    <account username="nguyenvany" name="Nguyễn Văn Y" password="nguyenvany" role="staff"/>
+    <account username="nguyenvanz" name="Nguyễn Văn Z" password="nguyenvanz" role="staff"/>
+    <account username="nguyenthia" name="Nguyễn Thị A" password="nguyenvana" role="staff"/>
+    <account username="nguyenthib" name="Nguyễn Thị B" password="nguyenvanb" role="staff"/>
+<!-- Manager account -->
+     <account username="caotiend" name="Cao Tiến D" password="caotiend" role="manager"/>
+</account_list>
