@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<product_list>
+    <product id="QD_KM_0000" in_price="197407" in_stock="true" inventory_num="907" name="Quần Jean Nam KiriMaru Dài D18" out_price="199000">
+        <description>JEANS THUN - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Thành phần 15% Spandex (sợi thun) tạo độ co dãn mạnh, thoải mái trong sử dụng. - Kiểu dáng trẻ trung, năng động. Nhiều màu sắc &amp; mẫu mã để lựa chọn. - Form basic, ống đứng.</description>
+        <size id="M" inventory_num="182">
+            <color id="XD" inventory_num="182" name="Xanh Đậm">
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="350">
+            <color id="XD" inventory_num="350" name="Xanh Đậm">
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="153">
+            <color id="XD" inventory_num="153" name="Xanh Đậm">
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="222">
+            <color id="XD" inventory_num="222" name="Xanh Đậm">
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0001" in_price="156342" in_stock="true" inventory_num="461" name="Quần Jean Nam KiriMaRu Dài D09" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu jean cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="195">
+            <color id="XD" inventory_num="195" name="Xanh Đen">
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="84">
+            <color id="XD" inventory_num="84" name="Xanh Đen">
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="29">
+            <color id="XD" inventory_num="29" name="Xanh Đen">
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="153">
+            <color id="XD" inventory_num="153" name="Xanh Đen">
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0002" in_price="166523" in_stock="true" inventory_num="854" name="Quần Jean Nam KiriMaru Dài D15" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="403">
+            <color id="XD" inventory_num="403" name="Xanh Đen">
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="175">
+            <color id="XD" inventory_num="175" name="Xanh Đen">
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="258">
+            <color id="XD" inventory_num="258" name="Xanh Đen">
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="18">
+            <color id="XD" inventory_num="18" name="Xanh Đen">
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0003" in_price="176818" in_stock="true" inventory_num="1425" name="Quần Jean Nam KiriMaRu Dài D12" out_price="199000">
+        <description>- Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="475">
+            <color id="D" inventory_num="390" name="Đen">
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+            <color id="XD" inventory_num="85" name="Xanh Đen">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="151">
+            <color id="D" inventory_num="85" name="Đen">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+            </color>
+            <color id="XD" inventory_num="66" name="Xanh Đen">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="627">
+            <color id="D" inventory_num="407" name="Đen">
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+            <color id="XD" inventory_num="220" name="Xanh Đen">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="172">
+            <color id="D" inventory_num="70" name="Đen">
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+            </color>
+            <color id="XD" inventory_num="102" name="Xanh Đen">
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0004" in_price="157901" in_stock="true" inventory_num="263" name="Quần Jean Nam KiriMaRu Dài D10" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu jean cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="42">
+            <color id="D" inventory_num="42" name="Đen">
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="30">
+            <color id="D" inventory_num="30" name="Đen">
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="135">
+            <color id="D" inventory_num="135" name="Đen">
+                <shop id="shop_2" inventory_num="2"/>
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="56">
+            <color id="D" inventory_num="56" name="Đen">
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0005" in_price="185447" in_stock="true" inventory_num="861" name="Quần Jean Nam KiriMaru Dài D14" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="432">
+            <color id="XD" inventory_num="432" name="Xanh Đậm">
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="345">
+            <color id="XD" inventory_num="345" name="Xanh Đậm">
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="51">
+            <color id="XD" inventory_num="51" name="Xanh Đậm">
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="33">
+            <color id="XD" inventory_num="33" name="Xanh Đậm">
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0006" in_price="178951" in_stock="true" inventory_num="1385" name="Quần Jean Nam KiriMaru Sooc A12" out_price="185000">
+        <description>- Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Thành phần 15% Spandex (sợi thun) tạo độ co dãn mạnh, thoải mái trong sử dụng. - Phom dáng thiết kiến thon gọn. - Quần sooc jeans là loại trang phục trẻ trung, phù hợp với các bạn nam năng động và cá tính.</description>
+        <size id="M" inventory_num="371">
+            <color id="D" inventory_num="20" name="Đen">
+                <shop id="shop_2" inventory_num="2"/>
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+            </color>
+            <color id="XD" inventory_num="351" name="Xanh Đen">
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="132">
+            <color id="D" inventory_num="42" name="Đen">
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+            </color>
+            <color id="XD" inventory_num="90" name="Xanh Đen">
+                <shop id="shop_2" inventory_num="2"/>
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="378">
+            <color id="D" inventory_num="108" name="Đen">
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+            </color>
+            <color id="XD" inventory_num="270" name="Xanh Đen">
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="504">
+            <color id="D" inventory_num="105" name="Đen">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+            </color>
+            <color id="XD" inventory_num="399" name="Xanh Đen">
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0007" in_price="163150" in_stock="true" inventory_num="906" name="Quần Jean Nam KiriMaRu Dài D13" out_price="199000">
+        <description>- Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="55">
+            <color id="D" inventory_num="18" name="Đen">
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+            </color>
+            <color id="XD" inventory_num="37" name="Xanh Đậm">
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="547">
+            <color id="D" inventory_num="156" name="Đen">
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+            </color>
+            <color id="XD" inventory_num="391" name="Xanh Đậm">
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="238">
+            <color id="D" inventory_num="123" name="Đen">
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+            </color>
+            <color id="XD" inventory_num="115" name="Xanh Đậm">
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="66">
+            <color id="D" inventory_num="24" name="Đen">
+                <shop id="shop_24" inventory_num="24"/>
+            </color>
+            <color id="XD" inventory_num="42" name="Xanh Đậm">
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0008" in_price="194004" in_stock="true" inventory_num="1057" name="Quần Jean Nam KiriMaru Dài D16" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="198">
+            <color id="XD" inventory_num="198" name="Xanh Đậm">
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="396">
+            <color id="XD" inventory_num="396" name="Xanh Đậm">
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="135">
+            <color id="XD" inventory_num="135" name="Xanh Đậm">
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="328">
+            <color id="XD" inventory_num="328" name="Xanh Đậm">
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0009" in_price="181575" in_stock="true" inventory_num="572" name="Quần Jean Nam KiriMaRu Dài D11" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu jean cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="84">
+            <color id="XN" inventory_num="84" name="Xanh Nhạt">
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="121">
+            <color id="XN" inventory_num="121" name="Xanh Nhạt">
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="310">
+            <color id="XN" inventory_num="310" name="Xanh Nhạt">
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="57">
+            <color id="XN" inventory_num="57" name="Xanh Nhạt">
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0010" in_price="150052" in_stock="true" inventory_num="841" name="Quần Jean Nam KiriMaru D01" out_price="199000">
+        <description>- Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Thành phần 15% Spandex (sợi thun) tạo độ co dãn mạnh, thoải mái trong sử dụng. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="26">
+            <color id="D" inventory_num="26" name="Đen">
+                <shop id="shop_26" inventory_num="26"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="231">
+            <color id="D" inventory_num="231" name="Đen">
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="400">
+            <color id="D" inventory_num="400" name="Đen">
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="184">
+            <color id="D" inventory_num="184" name="Đen">
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0011" in_price="156562" in_stock="true" inventory_num="979" name="Quần Jean Nam KiriMaru Dài D07" out_price="199000">
+        <description>- Slim-fit là kiểu quần jean cổ điển với form sáng quần vừa vặn và thời trang. - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="171">
+            <color id="XD" inventory_num="171" name="Xanh Đậm">
+                <shop id="shop_1" inventory_num="1"/>
+                <shop id="shop_2" inventory_num="2"/>
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="195">
+            <color id="XD" inventory_num="195" name="Xanh Đậm">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="312">
+            <color id="XD" inventory_num="312" name="Xanh Đậm">
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="301">
+            <color id="XD" inventory_num="301" name="Xanh Đậm">
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0012" in_price="190247" in_stock="true" inventory_num="645" name="Quần Jean Nam KiriMaRu Dài D08" out_price="199000">
+        <description>- Jeans Slim-fit chính là thứ sẽ cải thiện đáng kể chiều cao cho bạn khi diện chúng. - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="414">
+            <color id="XD" inventory_num="414" name="Xanh Đậm">
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+                <shop id="shop_29" inventory_num="29"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="35">
+            <color id="XD" inventory_num="35" name="Xanh Đậm">
+                <shop id="shop_2" inventory_num="2"/>
+                <shop id="shop_3" inventory_num="3"/>
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="130">
+            <color id="XD" inventory_num="130" name="Xanh Đậm">
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="66">
+            <color id="XD" inventory_num="66" name="Xanh Đậm">
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+            </color>
+        </size>
+    </product>
+    <product id="QD_KM_0013" in_price="161061" in_stock="true" inventory_num="909" name="Quần Jean Nam KiriMaru Dài D17" out_price="199000">
+        <description>- Kiểu Jeans extreme strectch vô cùng phù hợp với các tín đồ không thích dùng thắt lưng, thiết kế phần lưng quần vừa vặn và thời trang. - Chất liệu cotton cao cấp từ sợi thiên nhiên mang lại cảm giác thoáng mát và mềm mại. - Phom dáng chuẩn, màu sắc cổ điển của Jean, dễ dàng phối nhiều loại trang phục khác nhau. - Quần Jeans là loại trang phục trẻ trung, năng động, không thể thiếu trong tủ đồ của bất kỳ bạn trẻ nào.</description>
+        <size id="M" inventory_num="165">
+            <color id="XD" inventory_num="165" name="Xanh Đen">
+                <shop id="shop_4" inventory_num="4"/>
+                <shop id="shop_5" inventory_num="5"/>
+                <shop id="shop_6" inventory_num="6"/>
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+            </color>
+        </size>
+        <size id="L" inventory_num="273">
+            <color id="XD" inventory_num="273" name="Xanh Đen">
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+            </color>
+        </size>
+        <size id="XL" inventory_num="385">
+            <color id="XD" inventory_num="385" name="Xanh Đen">
+                <shop id="shop_7" inventory_num="7"/>
+                <shop id="shop_8" inventory_num="8"/>
+                <shop id="shop_9" inventory_num="9"/>
+                <shop id="shop_10" inventory_num="10"/>
+                <shop id="shop_11" inventory_num="11"/>
+                <shop id="shop_12" inventory_num="12"/>
+                <shop id="shop_13" inventory_num="13"/>
+                <shop id="shop_14" inventory_num="14"/>
+                <shop id="shop_15" inventory_num="15"/>
+                <shop id="shop_16" inventory_num="16"/>
+                <shop id="shop_17" inventory_num="17"/>
+                <shop id="shop_18" inventory_num="18"/>
+                <shop id="shop_19" inventory_num="19"/>
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_25" inventory_num="25"/>
+                <shop id="shop_26" inventory_num="26"/>
+                <shop id="shop_27" inventory_num="27"/>
+                <shop id="shop_28" inventory_num="28"/>
+            </color>
+        </size>
+        <size id="XXL" inventory_num="86">
+            <color id="XD" inventory_num="86" name="Xanh Đen">
+                <shop id="shop_20" inventory_num="20"/>
+                <shop id="shop_21" inventory_num="21"/>
+                <shop id="shop_22" inventory_num="22"/>
+                <shop id="shop_23" inventory_num="23"/>
+            </color>
+        </size>
+    </product>
+</product_list>
