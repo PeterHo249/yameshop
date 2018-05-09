@@ -1,0 +1,36 @@
+<shop_list>
+<!-- Ho Chi Minh -->
+    <shop id="shop_0" name="YaMe Q.10: 770F, Sư Vạn Hạnh (nd), P.12 " address="770F, Sư Vạn Hạnh (nd), P.12"/>
+    <shop id="shop_1" name="Yame Q.10: 286, 3 tháng 2, P.12" address="286, 3 tháng 2, P.12"/>
+    <shop id="shop_2" name="Yame Q.5: 190, Nguyễn Trãi, P.3" address="190, Nguyễn Trãi, P.3"/>
+    <shop id="shop_3" name="Yame Q.5: 116, Nguyễn Trãi, P.3" address="116, Nguyễn Trãi, P.3"/>
+    <shop id="shop_4" name="Yame Q.BT: 138 Đinh Tiên Hoàng, P.1" address="138 Đinh Tiên Hoàng, P.1"/>
+    <shop id="shop_5" name="Yame Q.7: 323 Huỳnh Tấn Phát" address="323 Huỳnh Tấn Phát"/>
+    <shop id="shop_6" name="Yame Tân Phú: 34 Nguyễn Sơn" address="34 Nguyễn Sơn"/>
+    <shop id="shop_7" name="Yame Tân Phú 2: 189 Hòa Bình" address="189 Hòa Bình"/>
+    <shop id="shop_8" name="Yame Gò Vấp: 507 - 509, Quang Trung, P.10" address="507 - 509, Quang Trung, P.10"/>
+    <shop id="shop_9" name="Yame Gò Vấp 2: 1096 Quang Trung" address="1096 Quang Trung"/>
+    <shop id="shop_10" name="Yame Thủ Đức: 336, Võ Văn Ngân, Q. Thủ Đức" address="336, Võ Văn Ngân, Q. Thủ Đức"/>
+     <shop id="shop_11" name="Yame Q9: 200 Lê Văn Việt P.Tăng Nhơn Phú B" address="200 Lê Văn Việt P.Tăng Nhơn Phú B"/>
+    <shop id="shop_12" name="Yame Q12: 290 Phan Văn Hớn, Q.12" address="290 Phan Văn Hớn, Q.12"/>
+    <shop id="shop_13" name="Yame Q.9: 114 Đỗ Xuân Hợp (Sắp KT)" address="114 Đỗ Xuân Hợp (Sắp KT)"/>
+    <shop id="shop_14" name="Yame Q.6: 102 Hậu Giang (Sắp KT)" address="102 Hậu Giang (Sắp KT)"/>
+<!-- Tay Nam Bo -->
+    <shop id="shop_15" name="Yame Cần Thơ: 57 Nguyễn Trãi, Q. Ninh kiều" address="57 Nguyễn Trãi, Q. Ninh kiều"/>
+    <shop id="shop_16" name="Yame Long Xuyên: 47 Tôn Đức Thắng, P. Mỹ Bình" address="47 Tôn Đức Thắng, P. Mỹ Bình"/>
+    <shop id="shop_17" name="Yame Rạch Giá: 290 Nguyễn Trung Trực, Tp. Rạch Giá" address="290 Nguyễn Trung Trực, Tp. Rạch Giá"/>
+    <shop id="shop_18" name="Yame Mỹ Tho: 193N đường Ấp Bắc, P.5" address="193N đường Ấp Bắc, P.5"/>
+     <shop id="shop_19" name="Yame Vĩnh Long: 27A Phạm Thái Bường" address="27A Phạm Thái Bường"/>
+    <shop id="shop_20" name="Yame Bến Tre:209 Đồng Khởi Tp.Bến Tre" address="209 Đồng Khởi Tp.Bến Tre"/>
+    <shop id="shop_21" name="Yame Tân An: 492 Hùng Vương" address="492 Hùng Vương"/>
+    <shop id="shop_22" name="Yame Cao Lãnh: 66A Tôn Đức Thắng" address="66A Tôn Đức Thắng"/>
+    <shop id="shop_23" name="Yame Sóc Trăng: 126 Tôn Đức Thắng" address="126 Tôn Đức Thắng"/>
+    <shop id="shop_24" name="Yame Trà Vinh: 09 Nguyễn Đáng" address="09 Nguyễn Đáng"/>
+<!-- Dong Nam Bo    -->
+    <shop id="shop_25" name="Yame Biên Hòa: 30, Dương Tử Giang, Tp. Biên Hòa" address="30, Dương Tử Giang, Tp. Biên Hòa"/>
+    <shop id="shop_26" name="Yame Bình Dương: 187, Yersin, Tp.Thủ Dầu Một" address="187, Yersin, Tp.Thủ Dầu Một"/>
+     <shop id="shop_27" name="Yame Vũng Tàu: 528 Trương Công Định" address="528 Trương Công Định"/>
+    <shop id="shop_28" name="Yame Tây Ninh: 586 Cách Mạng Tháng 8, P.3" address="586 Cách Mạng Tháng 8, P.3"/>
+<!-- Tay Nguyen     -->
+    <shop id="shop_29" name="Yame Buôn Ma Thuột: 64 Phan Chu Trinh, Tp.BMT" address="64 Phan Chu Trinh, Tp.BMT"/>
+</shop_list>

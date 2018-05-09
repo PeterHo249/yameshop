@@ -97,7 +97,7 @@ chi tiết tổ chức các file dữ liệu
 +++++++ type là loại hóa đơn, in là hóa đơn nhập, out là hóa đơn bán
 +++++++ total là tổng tiền, tính bằng đơn giá * số lượng
 +++++++ revenue là doanh thu, tính bằng (đơn giá xuất - đơn giá nhập) * số lượng
-
++++++++ id bill gồm 8 số
 
 ** new_trend_product.xml
 <new_trend_product>
