@@ -94,10 +94,8 @@ body {
     background: #ccc;
 }
 
-@media all and (max-width: 768px) {
-    .tcb-product-item {
-        margin-bottom: 30px;
-    }
+.tcb-product-item {
+    margin-bottom: 30px;
 }
 
 .tcb-product-photo {
@@ -129,6 +127,45 @@ body {
 }
 
 /* End Product silder */
+
+.page-link {
+    background-color: transparent;
+    color: white;
+    border: 1px solid grey;
+}
+
+/* Product detail page */
+
+#product-detail {
+    background-color: rgba(208, 208, 208, 0.2);
+    padding: 10px;
+}
+
+#product-detail-info {
+    padding: 10px 0px;
+    margin-bottom: 10px;
+}
+
+#product-photo-sample {
+    width: 100%;
+    padding: 5px;
+}
+
+#product-name {
+    font-size: 1.8em;
+    padding-bottom: 10px;
+}
+
+#product-description-header {
+    font-size: 1.5em;
+    padding-bottom: 10px;
+}
+
+.product-photo {
+    padding: 10px;
+    width: 100%;
+}
+/* End Product detail page */
 
 /* END BODY */
 
