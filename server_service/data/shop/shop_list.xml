@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <shop_list>
 <!-- Ho Chi Minh -->
     <shop id="shop_0" name="YaMe Q.10: 770F, Sư Vạn Hạnh (nd), P.12 " address="770F, Sư Vạn Hạnh (nd), P.12"/>
@@ -11,7 +12,7 @@
     <shop id="shop_8" name="Yame Gò Vấp: 507 - 509, Quang Trung, P.10" address="507 - 509, Quang Trung, P.10"/>
     <shop id="shop_9" name="Yame Gò Vấp 2: 1096 Quang Trung" address="1096 Quang Trung"/>
     <shop id="shop_10" name="Yame Thủ Đức: 336, Võ Văn Ngân, Q. Thủ Đức" address="336, Võ Văn Ngân, Q. Thủ Đức"/>
-     <shop id="shop_11" name="Yame Q9: 200 Lê Văn Việt P.Tăng Nhơn Phú B" address="200 Lê Văn Việt P.Tăng Nhơn Phú B"/>
+    <shop id="shop_11" name="Yame Q9: 200 Lê Văn Việt P.Tăng Nhơn Phú B" address="200 Lê Văn Việt P.Tăng Nhơn Phú B"/>
     <shop id="shop_12" name="Yame Q12: 290 Phan Văn Hớn, Q.12" address="290 Phan Văn Hớn, Q.12"/>
     <shop id="shop_13" name="Yame Q.9: 114 Đỗ Xuân Hợp (Sắp KT)" address="114 Đỗ Xuân Hợp (Sắp KT)"/>
     <shop id="shop_14" name="Yame Q.6: 102 Hậu Giang (Sắp KT)" address="102 Hậu Giang (Sắp KT)"/>
