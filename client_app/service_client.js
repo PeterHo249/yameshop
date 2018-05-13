@@ -24,24 +24,28 @@ app.createServer((req, res) => {
         '.js': 'text/javascript'
     }[req.url.substr(file_extension)];
 
-    fs.readFile(__dirname + req_url, (err, data) => {
-        if (err) {
-            console.log('==> Error: ' + err);
-            console.log('==> Error 404: File not found ' + res.url);
+    if (header_type === 'text/html') {
+        // TODO - Implement code to render html file
+    } else {
+        fs.readFile(__dirname + req_url, (err, data) => {
+            if (err) {
+                console.log('==> Error: ' + err);
+                console.log('==> Error 404: File not found ' + res.url);
 
-            res.writeHead(404, 'Not Found');
-            res.end();
-        } else {
-            res.setHeader('Content-type', header_type);
+                res.writeHead(404, 'Not Found');
+                res.end();
+            } else {
+                res.setHeader('Content-type', header_type);
 
-            res.end(data);
-            console.log(req.url, header_type);
-        }
-    });
+                res.end(data);
+                console.log(req.url, header_type);
+            }
+        });
+    }
 }).listen(port, (err) => {
     if (err != null) {
         console.log('==> Error: ' + err);
     } else {
-        console.log('Server is starting at port 3000');
+        console.log('Server is starting at port ' + port);
     }
 });

@@ -6,49 +6,6 @@ let xml2js = require('xml2js');
 let path = __dirname + '/../data';
 let product_path = path + '/product';
 
-let get_home_guest = () => {
-    let data = {
-        news: [],
-        trends: []
-    };
-    let parser = new xml2js.Parser();
-    let product_list = [];
-    fs.readdirSync(product_path + '/').forEach(dir => {
-        let list = JSON.parse(get_product_list_guest(dir));
-        list.forEach(element => {
-            product_list.push(element);
-        });
-    });
-
-    // TODO - Implement code here
-    let file_path = path + '/new_trend/new_trend_product.xml';
-    let file_content = fs.readFileSync(file_path, 'utf-8');
-    parser.parseString(file_content, function (err, result) {
-        let new_products = result.new_trend_product.new_product[0].item;
-        let trend_products = result.new_trend_product.trend_product[0].item;
-        
-        new_products.forEach(product => {
-            for (let i = 0; i < product_list.length; i++) {
-                if (product.$.id === product_list[i].id) {
-                    data.news.push(product_list[i]);
-                    break;
-                }
-            }
-        });
-
-        trend_products.forEach(product => {
-            for (let i = 0; i < product_list.length; i++) {
-                if (product.$.id === product_list[i].id) {
-                    data.trends.push(product_list[i]);
-                    break;
-                }
-            }
-        });
-    });
-
-    let result_str = JSON.stringify(data);
-    return result_str;
-};
 
 let get_product_list_guest = (category, brand) => {
     let data = [];
@@ -167,6 +124,56 @@ let get_product_guest = (product_id) => {
         });
 
     let result_str = JSON.stringify(data);
+    return result_str;
+};
+
+function get_new_trend_data() {
+    let data = {
+        news: [],
+        trends: []
+    };
+    let parser = new xml2js.Parser();
+    let product_list = [];
+    fs.readdirSync(product_path + '/').forEach(dir => {
+        let list = JSON.parse(get_product_list_guest(dir));
+        list.forEach(element => {
+            product_list.push(element);
+        });
+    });
+
+    // TODO - Implement code here
+    let file_path = path + '/new_trend/new_trend_product.xml';
+    let file_content = fs.readFileSync(file_path, 'utf-8');
+    parser.parseString(file_content, function (err, result) {
+        let new_products = result.new_trend_product.new_product[0].item;
+        let trend_products = result.new_trend_product.trend_product[0].item;
+        
+        new_products.forEach(product => {
+            for (let i = 0; i < product_list.length; i++) {
+                if (product.$.id === product_list[i].id) {
+                    data.news.push(product_list[i]);
+                    break;
+                }
+            }
+        });
+
+        trend_products.forEach(product => {
+            for (let i = 0; i < product_list.length; i++) {
+                if (product.$.id === product_list[i].id) {
+                    data.trends.push(product_list[i]);
+                    break;
+                }
+            }
+        });
+    });
+
+    return data;
+}
+
+let new_trend_products = get_new_trend_data();
+
+let get_home_guest = () => {
+    let result_str = JSON.stringify(new_trend_products);
     return result_str;
 };
 
