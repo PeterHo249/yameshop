@@ -5,6 +5,7 @@
 
 let app = require('http');
 let fs = require('fs');
+let present_generator = require('./bussiness/present_generator');
 var port = 3000;
 
 app.createServer((req, res) => {
@@ -26,6 +27,12 @@ app.createServer((req, res) => {
 
     if (header_type === 'text/html') {
         // TODO - Implement code to render html file
+        switch (String(req_url.match(/(\/\w+\.\w+)/)[0])) {
+            case '/index_guest.html':
+                res.setHeader('Content-type', header_type);
+                res.end(present_generator.generateExample());
+                break;
+        }
     } else {
         fs.readFile(__dirname + req_url, (err, data) => {
             if (err) {
