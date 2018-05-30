@@ -33,88 +33,88 @@
                 <div class="collapse navbar-collapse" id="collapsable-nav">
                     <ul id="nav-list" class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">ÁO THUN</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="AT" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">ÁO THUN</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Áo thun No Style</a>
-                                <a href="#" class="dropdown-item">Áo thun Adachi</a>
-                                <a href="#" class="dropdown-item">Áo thun KiriMaru</a>
-                                <a href="#" class="dropdown-item">Áo thun MaBư</a>
+                                <a href="#" id="AT_NS" class="dropdown-item" onclick="SendRequestToServer(this.id)">Áo thun No Style</a>
+                                <a href="#" id="AT_AD" class="dropdown-item" onclick="SendRequestToServer(this.id)">Áo thun Adachi</a>
+                                <a href="#" id="AT_KM" class="dropdown-item" onclick="SendRequestToServer(this.id)">Áo thun KiriMaru</a>
+                                <a href="#" id="AT_MB" class="dropdown-item" onclick="SendRequestToServer(this.id)">Áo thun MaBư</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">ÁO KHOÁC</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="AK" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">ÁO KHOÁC</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Áo khoác No Style</a>
-                                <a href="#" class="dropdown-item">Áo khoác Adachi</a>
-                                <a href="#" class="dropdown-item">Áo khoác KiriMaru</a>
-                                <a href="#" class="dropdown-item">Áo khoác MaBư</a>
+                                <a href="#" class="dropdown-item" id="AK_NS" onclick="SendRequestToServer(this.id)">Áo khoác No Style</a>
+                                <a href="#" class="dropdown-item" id="AK_AD" onclick="SendRequestToServer(this.id)">Áo khoác Adachi</a>
+                                <a href="#" class="dropdown-item" id="AK_KM" onclick="SendRequestToServer(this.id)">Áo khoác KiriMaru</a>
+                                <a href="#" class="dropdown-item" id="AK_MB" onclick="SendRequestToServer(this.id)">Áo khoác MaBư</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">ÁO SƠMI</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="ASM" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">ÁO SƠMI</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Áo sơmi No Style</a>
-                                <a href="#" class="dropdown-item">Áo sơmi Adachi</a>
-                                <a href="#" class="dropdown-item">Áo sơmi KiriMaru</a>
-                                <a href="#" class="dropdown-item">Áo sơmi MaBư</a>
+                                <a href="#" class="dropdown-item" id="ASM_NS" onclick="SendRequestToServer(this.id)">Áo sơmi No Style</a>
+                                <a href="#" class="dropdown-item" id="ASM_AD" onclick="SendRequestToServer(this.id)">Áo sơmi Adachi</a>
+                                <a href="#" class="dropdown-item" id="ASM_KM" onclick="SendRequestToServer(this.id)">Áo sơmi KiriMaru</a>
+                                <a href="#" class="dropdown-item" id="ASM_MB" onclick="SendRequestToServer(this.id)">Áo sơmi MaBư</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">QUẦN DÀI</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="QD" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">QUẦN DÀI</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Quần dài No Style</a>
-                                <a href="#" class="dropdown-item">Quần dài Adachi</a>
-                                <a href="#" class="dropdown-item">Quần dài KiriMaru</a>
-                                <a href="#" class="dropdown-item">Quần dài MaBư</a>
-                                <a href="#" class="dropdown-item">Quần tây</a>
+                                <a href="#" class="dropdown-item" id="QD_NS" onclick="SendRequestToServer(this.id)">Quần dài No Style</a>
+                                <a href="#" class="dropdown-item" id="QD_AD" onclick="SendRequestToServer(this.id)">Quần dài Adachi</a>
+                                <a href="#" class="dropdown-item" id="QD_KM" onclick="SendRequestToServer(this.id)">Quần dài KiriMaru</a>
+                                <a href="#" class="dropdown-item" id="QD_MB" onclick="SendRequestToServer(this.id)">Quần dài MaBư</a>
+                                <a href="#" class="dropdown-item" id="QD_QT" onclick="SendRequestToServer(this.id)">Quần tây</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">QUẦN SHORT</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="QS" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">QUẦN SHORT</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Quần short No Style</a>
-                                <a href="#" class="dropdown-item">Quần short Adachi</a>
-                                <a href="#" class="dropdown-item">Quần short KiriMaru</a>
-                                <a href="#" class="dropdown-item">Quần short MaBư</a>
+                                <a href="#" class="dropdown-item" id="QS_NS" onclick="SendRequestToServer(this.id)">Quần short No Style</a>
+                                <a href="#" class="dropdown-item" id="QS_AD" onclick="SendRequestToServer(this.id)">Quần short Adachi</a>
+                                <a href="#" class="dropdown-item" id="QS_KM" onclick="SendRequestToServer(this.id)">Quần short KiriMaru</a>
+                                <a href="#" class="dropdown-item" id="QS_MB" onclick="SendRequestToServer(this.id)">Quần short MaBư</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">GIÀY NAM</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="GN1" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">GIÀY NAM</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Giày thời trang</a>
-                                <a href="#" class="dropdown-item">Giày da</a>
-                                <a href="#" class="dropdown-item">Giày couple Adachi</a>
+                                <a href="#" class="dropdown-item" id="GN1_GTT" onclick="SendRequestToServer(this.id)">Giày thời trang</a>
+                                <a href="#" class="dropdown-item" id="GN1_GD" onclick="SendRequestToServer(this.id)">Giày da</a>
+                                <a href="#" class="dropdown-item" id="GN1_AD" onclick="SendRequestToServer(this.id)">Giày couple Adachi</a>
                             </div>
                         </li>
                         <li id="woman-shoe-button" class="nav-item">
-                            <a class="nav-link" href="#">GIÀY NỮ</a>
+                            <a class="nav-link" href="#" id="GN2" onclick="SendRequestToServer(this.id)">GIÀY NỮ</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">DÉP-SANDAL</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="DS" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">DÉP-SANDAL</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Dép nam</a>
-                                <a href="#" class="dropdown-item">Sandal</a>
-                                <a href="#" class="dropdown-item">Giày couple Adachi</a>
+                                <a href="#" class="dropdown-item" id="DS_N" onclick="SendRequestToServer(this.id)">Dép nam</a>
+                                <a href="#" class="dropdown-item" id="DS_S" onclick="SendRequestToServer(this.id)">Sandal</a>
+                                <a href="#" class="dropdown-item" id="DS_AD" onclick="SendRequestToServer(this.id)">Giày couple Adachi</a>
                             </div>
                         </li>
                         <li id="backpack-button" class="nav-item">
-                            <a class="nav-link" href="#">BALO</a>
+                            <a class="nav-link" href="#" id="BL" onclick="SendRequestToServer(this.id)">BALO</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="navbar-dropdown" role="button" aria-haspopup="true"
-                                aria-expanded="false">PHỤ KIỆN</a>
+                            <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle" id="PK" role="button" aria-haspopup="true" aria-expanded="false"
+                                onclick="SendRequestToServer(this.id)">PHỤ KIỆN</a>
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a href="#" class="dropdown-item">Dây nịt</a>
-                                <a href="#" class="dropdown-item">Ví da</a>
-                                <a href="#" class="dropdown-item">Kính</a>
-                                <a href="#" class="dropdown-item">Nón</a>
+                                <a href="#" class="dropdown-item" id="PK_DN" onclick="SendRequestToServer(this.id)">Dây nịt</a>
+                                <a href="#" class="dropdown-item" id="PK_VD" onclick="SendRequestToServer(this.id)">Ví da</a>
+                                <a href="#" class="dropdown-item" id="PK_K" onclick="SendRequestToServer(this.id)">Kính</a>
+                                <a href="#" class="dropdown-item" id="PK_N" onclick="SendRequestToServer(this.id)">Nón</a>
                             </div>
                         </li>
                     </ul>
@@ -250,6 +250,143 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script src="bussiness/bussiness_guest.js"></script>
+
+    <script>
+        function SendRequestToServer(id) {
+            let addressProcess;
+            let addressService = "http://localhost:3000";
+
+            switch (id) {
+                case 'AK':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AK'}`;
+                    break;
+                case 'AK_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AK'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'AK_KM':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AK'}&${'brand'}=${'KM'}`;
+                    break;
+                case 'AK_MB':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AK'}&${'brand'}=${'MB'}`;
+                    break;
+                case 'AK_NS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AK'}&${'brand'}=${'NS'}`;
+                    break;
+                case 'ASM':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'ASM'}`;
+                    break;
+                case 'ASM_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'ASM'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'ASM_KM':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'ASM'}&${'brand'}=${'KM'}`;
+                    break;
+                case 'ASM_MB':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'ASM'}&${'brand'}=${'MB'}`;
+                    break;
+                case 'ASM_NS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'ASM'}&${'brand'}=${'NS'}`;
+                    break;
+                case 'AT':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AT'}`;
+                    break;
+                case 'AT_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AT'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'AT_KM':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AT'}&${'brand'}=${'KM'}`;
+                    break;
+                case 'AT_MB':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AT'}&${'brand'}=${'MB'}`;
+                    break;
+                case 'AT_NS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'AT'}&${'brand'}=${'NS'}`;
+                    break;
+                case 'BL':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'BL'}`;
+                    break;
+                case 'DS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'DS'}`;
+                    break;
+                case 'DS_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'DS'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'DS_N':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'DS'}&${'brand'}=${'N'}`;
+                    break;
+                case 'DS_S':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'DS'}&${'brand'}=${'S'}`;
+                    break;
+                case 'GN1':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'GN1'}`;
+                    break;
+                case 'GN1_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'GN1'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'GN1_GD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'GN1'}&${'brand'}=${'GD'}`;
+                    break;
+                case 'GN1_GTT':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'GN1'}&${'brand'}=${'GTT'}`;
+                    break;
+                case 'GN2':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'GN2'}`;
+                    break;
+                case 'PK':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'PK'}`;
+                    break;
+                case 'PK_DN':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'PK'}&${'brand'}=${'DN'}`;
+                    break;
+                case 'PK_K':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'PK'}&${'brand'}=${'K'}`;
+                    break;
+                case 'PK_N':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'PK'}&${'brand'}=${'N'}`;
+                    break;
+                case 'PK_VD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'PK'}&${'brand'}=${'VD'}`;
+                    break;
+                case 'QD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QD'}`;
+                    break;
+                case 'QD_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QD'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'QD_KM':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QD'}&${'brand'}=${'KM'}`;
+                    break;
+                case 'QD_MB':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QD'}&${'brand'}=${'MB'}`;
+                    break;
+                case 'QD_NS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QD'}&${'brand'}=${'NS'}`;
+                    break;
+                case 'QD_QT':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QD'}&${'brand'}=${'QT'}`;
+                    break;
+                case 'QS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QS'}`;
+                    break;
+                case 'QS_AD':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QS'}&${'brand'}=${'AD'}`;
+                    break;
+                case 'QS_KM':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QS'}&${'brand'}=${'KM'}`;
+                    break;
+                case 'QS_MB':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QS'}&${'brand'}=${'MB'}`;
+                    break;
+                case 'QS_NS':
+                    addressProcess = `${addressService}/${'product_list'}?${'category'}=${'QS'}&${'brand'}=${'NS'}`;
+                    break;
+            }
+
+            let processHttp = new XMLHttpRequest();
+            processHttp.open("GET", addressProcess, false);
+            processHttp.send("");
+        }
+    </script>
 </body>
 
 </html>

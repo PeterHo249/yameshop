@@ -5,15 +5,20 @@
 
 let app = require('http');
 let fs = require('fs');
+let url = require('url');
+let query = require('querystring');
 let present_generator = require('./bussiness/present_generator');
 var port = 3000;
 
 app.createServer((req, res) => {
-    console.log(`${req.method} ${req.url}`);
+    let params = {};
+    params = url.parse(req.url, true).query;
+    // console.log('--------------------------------------' + req.method + " " + String(req.url.match(/\/\w+/)));
 
     let req_url = (req.url == '/') ? '/index_guest.html' : req.url;
 
     let file_extension = req.url.lastIndexOf('.');
+
     let header_type = (file_extension == -1 && req.url != '/') ? 'text/plain' : {
         '/': 'text/html',
         '.html': 'text/html',
@@ -29,8 +34,11 @@ app.createServer((req, res) => {
         // TODO - Implement code to render html file
         switch (String(req_url.match(/(\/\w+\.\w+)/)[0])) {
             case '/index_guest.html':
-                res.setHeader('Content-type', header_type);
-                res.end(present_generator.generateExample());
+                    res.setHeader('Content-type', header_type);
+                    //------------------------------
+                    present_generator.SendRequestGetData('4','AK_MB_0000_L');
+                    //------------------------------
+                    res.end(present_generator.RenderUI('4')); 
                 break;
         }
     } else {
@@ -43,7 +51,6 @@ app.createServer((req, res) => {
                 res.end();
             } else {
                 res.setHeader('Content-type', header_type);
-
                 res.end(data);
                 console.log(req.url, header_type);
             }
