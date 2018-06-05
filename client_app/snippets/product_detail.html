@@ -1,7 +1,7 @@
 <div class="container" id="product-detail">
     <div class="row" id="product-detail-info">
         <div class="col-md-4">
-            <img id="product-photo-sample" src="#" alt="hinh mau">
+            {{PRODUCT_IMAGE_MAIN}}
         </div>
         <div class="col-md-8">
             <div class="row">
@@ -31,26 +31,17 @@
         </div>
     </div>
     <div id="product-detail-photo" class="row">
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
-        <div class="col-sm-6 col-md-4">
-            <img src="#" alt="hinh ao" class="product-photo">
-        </div>
+        {{PRODUCT_IMAGE_DIFFERENT_COLOR}}
     </div>
 </div>
+<script>
+    // When the user clicks on div, open the popup
+    function showFunction(id) {
+        var popup = document.getElementById(id);
+        popup.classList.toggle("show");
+    }
+    function hideFunction(id) {
+        var popup = document.getElementById(id);
+        popup.classList.toggle("hide");
+    }
+</script>
