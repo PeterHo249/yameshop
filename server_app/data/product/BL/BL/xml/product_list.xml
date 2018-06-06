@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <product_list>
-    <product id="BL_0000" in_price="175342" in_stock="true" inventory_num="3283" name="BLTX U Adachi H30" out_price="198000">
+    <product id="BL_BL_0000" in_price="175342" in_stock="true" inventory_num="3283" name="BLTX U Adachi H30" out_price="198000">
         <description>BALO chất liệu vải TRƯỢT NƯỚC - Chất liệu: Vải 600D TPE Coating water proof, tính năng trượt nước. - Thiết kế mới, được cải tiến từ balo H16. - Thêm nhiều ngăn chứa đồ. Ngăn nhỏ bên hông đựng nước. - Màu sắc mới, phù hợp cho cả nam &amp; nữ. * Nước có thể thấm qua dây kéo hoặc đường chỉ may khi trời mưa lớn.</description>
         <size id="M" inventory_num="581">
             <color id="D" inventory_num="154" name="Đỏ">
@@ -283,7 +283,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0001" in_price="126428" in_stock="true" inventory_num="467" name="BLTX U Y2010 B01" out_price="149000">
+    <product id="BL_BL_0001" in_price="126428" in_stock="true" inventory_num="467" name="BLTX U Y2010 B01" out_price="149000">
         <description>- Chất liệu vải chính 320D Nylon Twill Blonded màu đen nhập khẩu trực tiếp từ Hàn Quốc - Hai ngăn dây kéo bên ngoài và bên trong rất tiện lợi. - Dây dù siêu bền 8mm - Ba lô có sức chứa 15L</description>
         <size id="M" inventory_num="18">
             <color id="D" inventory_num="18" name="Đen">
@@ -336,7 +336,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0002" in_price="273693" in_stock="true" inventory_num="3398" name="BLTX U Adachi H31" out_price="299000">
+    <product id="BL_BL_0002" in_price="273693" in_stock="true" inventory_num="3398" name="BLTX U Adachi H31" out_price="299000">
         <description>BALO UNISEX TRƯỢT NƯỚC - Chất liệu: Vải 600D TPE Coating water proof, tính năng trượt nước. Nhập khẩu trực tiếp từ Taiwan - Lưới darlington nhập khẩu Korea siêu bền. - Thiết kế mới, màu sắc không đụng hàng, phù hợp cho cả nam &amp; nữ. - Thêm foam 5mm ngăn laptop để chống sốc</description>
         <size id="M" inventory_num="1072">
             <color id="DXD" inventory_num="156" name="Đen - Xám Đậm">
@@ -608,7 +608,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0003" in_price="281917" in_stock="true" inventory_num="8843" name="BLTX U Adachi H24" out_price="299000">
+    <product id="BL_BL_0003" in_price="281917" in_stock="true" inventory_num="8843" name="BLTX U Adachi H24" out_price="299000">
         <description>BALO UNISEX - Chất liệu vải chính: 600D Twill PVC nhập khẩu Korea - Lưng balo là 1 tấm EVA chống sốc cao cấp, với vải lót Heat Gear êm, thoáng khí, đệm quai đeo Air mesh êm, thông thoáng. - Bao trùm áo mưa: vải 190D PVC chịu được mưa lớn 600ml - Dây khoá kéo YKK #8 siêu bền - nhập trực tiếp từ Nhật Bản. - Balo đựng vừa laptop 15inches. - Màu sắc đa dạng: 9 màu</description>
         <size id="M" inventory_num="1933">
             <color id="N" inventory_num="39" name="Nâu">
@@ -1324,7 +1324,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0004" in_price="246978" in_stock="true" inventory_num="366" name="BLTX U Y2010 B03" out_price="249000">
+    <product id="BL_BL_0004" in_price="246978" in_stock="true" inventory_num="366" name="BLTX U Y2010 B03" out_price="249000">
         <description/>
         <size id="M" inventory_num="99">
             <color id="D" inventory_num="99" name="Đen">
@@ -1375,7 +1375,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0005" in_price="285822" in_stock="true" inventory_num="601" name="BLTX U Adachi H33" out_price="299000">
+    <product id="BL_BL_0005" in_price="285822" in_stock="true" inventory_num="601" name="BLTX U Adachi H33" out_price="299000">
         <description/>
         <size id="M" inventory_num="6">
             <color id="D" inventory_num="6" name="Đen">
@@ -1434,7 +1434,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0006" in_price="292440" in_stock="true" inventory_num="936" name="BLTX U Adachi H32" out_price="299000">
+    <product id="BL_BL_0006" in_price="292440" in_stock="true" inventory_num="936" name="BLTX U Adachi H32" out_price="299000">
         <description/>
         <size id="M" inventory_num="187">
             <color id="TD" inventory_num="187" name="Trắng Đen">
@@ -1520,7 +1520,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0007" in_price="144448" in_stock="true" inventory_num="712" name="BLTX U Y2010 A03" out_price="149000">
+    <product id="BL_BL_0007" in_price="144448" in_stock="true" inventory_num="712" name="BLTX U Y2010 A03" out_price="149000">
         <description/>
         <size id="M" inventory_num="57">
             <color id="D" inventory_num="57" name="Đen">
@@ -1586,7 +1586,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0008" in_price="211096" in_stock="true" inventory_num="2987" name="BLTX U Y2010 B02" out_price="249000">
+    <product id="BL_BL_0008" in_price="211096" in_stock="true" inventory_num="2987" name="BLTX U Y2010 B02" out_price="249000">
         <description/>
         <size id="M" inventory_num="745">
             <color id="D" inventory_num="322" name="Đen">
@@ -1855,7 +1855,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0009" in_price="221893" in_stock="true" inventory_num="1826" name="BLTX U Adachi H25" out_price="249000">
+    <product id="BL_BL_0009" in_price="221893" in_stock="true" inventory_num="1826" name="BLTX U Adachi H25" out_price="249000">
         <description>BALO UNISEX STYLE HÀN QUỐC - Chất liệu: 600D PU nhập trực tiếp từ Hàn Quốc - Dây khóa kéo HHH #10 siêu bền - nhập trực tiếp từ Hàn Quốc - Quai đeo đệm Heat Gear êm, thoáng khí - Mouse PE 5mm - Khóa Buckle hàng hiệu Woojin, nhập từ Korea - Đai nylon 25mm bền chắc - Túi chịu lực 20kg</description>
         <size id="M" inventory_num="156">
             <color id="D" inventory_num="94" name="Đỏ">
@@ -2022,7 +2022,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0010" in_price="170945" in_stock="true" inventory_num="580" name="BLTX U Y2010 A04" out_price="179000">
+    <product id="BL_BL_0010" in_price="170945" in_stock="true" inventory_num="580" name="BLTX U Y2010 A04" out_price="179000">
         <description/>
         <size id="M" inventory_num="95">
             <color id="D" inventory_num="95" name="Đen">
@@ -2073,7 +2073,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0011" in_price="211513" in_stock="true" inventory_num="2059" name="BLTX U Y2010 B04" out_price="249000">
+    <product id="BL_BL_0011" in_price="211513" in_stock="true" inventory_num="2059" name="BLTX U Y2010 B04" out_price="249000">
         <description/>
         <size id="M" inventory_num="588">
             <color id="D" inventory_num="42" name="Đỏ">
@@ -2241,7 +2241,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0012" in_price="383802" in_stock="true" inventory_num="544" name="BLTX U Adachi H28" out_price="399000">
+    <product id="BL_BL_0012" in_price="383802" in_stock="true" inventory_num="544" name="BLTX U Adachi H28" out_price="399000">
         <description/>
         <size id="M" inventory_num="45">
             <color id="D" inventory_num="45" name="Đen">
@@ -2304,7 +2304,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0013" in_price="167023" in_stock="true" inventory_num="990" name="BLTX U Y2010 A05" out_price="199000">
+    <product id="BL_BL_0013" in_price="167023" in_stock="true" inventory_num="990" name="BLTX U Y2010 A05" out_price="199000">
         <description/>
         <size id="M" inventory_num="78">
             <color id="D" inventory_num="78" name="Đen">
@@ -2382,7 +2382,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0014" in_price="266286" in_stock="true" inventory_num="2058" name="BLTX U Adachi H27" out_price="299000">
+    <product id="BL_BL_0014" in_price="266286" in_stock="true" inventory_num="2058" name="BLTX U Adachi H27" out_price="299000">
         <description>BALO SỨC CHỨA KHỦNG - Chất liệu: 900D TPE coating nhập từ Korea, vải lót: 210D PU - Lưng balo ép EVA cao tần chống sốc cực tốt . - Quai đeo EVA đệm Heat Gear rất êm, thoáng khí - Dây kéo YKK số 8 siêu bền nhập trực tiếp từ Nhật Bản - Balo chứa được laptọp 15.6inches - Có nhiều ngăn được thiết kế thông minh, tiện ích cho người sử dụng.</description>
         <size id="M" inventory_num="431">
             <color id="D" inventory_num="170" name="Đen">
@@ -2563,7 +2563,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0015" in_price="298583" in_stock="true" inventory_num="654" name="BLTX U Adachi H26" out_price="299000">
+    <product id="BL_BL_0015" in_price="298583" in_stock="true" inventory_num="654" name="BLTX U Adachi H26" out_price="299000">
         <description>BALO UNISEX STYLE HÀN QUỐC - Thiết kế thời trang &amp; xu hướng. - Chất liệu: Vải Air mesh màu ĐEN nhập khẩu Korea. Vải lót 100% cotton. - Dây kéo YKK siêu bền nhập trực tiếp từ Nhật Bản. - Sản phẩm được sản xuất tại Việt Nam. - Bảo hành đến 365 ngày</description>
         <size id="M" inventory_num="18">
             <color id="D" inventory_num="18" name="Đen">
@@ -2631,7 +2631,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0016" in_price="265903" in_stock="true" inventory_num="2827" name="BLTX U Adachi H21" out_price="299000">
+    <product id="BL_BL_0016" in_price="265903" in_stock="true" inventory_num="2827" name="BLTX U Adachi H21" out_price="299000">
         <description>BALO UNISEX STYLE HÀN QUỐC - Chất liệu: 420D Exterior được nhập trực tiếp từ Hàn Quốc - Dây kéo Nhật bản YKK siêu bền - Đệm quai đeo Heat Gear êm, thoáng khí. - Đai nylon 25mm bền chắc - Túi chịu lực 20kg</description>
         <size id="M" inventory_num="355">
             <color id="T" inventory_num="119" name="Tím">
@@ -2919,7 +2919,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0017" in_price="282391" in_stock="true" inventory_num="599" name="BLTX U Adachi I03" out_price="299000">
+    <product id="BL_BL_0017" in_price="282391" in_stock="true" inventory_num="599" name="BLTX U Adachi I03" out_price="299000">
         <description>- Chất liệu vải chính: 1000D Cordura + Lót 210D PU Đen - Lưng balo là 1 tấm EVA chống sốc cao cấp, với vải lót Heat Gear êm, thoáng khí. - Đệm quai đeo Air mesh êm, thông thoáng. - Bao trùm áo mưa: vải 190D PVC chịu được mưa lớn 600ml - Dây khoá kéo YKK #8 siêu bền - nhập trực tiếp từ Nhật Bản. - Balo đựng vừa laptop 15inches.</description>
         <size id="M" inventory_num="126">
             <color id="D" inventory_num="126" name="Đen">
@@ -2983,7 +2983,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0018" in_price="223451" in_stock="true" inventory_num="1782" name="BLTX U Adachi H22" out_price="249000">
+    <product id="BL_BL_0018" in_price="223451" in_stock="true" inventory_num="1782" name="BLTX U Adachi H22" out_price="249000">
         <description>BALO UNISEX - Chất liệu vải chính: Simily PVC, lót 210D PU nhập trực tiếp từ Hàn Quốc - Quai đeo đệm dây đai chắc chắn. - Dây khoá kéo HHH #5 siêu bền - nhập trực tiếp từ Hàn Quốc. - Balo đựng vừa laptop 15inches.</description>
         <size id="M" inventory_num="554">
             <color id="D" inventory_num="175" name="Đen">
@@ -3136,7 +3136,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0019" in_price="475293" in_stock="true" inventory_num="532" name="BLTX U Y2010 F08" out_price="499000">
+    <product id="BL_BL_0019" in_price="475293" in_stock="true" inventory_num="532" name="BLTX U Y2010 F08" out_price="499000">
         <description/>
         <size id="M" inventory_num="27">
             <color id="D" inventory_num="27" name="Đen">
@@ -3186,7 +3186,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0020" in_price="291414" in_stock="true" inventory_num="578" name="BLTX U Adachi I04" out_price="299000">
+    <product id="BL_BL_0020" in_price="291414" in_stock="true" inventory_num="578" name="BLTX U Adachi I04" out_price="299000">
         <description>- Chất liệu vải chính: 1000D Cordura + Lót 210D PU Đen - Lưng balo là 1 tấm EVA chống sốc cao cấp, với vải lót Heat Gear êm, thoáng khí. - Đệm quai đeo Air mesh êm, thông thoáng. - Bao trùm áo mưa: vải 190D PVC chịu được mưa lớn 600ml - Dây khoá kéo YKK #8 siêu bền - nhập trực tiếp từ Nhật Bản. - Balo đựng vừa laptop 15inches.</description>
         <size id="M" inventory_num="304">
             <color id="D" inventory_num="304" name="Đen">
@@ -3236,7 +3236,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0021" in_price="265481" in_stock="true" inventory_num="535" name="BLTX U Adachi I01" out_price="299000">
+    <product id="BL_BL_0021" in_price="265481" in_stock="true" inventory_num="535" name="BLTX U Adachi I01" out_price="299000">
         <description>- Chất liệu vải chính: 1000D Cordura + Lót 210D PU Đen - Lưng balo là 1 tấm EVA chống sốc cao cấp, với vải lót Heat Gear êm, thoáng khí. - Đệm quai đeo Air mesh êm, thông thoáng. - Bao trùm áo mưa: vải 190D PVC chịu được mưa lớn 600ml - Dây khoá kéo YKK #8 siêu bền - nhập trực tiếp từ Nhật Bản. - Balo đựng vừa laptop 15inches.</description>
         <size id="M" inventory_num="100">
             <color id="D" inventory_num="100" name="Đen">
@@ -3297,7 +3297,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0022" in_price="253193" in_stock="true" inventory_num="923" name="BLTX U Adachi I05" out_price="299000">
+    <product id="BL_BL_0022" in_price="253193" in_stock="true" inventory_num="923" name="BLTX U Adachi I05" out_price="299000">
         <description>- Chất liệu vải chính: 1000D Cordura + Lót 210D PU Đen - Lưng balo là 1 tấm EVA chống sốc cao cấp, với vải lót Heat Gear êm, thoáng khí. - Đệm quai đeo Air mesh êm, thông thoáng. - Bao trùm áo mưa: vải 190D PVC chịu được mưa lớn 600ml - Dây khoá kéo YKK #8 siêu bền - nhập trực tiếp từ Nhật Bản. - Balo đựng vừa laptop 15inches.</description>
         <size id="M" inventory_num="203">
             <color id="D" inventory_num="203" name="Đen">
@@ -3384,7 +3384,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0023" in_price="266846" in_stock="true" inventory_num="479" name="BLTX U Adachi I02" out_price="299000">
+    <product id="BL_BL_0023" in_price="266846" in_stock="true" inventory_num="479" name="BLTX U Adachi I02" out_price="299000">
         <description>- Chất liệu vải chính: 1000D Cordura + Lót 210D PU Đen - Lưng balo là 1 tấm EVA chống sốc cao cấp, với vải lót Heat Gear êm, thoáng khí. - Đệm quai đeo Air mesh êm, thông thoáng. - Bao trùm áo mưa: vải 190D PVC chịu được mưa lớn 600ml - Dây khoá kéo YKK #8 siêu bền - nhập trực tiếp từ Nhật Bản. - Balo đựng vừa laptop 15inches.</description>
         <size id="M" inventory_num="24">
             <color id="D" inventory_num="24" name="Đen">
@@ -3441,7 +3441,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0024" in_price="205421" in_stock="true" inventory_num="2103" name="BLTX U Adachi H17" out_price="225000">
+    <product id="BL_BL_0024" in_price="205421" in_stock="true" inventory_num="2103" name="BLTX U Adachi H17" out_price="225000">
         <description>- Điểm nhấn nổi bật nhất của dòng Balo H17 là thiết kế đặc biệt thay thế dây kéo miệng túi bằng dây rút có thể đựng nhiều đồ dùng hơn với nắp túi 2 khóa bấm chắc chắn. - Chất liệu 600D*600D PU 2 Times Water Proof, trượt nước tuyệt đối. - Nhiều tính năng tiện lợi: + Ngăn chứa lớn, 2 ngăn phụ bên trong có dây kéo. + Dây kéo HHH lướt nhẹ nhàng + Dây đeo được may siêu chắc (chịu lực lên tới 15kg), và có lót cực êm cho đôi vai.</description>
         <size id="M" inventory_num="550">
             <color id="DD" inventory_num="330" name="Đen Đỏ">
@@ -3613,7 +3613,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0025" in_price="252694" in_stock="true" inventory_num="692" name="BLTX U Adachi H36" out_price="255000">
+    <product id="BL_BL_0025" in_price="252694" in_stock="true" inventory_num="692" name="BLTX U Adachi H36" out_price="255000">
         <description/>
         <size id="M" inventory_num="204">
             <color id="XD" inventory_num="204" name="Xanh Dương">
@@ -3676,7 +3676,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0026" in_price="276012" in_stock="true" inventory_num="842" name="BLTX U Adachi H37" out_price="299000">
+    <product id="BL_BL_0026" in_price="276012" in_stock="true" inventory_num="842" name="BLTX U Adachi H37" out_price="299000">
         <description/>
         <size id="M" inventory_num="333">
             <color id="NL" inventory_num="333" name="Nâu Lính">
@@ -3747,7 +3747,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0027" in_price="215858" in_stock="true" inventory_num="976" name="BLTX U Adachi H34" out_price="255000">
+    <product id="BL_BL_0027" in_price="215858" in_stock="true" inventory_num="976" name="BLTX U Adachi H34" out_price="255000">
         <description>- Chất liệu vải Canvas dày 12OZ Sọc ,vải lót 210D PU màu ĐEN - EVA 5mm.Foam 5mm. Đai 25mm màu ĐEN - Viền PP 25mm màu ĐEN - Dây kéo YKK#8 siêu bền. Đầu kéo YKK #8 - Khóa kim loại 25mm - Ba lô có sức chứa 20L - Ngăn Laptop thiết kế đệm Foam 5mm chống sốc</description>
         <size id="M" inventory_num="429">
             <color id="TL" inventory_num="429" name="Trắng Lam">
@@ -3829,7 +3829,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0028" in_price="454179" in_stock="true" inventory_num="1575" name="BLTX U Y2010 F09" out_price="499000">
+    <product id="BL_BL_0028" in_price="454179" in_stock="true" inventory_num="1575" name="BLTX U Y2010 F09" out_price="499000">
         <description/>
         <size id="M" inventory_num="680">
             <color id="D" inventory_num="245" name="Đen">
@@ -3966,7 +3966,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0029" in_price="422488" in_stock="true" inventory_num="1802" name="BLTX U Y2010 F03" out_price="449000">
+    <product id="BL_BL_0029" in_price="422488" in_stock="true" inventory_num="1802" name="BLTX U Y2010 F03" out_price="449000">
         <description/>
         <size id="M" inventory_num="339">
             <color id="N" inventory_num="39" name="Nâu">
@@ -4099,7 +4099,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0030" in_price="470364" in_stock="true" inventory_num="572" name="BLTX U Y2010 F05" out_price="499000">
+    <product id="BL_BL_0030" in_price="470364" in_stock="true" inventory_num="572" name="BLTX U Y2010 F05" out_price="499000">
         <description/>
         <size id="M" inventory_num="126">
             <color id="D" inventory_num="126" name="Đen">
@@ -4154,7 +4154,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0031" in_price="472144" in_stock="true" inventory_num="139" name="BLTX U Y2010 F06" out_price="499000">
+    <product id="BL_BL_0031" in_price="472144" in_stock="true" inventory_num="139" name="BLTX U Y2010 F06" out_price="499000">
         <description/>
         <size id="M" inventory_num="25">
             <color id="D" inventory_num="25" name="Đen">
@@ -4186,7 +4186,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0032" in_price="449689" in_stock="true" inventory_num="634" name="BLTX U Y2010 F04" out_price="499000">
+    <product id="BL_BL_0032" in_price="449689" in_stock="true" inventory_num="634" name="BLTX U Y2010 F04" out_price="499000">
         <description/>
         <size id="M" inventory_num="171">
             <color id="D" inventory_num="171" name="Đen">
@@ -4253,7 +4253,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0033" in_price="193544" in_stock="true" inventory_num="2179" name="BLTX U ADACHI H11" out_price="225000">
+    <product id="BL_BL_0033" in_price="193544" in_stock="true" inventory_num="2179" name="BLTX U ADACHI H11" out_price="225000">
         <description/>
         <size id="M" inventory_num="485">
             <color id="D" inventory_num="273" name="Đỏ">
@@ -4452,7 +4452,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0034" in_price="425702" in_stock="true" inventory_num="1142" name="BLTX U Y2010 F02" out_price="449000">
+    <product id="BL_BL_0034" in_price="425702" in_stock="true" inventory_num="1142" name="BLTX U Y2010 F02" out_price="449000">
         <description/>
         <size id="M" inventory_num="300">
             <color id="N" inventory_num="54" name="Nâu">
@@ -4543,7 +4543,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0035" in_price="263483" in_stock="true" inventory_num="2266" name="BLTX U Adachi H19" out_price="299000">
+    <product id="BL_BL_0035" in_price="263483" in_stock="true" inventory_num="2266" name="BLTX U Adachi H19" out_price="299000">
         <description>BALO UNISEX STYLE HÀN QUỐC - Chất liệu:600D Polyester PU được nhập trực tiếp từ Hàn Quốc - Dây kéo Nhật bản YKK siêu bền - Đệm quai đeo air mesh êm, thoáng khí - Mouse PE 5mm - Khóa Buckle hàng hiệu Woojin, nhập từ Korea - Đai nylon 25mm bền chắc - Túi chịu lực 20kg</description>
         <size id="M" inventory_num="469">
             <color id="D" inventory_num="184" name="Đen">
@@ -4749,7 +4749,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0036" in_price="384406" in_stock="true" inventory_num="1955" name="BLTX U Adachi H15" out_price="385000">
+    <product id="BL_BL_0036" in_price="384406" in_stock="true" inventory_num="1955" name="BLTX U Adachi H15" out_price="385000">
         <description>- Chất liệu 600D TWILL, nắp Simili Indo có sức chịu đi mưa và nắng lên đến 3 năm, bảo vệ 2 ngăn chứa lớn. - Dây kéo YKK 2 chiều nhập trực tiếp từ Nhật Bản. - Lót thiết kế lưới E-mesh thoáng khí. - Lớp muốt EVA chống sốc bọc thân trước, đáy và thân sau an toàn cho vật dụng điện tử. - Dây đeo được may siêu chắc (chịu lực lên tới 15kg), có lót cực êm cho vai. - Trên dây đeo thiết kế thêm đai móc đa năng, dành cho các bạn đi chơi xa có thể treo nhiều phụ kiện tiện dụng.</description>
         <size id="M" inventory_num="513">
             <color id="N" inventory_num="273" name="Nâu">
@@ -4935,7 +4935,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0037" in_price="508578" in_stock="true" inventory_num="471" name="BLTX U Y2010 F10" out_price="549000">
+    <product id="BL_BL_0037" in_price="508578" in_stock="true" inventory_num="471" name="BLTX U Y2010 F10" out_price="549000">
         <description/>
         <size id="M" inventory_num="56">
             <color id="D" inventory_num="56" name="Đen">
@@ -4989,7 +4989,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0038" in_price="463720" in_stock="true" inventory_num="1209" name="BLTX U Y2010 F07" out_price="499000">
+    <product id="BL_BL_0038" in_price="463720" in_stock="true" inventory_num="1209" name="BLTX U Y2010 F07" out_price="499000">
         <description/>
         <size id="M" inventory_num="399">
             <color id="D" inventory_num="300" name="Đen">
@@ -5098,7 +5098,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0039" in_price="503906" in_stock="true" inventory_num="499" name="BLTX U Y2010 F11" out_price="549000">
+    <product id="BL_BL_0039" in_price="503906" in_stock="true" inventory_num="499" name="BLTX U Y2010 F11" out_price="549000">
         <description/>
         <size id="M" inventory_num="10">
             <color id="D" inventory_num="10" name="Đen">
@@ -5160,7 +5160,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0040" in_price="135121" in_stock="true" inventory_num="1331" name="BLTX U Adachi H06" out_price="185000">
+    <product id="BL_BL_0040" in_price="135121" in_stock="true" inventory_num="1331" name="BLTX U Adachi H06" out_price="185000">
         <description/>
         <size id="M" inventory_num="348">
             <color id="VC" inventory_num="348" name="Vàng Chanh">
@@ -5260,7 +5260,7 @@
             </color>
         </size>
     </product>
-    <product id="BL_0041" in_price="127787" in_stock="true" inventory_num="782" name="BLTX U Adachi H16" out_price="150000">
+    <product id="BL_BL_0041" in_price="127787" in_stock="true" inventory_num="782" name="BLTX U Adachi H16" out_price="150000">
         <description>- Chất liệu 600D*600D PU 2 Times Water Proof, trượt nước tuyệt đối. - Dây kéo YKK 2 chiều siêu bền. - Dây đeo được may siêu chắc (chịu lực lên tới 15kg), và có lót cực êm cho đôi vai. - Thiết kế đơn giản &amp; tinh tế, không kém phần thời trang, dành cả cho nam và nữ. - Màu sắc đa dạng hơn cho bạn thêm sự lựa chọn. - Lưu ý: Nước mưa có thể thấm qua đường dây kéo, nên các bạn cẩn thận khi đi dưới trời mưu lớn.</description>
         <size id="M" inventory_num="201">
             <color id="D" inventory_num="125" name="Đen">

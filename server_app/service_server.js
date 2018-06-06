@@ -21,7 +21,7 @@ function checkAuth(headers) {
 }
 
 app.createServer((req, res) => {
-    console.log(req.method + " " + req.url);
+    console.log('--------------------------------------'+req.method + " " + req.url);
 
     let data = '';
     let parameters = {};
