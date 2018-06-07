@@ -77,7 +77,7 @@ let get_product_guest = (product_id) => {
                 let temp = {
                     id: data.$.id,
                     name: data.$.name,
-                    description: data.$.description,
+                    description: data.description[0],
                     out_price: data.$.out_price
                 };
 
