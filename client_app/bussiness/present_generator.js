@@ -172,10 +172,56 @@ let generateGuestProductList = function (pageNo, category, brand) {
 
 let generateGuestProductDetail = function (productId) {
     let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/product_detail.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/product_detail_row.html', 'utf-8');
+    let photo_snippet = fs.readFileSync('./snippets/product_detail_photo.html', 'utf-8');
 
     // TODO: Implement code here
+    let data = getDataFromDAO('/product?productId=' + productId);
+    let tokens = productId.match(/([^_]+)/g);
+    let product_id = tokens[0] + '_' + tokens[1] + '_' + tokens[2];
 
-    //layout_html = insertProperty(layout_html, 'body', content_html);
+    // Generate photo list
+    let html_photo_list = '';
+    for (let i = 0; i < data.color.length; i++) {
+        let html_string = insertProperty(photo_snippet, 'product_id', product_id);
+        html_string = insertProperty(html_string, 'color', data.color[i].id);
+        html_photo_list = html_photo_list + html_string;
+    }
+    content_html = insertProperty(content_html, 'photo_list', html_photo_list);
+
+    // Generate table list
+    let html_row_list = '';
+    for (let i = 0; i < data.color.length; i++) {
+        let html_string = insertProperty(row_snippet, 'id', product_id + '_' + data.color[i].id);
+        html_string = insertProperty(html_string, 'color_size', data.color[i].name + ' - ' + tokens[3]);
+        html_string = insertProperty(html_string, 'shop_count', data.color[i].shops.length);
+        let shop_list_string = '';
+        for (let j = 0; j < data.color[i].shops.length; j++) {
+            shop_list_string = shop_list_string + data.color[i].shops[j] + '<br>';
+        }
+        html_string = insertProperty(html_string, 'shop_list', shop_list_string);
+        html_row_list = html_row_list + html_string;
+    }
+    content_html = insertProperty(content_html, 'table_body', html_row_list);
+
+    // Generate main content
+    content_html = insertProperty(content_html, 'product_id', product_id);
+    content_html = insertProperty(content_html, 'product_name', data.name);
+    content_html = insertProperty(content_html, 'product_price', data.out_price);
+    content_html = insertProperty(content_html, 'description', data.description);
+
+    // Generate link to more size
+    let link_snippet = '<a href="/productdetail.html?id={{product_id}}_{{size}}">{{size}}</a><span> </span>';
+    let html_link_list = '';
+    for (let i = 0; i < data.size_list.length; i++) {
+        let html_string = insertProperty(link_snippet, 'product_id', product_id);
+        html_string = insertProperty(html_string, 'size', data.size_list[i]);
+        html_link_list = html_link_list + html_string;
+    }
+    content_html = insertProperty(content_html, 'link_list', html_link_list);
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
