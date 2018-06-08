@@ -126,6 +126,26 @@ body {
     font-size: 18px;
 }
 
+.product-price {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.more-size {
+    padding: 10px;
+    color: white;
+}
+
+.more-size a {
+    color: white;
+}
+
+.more-size a:link, .more-size a:visited, .more-size a:hover, .more-size a:active {
+    color: white;
+}
+
 /* End Product silder */
 
 .page-link {

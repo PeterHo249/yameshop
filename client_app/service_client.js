@@ -3,104 +3,84 @@
 
 /*jshint esversion: 6 */
 
-let app = require("http");
-let fs = require("fs");
-let url = require("url");
-let query = require("querystring");
-let present_generator = require("./bussiness/present_generator");
+let app = require('http');
+let url = require('url');
+let query = require('querystring');
+let fs = require('fs');
+let present_generator = require('./bussiness/present_generator');
 var port = 3000;
-let page = -5;
-let listProductLink;
 
-app
-  .createServer((req, res) => {
+app.createServer((req, res) => {
+  console.log(`${req.method} ${req.url}`);
 
-    let type;
-    let urlExtension;
-    let numPage = 0;
-    let flag = false;
+  let parameters = {};
 
-    switch (String(req.url.match(/\/\w+/))) {
-      case 'null': //home_guest
-        urlExtension = "/home_guest";
-        type = "1";
-        flag=true;
-        break;
-      case '/product_list':
-        urlExtension = req.url;
-        req.url = "/product_list.html";
-        type = "2";
-        listProductLink = urlExtension;
-        if (page == -5) page += 5;
-        flag=true;
-        break;
-      case '/product': //detail
-        urlExtension = req.url;
-        req.url = "/product_detail.html";
-        type = "3";
-        flag=true;
-        break;
-      case '/product_list_next':
-        urlExtension = listProductLink;
-        req.url = "/product_list.html";
-        type = "2";
-        page += 5;
-        break;
-      case '/product_list_previous':
-        urlExtension = listProductLink;
-        req.url = "/product_list.html";
-        type = "2";
-        if (page > 0)
-          page -= 5;
-        break;
-        case '/product_list_change':
-        urlExtension = listProductLink;
-        numPage = parseInt(String(req.url.match(/\=\w+/)).substr(1,String(req.url.match(/\=\w+/)).length));
-        req.url = "/product_list.html";
-        type = "2";
-        break;
-    }
+  let req_url = (req.url == '/') ? '/homepage.html' : req.url;
 
-    let req_url = req.url == "/" ? "/index_guest.html" : req.url;
-    let file_extension = req.url.lastIndexOf(".");
-    let header_type = file_extension == -1 && req.url != "/" ? "text/plain" : {
-      "/": "text/html",
-      ".html": "text/html",
-      ".ico": "image/x-icon",
-      ".jpg": "image/jpeg",
-      ".png": "image/png",
-      ".gif": "image/gif",
-      ".css": "text/css",
-      ".js": "text/javascript"
-    }[req.url.substr(file_extension)];
+  let file_extension = String(req_url.match(/(\.\w+)/)[0]);
+  let header_type = {
+    '/': 'text/html',
+    '.html': 'text/html',
+    '.ico': 'image/x-icon',
+    '.jpg': 'image/jpeg',
+    '.png': 'image/png',
+    '.gif': 'image/gif',
+    '.css': 'text/css',
+    '.js': 'text/javascript'
+  }[file_extension];
 
-    if (header_type === "text/html") {
-      // TODO - Implement code to render html file
-      res.setHeader("Content-type", header_type);
-      if(flag==true){
-        present_generator.SendRequestGetData(urlExtension);
-      }
-      res.end(present_generator.RenderUI(type, page, numPage));
-    } else {
-      fs.readFile(__dirname + req_url, (err, data) => {
-        if (err) {
-          console.log("==> Error: " + err);
-          console.log("==> Error 404: File not found " + res.url);
-
-          res.writeHead(404, "Not Found");
-          res.end();
-        } else {
-          res.setHeader("Content-type", header_type);
-          res.end(data);
-          console.log(req.url, header_type);
+  if (header_type === 'text/html') {
+    // TODO - Implement code to render html file
+    switch (String(req_url.match(/(\/\w+\.\w+)/)[0])) {
+      case '/index_guest.html':
+        res.setHeader('Content-type', header_type);
+        res.end(present_generator.generateExample());
+        break;
+      case '/homepage.html':
+        res.setHeader('Content-type', header_type);
+        res.end(present_generator.generateGuestHomepage());
+        break;
+      case '/productlist.html':
+        parameters = url.parse(req.url, true).query;
+        if (parameters.brand === undefined) {
+          parameters.brand = '';
         }
-      });
+        parameters.page = parseInt(parameters.page);
+        res.setHeader('Content-type', header_type);
+        res.end(present_generator.generateGuestProductList(parameters.page, parameters.category, parameters.brand));
+        break;
+      case '/productdetail.html':
+        parameters = url.parse(req.url, true).query;
+        res.setHeader('Content-type', header_type);
+        res.end(present_generator.generateGuestProductDetail(parameters.id));
+        break;
+      default:
+        res.writeHeader(404, {
+          'Content-Type': 'text/plain'
+        });
+        res.end("Request was not support!!!");
+        break;
     }
-  })
-  .listen(port, err => {
-    if (err != null) {
-      console.log("==> Error: " + err);
-    } else {
-      console.log("Server is starting at port " + port);
-    }
-  });
+  } else {
+    fs.readFile(__dirname + req_url, (err, data) => {
+      if (err) {
+        console.log('==> Error: ' + err);
+        console.log('==> Error 404: File not found ' + res.url);
+
+        res.writeHead(404, 'Not Found');
+        res.end();
+      } else {
+        res.setHeader('Content-type', header_type);
+
+        res.end(data);
+        console.log(req.url, header_type);
+      }
+    });
+  }
+}).listen(port, (err) => {
+  if (err != null) {
+    console.log('==> Error: ' + err);
+  } else {
+    console.log('Server is starting at port ' + port);
+  }
+});
