@@ -1,14 +1,14 @@
 <div class="container" id="product-detail">
     <div class="row" id="product-detail-info">
         <div class="col-md-4">
-            {{PRODUCT_IMAGE_MAIN}}
+            <img id="product-photo-sample" src="photos/{{product_id}}.jpg" alt="hinh mau">
         </div>
         <div class="col-md-8">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 id="product-name">{{PRODUCT_NAME}}</h3>
+                    <h3 id="product-name">{{product_name}}</h3>
                     <div class="tcb-product-price">
-                        {{PRODUCT_PRICE}}
+                        {{product_price}} vnd
                     </div>
                     <table class="table" id="product-detail-info-table">
                         <thead class="thead-light">
@@ -19,29 +19,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{INFO_TABLE}}
+                            {{table_body}}
                         </tbody>
                     </table>
                 </div>
                 <div class="col-md-4">
                     <h3 id="product-description-header">Mô tả sản phẩm</h3>
-                    <p id="product-description-body">{{DESCRIPTION}}</p>
+                    <p id="product-description-body">{{description}}</p>
                 </div>
             </div>
         </div>
     </div>
     <div id="product-detail-photo" class="row">
-        {{PRODUCT_IMAGE_DIFFERENT_COLOR}}
+        {{photo_list}}
     </div>
 </div>
-<script>
-    // When the user clicks on div, open the popup
-    function showFunction(id) {
-        var popup = document.getElementById(id);
-        popup.classList.toggle("show");
-    }
-    function hideFunction(id) {
-        var popup = document.getElementById(id);
-        popup.classList.toggle("hide");
-    }
-</script>
