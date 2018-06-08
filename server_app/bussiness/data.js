@@ -81,11 +81,13 @@ let get_product_guest = (product_id) => {
                     out_price: data.$.out_price
                 };
 
+                temp.size_list = [];
                 let size_node = {};
                 for (let i = 0; i < data.size.length; i++) {
                     if (data.size[i].$.id === tokens[3]) {
                         size_node = data.size[i];
-                        break;
+                    } else {
+                        temp.size_list.push(data.size[i].$.id);
                     }
                 }
                 if (size_node !== {}) {
