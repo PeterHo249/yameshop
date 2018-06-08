@@ -90,12 +90,83 @@ let generateGuestHomepage = function () {
     return layout_html;
 };
 
+let cache_product_list = {
+    category: '',
+    brand: '',
+    data: ''
+};
+
 let generateGuestProductList = function (pageNo, category, brand) {
     let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/product_list.html', 'utf-8');
+    let product_tile_snippet = fs.readFileSync('./snippets/product_list_tile.html', 'utf-8');
+    let page_item_snippet = fs.readFileSync('./snippets/product_list_page_item.html', 'utf-8');
 
     // TODO: Implement code here
+    // Get data
+    let data = [];
+    if (category === cache_product_list.category && brand === cache_product_list.brand) {
+        data = cache_product_list.data;
+    } else {
+        let request = '';
+        if (brand === '') {
+            request = 'localhost:3030/product_list?category=' + category;
+        } else {
+            request = 'localhost:3030/product_list?category=' + category + '&brand=' + brand;
+        }
+        data = getDataFromDAO(request);
+        cache_product_list.data = data;
+        cache_product_list.category = category;
+        cache_product_list.brand = brand;
+    }
 
-    //layout_html = insertProperty(layout_html, 'body', content_html);
+    // Generate html
+    let html_tile_list = '';
+
+    let page_count = Math.floor(data.length / 24);
+    page_count = (page_count * 24) === data.length ? page_count : (page_count + 1);
+    pageNo = pageNo > page_count ? page_count : pageNo;
+    pageNo = pageNo < 1 ? 1 : pageNo;
+
+    data = data.slice((pageNo - 1) * 24, pageNo * 24);
+
+    // Generate product tile
+    for (let i = 0; i < data.length; i++) {
+        let html_string = product_tile_snippet;
+        html_string = insertProperty(html_string, 'product_id', data[i].id);
+        html_string = insertProperty(html_string, 'product_name', data[i].name);
+        html_string = insertProperty(html_string, 'product_price', data[i].out_price);
+        html_tile_list = html_tile_list + html_string;
+    }
+    content_html = insertProperty(content_html, 'content', html_tile_list);
+
+    // Generate page index
+    let page_request = '';
+    if (brand === '') {
+        page_request = '/productlist.html?category=' + category + '&page=';
+    } else {
+        page_request = '/productlist.html?category=' + category + '&brand=' + brand + '&page=';
+    }
+
+    let html_page_list = '';
+
+    for (let i = 1; i <= page_count; i++) {
+        let html_string = page_item_snippet;
+        html_string = insertProperty(html_string, 'page_number', i);
+        html_string = insertProperty(html_string, 'page_link', page_request + i);
+        if (i === pageNo) {
+            html_string = insertProperty(html_string, 'active', 'active');
+        } else {
+            html_string = insertProperty(html_string, 'active', '');
+        }
+        html_page_list = html_page_list + html_string;
+    }
+    content_html = insertProperty(content_html, 'page_content', html_page_list);
+
+    content_html = insertProperty(content_html, 'next_link', page_request + (pageNo + 1));
+    content_html = insertProperty(content_html, 'prev_link', page_request + (pageNo - 1));
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 

@@ -17,8 +17,8 @@ app.createServer((req, res) => {
 
   let req_url = (req.url == '/') ? '/homepage.html' : req.url;
 
-  let file_extension = req.url.lastIndexOf('.');
-  let header_type = (file_extension == -1 && req.url != '/') ? 'text/plain' : {
+  let file_extension = String(req_url.match(/(\.\w+)/)[0]);
+  let header_type = {
     '/': 'text/html',
     '.html': 'text/html',
     '.ico': 'image/x-icon',
@@ -27,7 +27,7 @@ app.createServer((req, res) => {
     '.gif': 'image/gif',
     '.css': 'text/css',
     '.js': 'text/javascript'
-  }[req.url.substr(file_extension)];
+  }[file_extension];
 
   if (header_type === 'text/html') {
     // TODO - Implement code to render html file
@@ -40,12 +40,16 @@ app.createServer((req, res) => {
         res.setHeader('Content-type', header_type);
         res.end(present_generator.generateGuestHomepage());
         break;
-      case 'productlist.html':
+      case '/productlist.html':
         parameters = url.parse(req.url, true).query;
+        if (parameters.brand === undefined) {
+          parameters.brand = '';
+        }
+        parameters.page = parseInt(parameters.page);
         res.setHeader('Content-type', header_type);
         res.end(present_generator.generateGuestProductList(parameters.page, parameters.category, parameters.brand));
         break;
-      case 'productdetail.html':
+      case '/productdetail.html':
         parameters = url.parse(req.url, true).query;
         res.setHeader('Content-type', header_type);
         res.end(present_generator.generateGuestProductDetail(parameters.id));
