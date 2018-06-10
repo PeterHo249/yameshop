@@ -29,7 +29,7 @@ app.createServer((req, res) => {
     switch (req.method) {
         case 'GET':
             switch (String(req.url.match(/\/\w+/))) {
-                case '/home_guest':
+                case '/home_guest'://done
                     res.writeHeader(200, {'Content-Type': 'text/json'});
                     data = dto.get_home_guest();
                     res.end(data);
@@ -39,7 +39,7 @@ app.createServer((req, res) => {
                     parameters = url.parse(req.url, true).query;
                     let category = parameters.category;
                     let brand = parameters.brand;
-                    data = dto.get_product_list_guest(category, brand);
+                    data = dto.get_product_list_guest(category,undefined, brand);
                     res.end(data);
                     break;
                 case '/product':
@@ -47,6 +47,26 @@ app.createServer((req, res) => {
                     parameters = url.parse(req.url, true).query;
                     let product_id = parameters.productId;
                     data = dto.get_product_guest(product_id);
+                    res.end(data);
+                    break;
+                case '/product_employee':
+                    res.writeHeader(200, {'Content-Type': 'text/json'});
+                    parameters = url.parse(req.url, true).query;
+                    let _product_id = parameters.productId;
+                    data = dto.get_product_employee(_product_id);
+                    res.end(data);
+                    break;
+                case '/product_list_employee':
+                    res.writeHeader(200, {'Content-Type': 'text/json'});
+                    parameters = url.parse(req.url, true).query;
+                    let _category = parameters.category;
+                    let _brand = parameters.brand;
+                    data = dto.get_product_list_guest(_category,"employee", _brand);
+                    res.end(data);
+                    break;
+                case '/home_employee':
+                    res.writeHeader(200, {'Content-Type': 'text/json'});
+                    data = dto.get_home_guest("employee");
                     res.end(data);
                     break;
                 default:
