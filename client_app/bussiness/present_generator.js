@@ -1,16 +1,7 @@
 /*jshint esversion: 6 */
 
 const fs = require('fs');
-
-function getDataFromDAO(urlExtension) {
-    let addressProcess = "http://localhost:3030" + urlExtension;
-    let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-    let processHttp = new XMLHttpRequest();
-    processHttp.open("GET", addressProcess, false);
-    processHttp.send("");
-    let str_JSON = processHttp.responseText;
-    return JSON.parse(str_JSON);
-}
+const connection = require('./connection');
 
 let insertProperty = function (string, prop_name, prop_value) {
     let prop_to_replace = '{{' + prop_name + '}}';
@@ -18,27 +9,15 @@ let insertProperty = function (string, prop_name, prop_value) {
     return string;
 };
 
-let generateExample = function () {
-    let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./snippets/example_snippet.html', 'utf-8');
-
-    content_html = insertProperty(content_html, 'title', 'YameShop');
-    content_html = insertProperty(content_html, 'content', 'Example');
-
-    layout_html = insertProperty(layout_html, 'body', content_html);
-
-    return layout_html;
-};
-
 let generateGuestHomepage = function () {
     let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./snippets/homepage.html', 'utf-8');
-    let carousel_snippet = fs.readFileSync('./snippets/homepage_carousel_page.html', 'utf-8');
-    let carousel_item_snippet = fs.readFileSync('./snippets/homepage_carousel_item.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/guest/homepage.html', 'utf-8');
+    let carousel_snippet = fs.readFileSync('./snippets/guest/homepage_carousel_page.html', 'utf-8');
+    let carousel_item_snippet = fs.readFileSync('./snippets/guest/homepage_carousel_item.html', 'utf-8');
 
     // TODO: Implement code here
     // Get data from server
-    let new_trend_data = getDataFromDAO('/home_guest');
+    let new_trend_data = connection.get('/home_guest');
 
     // Generate new item carousel
     let new_item_carousel = '';
@@ -98,9 +77,9 @@ let cache_product_list = {
 
 let generateGuestProductList = function (pageNo, category, brand) {
     let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./snippets/product_list.html', 'utf-8');
-    let product_tile_snippet = fs.readFileSync('./snippets/product_list_tile.html', 'utf-8');
-    let page_item_snippet = fs.readFileSync('./snippets/product_list_page_item.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/guest/product_list.html', 'utf-8');
+    let product_tile_snippet = fs.readFileSync('./snippets/guest/product_list_tile.html', 'utf-8');
+    let page_item_snippet = fs.readFileSync('./snippets/guest/product_list_page_item.html', 'utf-8');
 
     // TODO: Implement code here
     // Get data
@@ -114,7 +93,7 @@ let generateGuestProductList = function (pageNo, category, brand) {
         } else {
             request = 'localhost:3030/product_list?category=' + category + '&brand=' + brand;
         }
-        data = getDataFromDAO(request);
+        data = connection.get(request);
         cache_product_list.data = data;
         cache_product_list.category = category;
         cache_product_list.brand = brand;
@@ -172,12 +151,12 @@ let generateGuestProductList = function (pageNo, category, brand) {
 
 let generateGuestProductDetail = function (productId) {
     let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./snippets/product_detail.html', 'utf-8');
-    let row_snippet = fs.readFileSync('./snippets/product_detail_row.html', 'utf-8');
-    let photo_snippet = fs.readFileSync('./snippets/product_detail_photo.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/guest/product_detail.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/guest/product_detail_row.html', 'utf-8');
+    let photo_snippet = fs.readFileSync('./snippets/guest/product_detail_photo.html', 'utf-8');
 
     // TODO: Implement code here
-    let data = getDataFromDAO('/product?productId=' + productId);
+    let data = connection.get('/product?productId=' + productId);
     let tokens = productId.match(/([^_]+)/g);
     let product_id = tokens[0] + '_' + tokens[1] + '_' + tokens[2];
 
@@ -225,9 +204,50 @@ let generateGuestProductDetail = function (productId) {
     return layout_html;
 };
 
+let generateStaffProductList = function () {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_product_list.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateStaffProductDetail = function () {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_product_detail.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateStaffOrderList = function () {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_order_list.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateStaffOrderDetail = function () {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_order_detail.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
 module.exports = {
-    generateExample: generateExample,
+    // Guest page
     generateGuestHomepage: generateGuestHomepage,
     generateGuestProductDetail: generateGuestProductDetail,
-    generateGuestProductList: generateGuestProductList
+    generateGuestProductList: generateGuestProductList,
+
+    // Staff page
+    generateStaffOrderList: generateStaffOrderList,
+    generateStaffOrderDetail: generateStaffOrderDetail,
+    generateStaffProductList: generateStaffProductList,
+    generateStaffProductDetail: generateStaffProductDetail,
+
+    // Manager page
+    manage: false
 };
