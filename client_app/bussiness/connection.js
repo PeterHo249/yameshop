@@ -18,4 +18,4 @@ function postRequest(url) {
 module.exports = {
     get: getRequest,
     post: postRequest
-}
+};

@@ -236,6 +236,54 @@ let generateStaffOrderDetail = function () {
     return layout_html;
 };
 
+let generateManagerProductList = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_product_list.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerProductDetail = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_product_Detail.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerOrderList = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_order_list.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerOrderDetail = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_order_Detail.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerShopList = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_shop_list.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerStaffList = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_staff_list.html', 'utf-8');
+
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
 module.exports = {
     // Guest page
     generateGuestHomepage: generateGuestHomepage,
@@ -249,5 +297,10 @@ module.exports = {
     generateStaffProductDetail: generateStaffProductDetail,
 
     // Manager page
-    manage: false
+    generateManagerProductList: generateManagerProductList,
+    generateManagerProductDetail: generateManagerProductDetail,
+    generateManagerOrderList: generateManagerOrderList,
+    generateManagerOrderDetail: generateManagerOrderDetail,
+    generateManagerShopList: generateManagerShopList,
+    generateManagerStaffList: generateManagerStaffList
 };

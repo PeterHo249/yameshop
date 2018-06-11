@@ -17,9 +17,9 @@ app.createServer((req, res) => {
 
   let req_url = (req.url == '/') ? '/homepage.html' : req.url;
 
-  let file_extension = String(req_url.match(/(\.\w+)/)[0]);
+  let file_extension = String(req_url.match(/(\.\w+)/) ? req_url.match(/(\.\w+)/)[0] : '');
   let header_type = {
-    '/': 'text/html',
+    '': 'text/plain',
     '.html': 'text/html',
     '.ico': 'image/x-icon',
     '.jpg': 'image/jpeg',
@@ -84,6 +84,36 @@ app.createServer((req, res) => {
             res.setHeader('Content-type', header_type);
             res.end(present_generator.generateStaffOrderDetail());
             break;
+          case '/managerproductlist.html':
+            // Testing purpose
+            res.setHeader('Content-type', header_type);
+            res.end(present_generator.generateManagerProductList());
+            break;
+          case '/managerproductdetail.html':
+            // Testing purpose
+            res.setHeader('Content-type', header_type);
+            res.end(present_generator.generateManagerProductDetail());
+            break;
+          case '/managerorderlist.html':
+            // Testing purpose
+            res.setHeader('Content-type', header_type);
+            res.end(present_generator.generateManagerOrderList());
+            break;
+          case '/managerorderdetail.html':
+            // Testing purpose
+            res.setHeader('Content-type', header_type);
+            res.end(present_generator.generateManagerOrderDetail());
+            break;
+          case '/managerstafflist.html':
+            // Testing purpose
+            res.setHeader('Content-type', header_type);
+            res.end(present_generator.generateManagerStaffList());
+            break;
+          case '/managershoplist.html':
+            // Testing purpose
+            res.setHeader('Content-type', header_type);
+            res.end(present_generator.generateManagerShopList());
+            break;
           default:
             res.writeHeader(404, {
               'Content-Type': 'text/plain'
@@ -94,7 +124,7 @@ app.createServer((req, res) => {
       } else {
         fs.readFile(__dirname + req_url, (err, data) => {
           if (err) {
-            console.log('==> Error: ' + err);
+            console.log('==> ' + err);
             console.log('==> Error 404: File not found ' + res.url);
 
             res.writeHeader(404, 'Not Found');
@@ -109,15 +139,14 @@ app.createServer((req, res) => {
       }
       break;
     case 'POST':
-      switch (String(req_url.match(/(\/\w+\.\w+)/)[0]))
-      {
+      switch (String(req_url.match(/(\/\w+\.\w+)/)[0])) {
         case '/login.html':
           extractPostBody(req, result => {
             // Example
             res.setHeader('Content-type', 'text/json');
             console.log(result);
             res.end(JSON.toString(result));
-            
+
             // TODO: Implement login code here
           });
           break;
@@ -133,7 +162,7 @@ app.createServer((req, res) => {
   }
 });
 
-function extractPostBody (req, callback) {
+function extractPostBody(req, callback) {
   const FORM_URLENCODED = 'application/x-www-form-urlencoded';
   if (req.headers['content-type'] === FORM_URLENCODED) {
     let body = '';
