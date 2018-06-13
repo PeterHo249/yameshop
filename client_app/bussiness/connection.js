@@ -8,6 +8,9 @@ function getRequest(urlExtension) {
     processHttp.open("GET", addressProcess, false);
     processHttp.send("");
     let str_JSON = processHttp.responseText;
+    if (str_JSON == null) {
+        return null;
+    }
     return JSON.parse(str_JSON);
 }
 

@@ -8,18 +8,6 @@ let bus = require('./bussiness/bussiness');
 
 let port = 3030;
 
-var sessions = [];
-
-function checkAuth(headers) {
-    let uid = headers.uid;
-    for (let i = 0; i < sessions.length; i++) {
-        if (uid ===sessions[i]) {
-            return true;
-        }
-    }
-    return false;
-}
-
 app.createServer((req, res) => {
     console.log('--------------------------------------'+req.method + " " + req.url);
 
@@ -49,6 +37,8 @@ app.createServer((req, res) => {
                     data = dto.get_product_guest(product_id);
                     res.end(data);
                     break;
+                case '/login':
+                    break;
                 default:
                     res.writeHeader(404, {'Content-Type': 'text/plain'});
                     res.end("Request was not support!!!");
@@ -56,6 +46,26 @@ app.createServer((req, res) => {
             }
             break;
         case 'POST':
+            switch (String(req.url.match(/\/\w+/))) {
+                case '/login':
+                    bus.extractPostBody(req, result => {
+                        if (result === null) {
+                            console.log('------> Nothing in request body');
+                            return;
+                        }
+
+                        let token = bus.logIn(result.username, result.password);
+                        if (!token) {
+                            res.writeHeader(200, {'Content-type': 'text/plain'});
+                            res.end('LogInFail');
+                            return;
+                        }
+
+                        res.writeHeader(200, {'Content-type': 'text/plain'});
+                        res.end(token);
+                    });
+                    break;
+            }
             break;
     }
 }).listen(port, (err) => {
