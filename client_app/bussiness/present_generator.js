@@ -312,5 +312,7 @@ module.exports = {
     generateManagerOrderList: generateManagerOrderList,
     generateManagerOrderDetail: generateManagerOrderDetail,
     generateManagerShopList: generateManagerShopList,
-    generateManagerStaffList: generateManagerStaffList
+    generateManagerStaffList: generateManagerStaffList,
+
+    insertProperty: insertProperty
 };

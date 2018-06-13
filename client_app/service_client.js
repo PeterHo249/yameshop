@@ -69,53 +69,123 @@ app.createServer((req, res) => {
             break;
           case '/staffproductlist.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateStaffProductList());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateStaffProductList();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/stafforderlist.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateStaffOrderList());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateStaffOrderList();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/staffproductdetail.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateStaffProductDetail());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateStaffProductDetail();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/stafforderdetail.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateStaffOrderDetail());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateStaffOrderDetail();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/managerproductlist.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateManagerProductList());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateManagerProductList();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/managerproductdetail.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateManagerProductDetail());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateManagerProductDetail();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/managerorderlist.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateManagerOrderList());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateManagerOrderList();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/managerorderdetail.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateManagerOrderDetail());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateManagerOrderDetail();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/managerstafflist.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateManagerStaffList());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateManagerStaffList();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/managershoplist.html':
             // Testing purpose
-            res.setHeader('Content-type', header_type);
-            res.end(present_generator.generateManagerShopList());
+            {
+              res.setHeader('Content-type', header_type);
+              let user_info = connection.parseUserInfo(req);
+              let html = present_generator.generateManagerShopList();
+              if (user_info != {}) {
+                html = present_generator.insertProperty(html, 'username', user_info.name);
+              }
+              res.end(html);
+            }
             break;
           case '/logout.html':
             let cookies = cookie.parse(req.headers['cookie']);
@@ -124,7 +194,9 @@ app.createServer((req, res) => {
             res.setHeader('Set-Cookie', cookie.serialize('usertoken', '', {
               expires: new Date()
             }));
-            res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/login.html'});
+            res.writeHead(302, {
+              'Location': 'http://' + req.headers['host'] + '/login.html'
+            });
             res.end();
             break;
           default:
@@ -158,10 +230,11 @@ app.createServer((req, res) => {
             // TODO: Implement login code here
             let body = '{"username":"' + result.username + '","password":"' + result.password + '"}';
             let login_res = connection.post('/login', body);
-            console.log(login_res);
             if (login_res === 'LogInFail') {
               // redirect to login
-              res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/login.html'});
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
               res.end();
             } else {
               // set cookie
@@ -172,7 +245,9 @@ app.createServer((req, res) => {
                   httpOnly: true,
                   maxAge: 60 * 60 * 24
                 }));
-                res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/staffproductlist.html'});
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/staffproductlist.html'
+                });
                 res.end();
               } else {
                 // redirect to manager
@@ -180,7 +255,9 @@ app.createServer((req, res) => {
                   httpOnly: true,
                   maxAge: 60 * 60 * 24
                 }));
-                res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/managerproductlist.html'});
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/managerproductlist.html'
+                });
                 res.end();
               }
             }

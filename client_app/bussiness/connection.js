@@ -1,5 +1,7 @@
 /*jshint esversion: 6 */
 let XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+let JSONWebToken = require('jsonwebtoken');
+let cookie = require('cookie');
 let host = "http://localhost:3030";
 
 function getRequest(urlExtension) {
@@ -28,7 +30,22 @@ function postRequest(url, body) {
     return res_body;
 }
 
+function parseUserInfo(req) {
+    let cookies = cookie.parse(req.headers['cookie']);
+    let token = cookies.usertoken;
+    if (token === null) {
+        return {};
+    }
+
+    if (token === '') {
+        return {};
+    }
+
+    return JSONWebToken.verify(token, 'key for yameshop');
+}
+
 module.exports = {
     get: getRequest,
-    post: postRequest
+    post: postRequest,
+    parseUserInfo: parseUserInfo
 };
