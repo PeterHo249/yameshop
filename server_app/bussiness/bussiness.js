@@ -26,7 +26,7 @@ let isAuth = function (token, role) {
     }
 
     return user_role === role;
-}
+};
 
 // Log In request
 let logIn = function (username, password) {
@@ -71,5 +71,6 @@ module.exports = {
     isLogedIn: isLogedIn,
     logIn: logIn,
     logOut: logOut,
-    extractPostBody: extractPostBody
+    extractPostBody: extractPostBody,
+    isAuth: isAuth
 };
