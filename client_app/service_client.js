@@ -8,6 +8,9 @@ let url = require('url');
 let query = require('querystring');
 let fs = require('fs');
 let present_generator = require('./bussiness/present_generator');
+let connection = require('./bussiness/connection');
+let cookie = require('cookie');
+let JSONWebToken = require('jsonwebtoken');
 var port = 3000;
 
 app.createServer((req, res) => {
@@ -142,12 +145,29 @@ app.createServer((req, res) => {
       switch (String(req_url.match(/(\/\w+\.\w+)/)[0])) {
         case '/login.html':
           extractPostBody(req, result => {
-            // Example
-            res.setHeader('Content-type', 'text/json');
-            console.log(result);
-            res.end(JSON.toString(result));
-
             // TODO: Implement login code here
+            let body = '{"username":"' + result.username + '","password":"' + result.password + '"}';
+            let login_res = connection.post('/login', body);
+            console.log(login_res);
+            if (login_res === 'LogInFail') {
+              // redirect to login
+              res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/login.html'});
+              res.end();
+            } else {
+              // set cookie
+              let user_info = JSONWebToken.verify(login_res, 'key for yameshop');
+              if (user_info.role === 'staff') {
+                // redirect to staff
+                res.setHeader('Set-Cookie', login_res);
+                res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/staffproductlist.html'});
+                res.end();
+              } else {
+                // redirect to manager
+                res.setHeader('Set-Cookie', login_res);
+                res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/managerproductlist.html'});
+                res.end();
+              }
+            }
           });
           break;
       }

@@ -23,7 +23,9 @@ let logIn = function (username, password) {
     let accounts = data.get_account_list();
     for (let i = 0; i < accounts.length; i++) {
         if (accounts[i].username === username && accounts[i].password === password) {
-            let token = JSONWebToken.sign(accounts[i], token_key);
+            let info = accounts[i];
+            info.date = Date();
+            let token = JSONWebToken.sign(info, token_key);
             sessions.push(token);
             return token;
         }
@@ -32,7 +34,7 @@ let logIn = function (username, password) {
 };
 
 function extractPostBody(req, callback) {
-    const FORM_URLENCODED = 'text/plain';
+    const FORM_URLENCODED = 'text/plain;charset=UTF-8';
     if (req.headers['content-type'] === FORM_URLENCODED) {
         let body = '';
         let result = {};

@@ -14,8 +14,18 @@ function getRequest(urlExtension) {
     return JSON.parse(str_JSON);
 }
 
-function postRequest(url) {
+function postRequest(url, body) {
+    let addressProcess = host + url;
+    let processHttp = new XMLHttpRequest();
+    processHttp.open('POST', addressProcess, false);
+    processHttp.setRequestHeader('Content-type', 'text/plain');
+    processHttp.send(body);
+    let res_body = processHttp.responseText;
+    if (res_body == null) {
+        return null;
+    }
 
+    return res_body;
 }
 
 module.exports = {
