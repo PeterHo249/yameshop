@@ -117,6 +117,16 @@ app.createServer((req, res) => {
             res.setHeader('Content-type', header_type);
             res.end(present_generator.generateManagerShopList());
             break;
+          case '/logout.html':
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            connection.post('/logout', '{"token":"' + token + '"}');
+            res.setHeader('Set-Cookie', cookie.serialize('usertoken', '', {
+              expires: new Date()
+            }));
+            res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/login.html'});
+            res.end();
+            break;
           default:
             res.writeHeader(404, {
               'Content-Type': 'text/plain'
@@ -158,12 +168,18 @@ app.createServer((req, res) => {
               let user_info = JSONWebToken.verify(login_res, 'key for yameshop');
               if (user_info.role === 'staff') {
                 // redirect to staff
-                res.setHeader('Set-Cookie', login_res);
+                res.setHeader('Set-Cookie', cookie.serialize('usertoken', login_res, {
+                  httpOnly: true,
+                  maxAge: 60 * 60 * 24
+                }));
                 res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/staffproductlist.html'});
                 res.end();
               } else {
                 // redirect to manager
-                res.setHeader('Set-Cookie', login_res);
+                res.setHeader('Set-Cookie', cookie.serialize('usertoken', login_res, {
+                  httpOnly: true,
+                  maxAge: 60 * 60 * 24
+                }));
                 res.writeHead(302, {'Location': 'http://' + req.headers['host'] + '/managerproductlist.html'});
                 res.end();
               }

@@ -18,6 +18,16 @@ let isLogedIn = function (token) {
     return false;
 };
 
+let isAuth = function (token, role) {
+    let user_role = isLogedIn(token);
+
+    if (!user_role) {
+        return false;
+    }
+
+    return user_role === role;
+}
+
 // Log In request
 let logIn = function (username, password) {
     let accounts = data.get_account_list();
@@ -31,6 +41,14 @@ let logIn = function (username, password) {
         }
     }
     return false;
+};
+
+let logOut = function (token) {
+    for (let i = 0; i < sessions.length; i++) {
+        if (sessions[i] === token) {
+            sessions.slice(i, 1);
+        }
+    }
 };
 
 function extractPostBody(req, callback) {
@@ -52,5 +70,6 @@ function extractPostBody(req, callback) {
 module.exports = {
     isLogedIn: isLogedIn,
     logIn: logIn,
+    logOut: logOut,
     extractPostBody: extractPostBody
 };

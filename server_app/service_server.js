@@ -37,8 +37,6 @@ app.createServer((req, res) => {
                     data = dto.get_product_guest(product_id);
                     res.end(data);
                     break;
-                case '/login':
-                    break;
                 default:
                     res.writeHeader(404, {'Content-Type': 'text/plain'});
                     res.end("Request was not support!!!");
@@ -63,6 +61,18 @@ app.createServer((req, res) => {
 
                         res.writeHeader(200, {'Content-type': 'text/plain'});
                         res.end(token);
+                    });
+                    break;
+                case '/logout':
+                    bus.extractPostBody(req, result => {
+                        if (result === null) {
+                            console.log('------> Nothing in request body');
+                            return;
+                        }
+
+                        bus.logOut(result.token);
+                        res.writeHeader(200, {'Content-type': 'text/plain'});
+                        res.end();
                     });
                     break;
             }
