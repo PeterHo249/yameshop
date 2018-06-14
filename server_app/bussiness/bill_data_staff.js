@@ -2,11 +2,10 @@ let fs = require('fs');
 let xml2js = require('xml2js');
 
 let path = __dirname + '/../data';
-let bill_path = path + '/bill';
+let order_path = path + '/order';
 let product_path = path + '/product';
 
 let list_product = JSON.parse(read_all_file_product());
-
 
 function find_name(id, type) {
     let parser = new xml2js.Parser();
@@ -57,7 +56,6 @@ function find_name(id, type) {
     return _result;
 }
 
-
 function read_all_file_product() {
     //read all file product
     let parser = new xml2js.Parser();
@@ -97,72 +95,168 @@ function find_revenue(item) {
     return sumary;
 }
 
-
-let get_list_bill = (month, year, id_bill) => {
+let get_list_order = (month,year,id_order) => {
     //read all file product
     let parser = new xml2js.Parser();
     let data = [];
 
-    let file_path = bill_path + '/' + year + '/' + month + '/bill_list.xml';
-    let file_content = fs.readFileSync(file_path, 'utf-8');
+    if(id_order!=undefined){
+        fs.readdirSync(order_path + '/').forEach(child_folder_level_0 => {
 
-    parser.parseString(file_content, function (err, result) {
+            fs.readdirSync(order_path + '/' + child_folder_level_0 + '/').forEach(child_folder_level_1 => { //cai nay duoc goi 2 lan
+    
+                let file_path = order_path + '/' + child_folder_level_0 + '/' + child_folder_level_1 + '/order_list.xml';
+                let file_content = fs.readFileSync(file_path, 'utf-8');
+    
+                parser.parseString(file_content, function (err, result) {
+                    let orders = result.order_list.order;
+                    for (let i = 0; i < orders.length; i++) {
 
-        let bills = result.bill_list.bill;
-        if (id_bill != undefined) {
-            for (let i = 0; i < bills.length; i++) {
-                if (bills[i].$.id == id_bill) {
-                    let bill_info = {
-                        id: bills[i].$.id,
-                        date: bills[i].$.date,
-                        total: bills[i].$.total,
-                        staff_id: bills[i].$.staff_id,
-                        shop_id: bills[i].$.shop_id
-                    };
-
-                    bill_info.name_of_staff = find_name(bills[i].$.staff_id, "staff");
-                    bill_info.name_of_shop = find_name(bills[i].$.shop_id, "shop");
-                    bill_info.list_item = [];
-                    let sumary = 0;
-                    for (let j = 0; j < bills[i].item.length; j++) {
-                        sumary += find_revenue(bills[i].item[j]);
-                        let node_item = {
-                            id: bills[i].item[j].$.id,
-                            count: bills[i].item[j].$.count,
+                        if (orders[i].$.id == id_order) {
+                            let order_info = {
+                                id: orders[i].$.id,
+                                date: orders[i].$.date,
+                                total: orders[i].$.total,
+                                staff_id: orders[i].$.staff_id,
+                                shop_id: orders[i].$.shop_id
+                            };
+        
+                            order_info.name_of_staff = find_name(orders[i].$.staff_id, "staff");
+                            order_info.name_of_shop = find_name(orders[i].$.shop_id, "shop");
+                            order_info.list_item = [];
+                            let sumary = 0;
+                            for (let j = 0; j < orders[i].item.length; j++) {
+                                sumary += find_revenue(orders[i].item[j]);
+                                let node_item = {
+                                    id: orders[i].item[j].$.id,
+                                    count: orders[i].item[j].$.count,
+                                };
+                                //tra xem san pham do la san pham nao
+                                let temp = find_name(orders[i].item[j].$.id, "product");
+                                node_item.name = temp.name;
+                                node_item.price = temp.out_price;
+                                node_item.sum_price = parseInt(temp.out_price)*orders[i].item[j].$.count;
+                                order_info.list_item.push(node_item);
+                            }
+                            order_info.revenue = sumary;
+                            data.push(order_info);
+                        }
+                           
+                    }
+                });
+            });
+        });
+    }
+    else if(year!=undefined&&month!=undefined){
+        let file_path = order_path + '/' + year + '/' + month + '/order_list.xml';
+        let file_content = fs.readFileSync(file_path, 'utf-8');
+    
+        parser.parseString(file_content, function (err, result) {
+    
+            let orders = result.order_list.order;
+           
+                for (let i = 0; i < orders.length; i++) {
+                    if (orders[i].$.date.search(month + '/' + year) >= 0) {
+                        let order_info = {
+                            id: orders[i].$.id,
+                            date: orders[i].$.date,
+                            total: orders[i].$.total
                         };
-                        //tra xem san pham do la san pham nao
-                        let temp = find_name(bills[i].item[j].$.id, "product");
-                        node_item.name = temp.name;
-                        node_item.price = temp.out_price;
-                        node_item.sum_price = parseInt(temp.out_price)*bills[i].item[j].$.count;
-                        bill_info.list_item.push(node_item);
+                        let sumary = 0;
+                        for (let j = 0; j < orders[i].item.length; j++) {
+                            sumary += find_revenue(orders[i].item[j]);
+                        }
+                        order_info.revenue = sumary;
+                        data.push(order_info);
                     }
-                    bill_info.revenue = sumary;
-                    data.push(bill_info);
                 }
-            }
-        } else {
-            for (let i = 0; i < bills.length; i++) {
-                if (bills[i].$.date.search(month + '/' + year) >= 0) {
-                    let bill_info = {
-                        id: bills[i].$.id,
-                        date: bills[i].$.date,
-                        total: bills[i].$.total
-                    };
-                    let sumary = 0;
-                    for (let j = 0; j < bills[i].item.length; j++) {
-                        sumary += find_revenue(bills[i].item[j]);
-                    }
-                    bill_info.revenue = sumary;
-                    data.push(bill_info);
-                }
-            }
-        }
+        });
+    }
+    else if(year==undefined&&month!=undefined){
+            fs.readdirSync(order_path + '/').forEach(child_folder_level_0 => { //cai nay duoc goi 2 lan
+                fs.readdirSync(order_path + '/'+ child_folder_level_0+'/').forEach(child_folder_level_1 => {
+                    if(child_folder_level_1==month){
+                        let file_path = order_path + '/' + child_folder_level_0+ '/'+ child_folder_level_1 +'/order_list.xml';
+                        let file_content = fs.readFileSync(file_path, 'utf-8');
+            
+                        parser.parseString(file_content, function (err, result) {
+                            let orders = result.order_list.order;
+                            for (let i = 0; i < orders.length; i++) {
+                                    let order_info = {
+                                        id: orders[i].$.id,
+                                        date: orders[i].$.date,
+                                        total: orders[i].$.total
+                                    };
+                                    let sumary = 0;
+                                    for (let j = 0; j < orders[i].item.length; j++) {
+                                        sumary += find_revenue(orders[i].item[j]);
+                                    }
+                                    order_info.revenue = sumary;
+                                    data.push(order_info);
+                            }
+                        });
+                    }      
+            });
     });
+}
+    else if(year!=undefined&&month==undefined){
+        year = (year!=undefined)?(year+'/'):'';
+
+            fs.readdirSync(order_path + '/' +year).forEach(child_folder => { //cai nay duoc goi 2 lan
+    
+                let file_path = order_path + '/' + year +child_folder +'/order_list.xml';
+                let file_content = fs.readFileSync(file_path, 'utf-8');
+    
+                parser.parseString(file_content, function (err, result) {
+                    let orders = result.order_list.order;
+                    for (let i = 0; i < orders.length; i++) {
+                            let order_info = {
+                                id: orders[i].$.id,
+                                date: orders[i].$.date,
+                                total: orders[i].$.total
+                            };
+                            let sumary = 0;
+                            for (let j = 0; j < orders[i].item.length; j++) {
+                                sumary += find_revenue(orders[i].item[j]);
+                            }
+                            order_info.revenue = sumary;
+                            data.push(order_info);
+                    }
+                });
+            });
+    }
+    else if(year==undefined&&month==undefined){
+        fs.readdirSync(order_path + '/').forEach(child_folder_level_0 => {
+
+            fs.readdirSync(order_path + '/' + child_folder_level_0 + '/').forEach(child_folder_level_1 => { //cai nay duoc goi 2 lan
+    
+                let file_path = order_path + '/' + child_folder_level_0 + '/' + child_folder_level_1 + '/order_list.xml';
+                let file_content = fs.readFileSync(file_path, 'utf-8');
+    
+                parser.parseString(file_content, function (err, result) {
+                    let orders = result.order_list.order;
+                    for (let i = 0; i < orders.length; i++) {
+                            let order_info = {
+                                id: orders[i].$.id,
+                                date: orders[i].$.date,
+                                total: orders[i].$.total
+                            };
+                            let sumary = 0;
+                            for (let j = 0; j < orders[i].item.length; j++) {
+                                sumary += find_revenue(orders[i].item[j]);
+                            }
+                            order_info.revenue = sumary;
+                            data.push(order_info);
+                    }
+                });
+            });
+        });
+    }
 
     return JSON.stringify(data);
 }
 
+
 module.exports = {
-    get_list_bill: get_list_bill
+    get_list_order: get_list_order
 };

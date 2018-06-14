@@ -8,11 +8,19 @@
 
 ----------------->NEW
 ** For staff
+    localhost:3030/product_list_staff
+    localhost:3030/product_list_staff?category=AK
+    localhost:3030/product_list_staff?brand=MB
     localhost:3030/product_list_staff?category=AK&brand=AD
     localhost:3030/product_staff?productId=AK_MB_0000
+
 ------ bill
+    localhost:3030/bill_general
+    localhost:3030/bill_general?month=5
+    localhost:3030/bill_general?year=2018
     localhost:3030/bill_general?month=1&year=2018
-    localhost:3030/bill_detail?month=1&year=2018&id=00000001
+    localhost:3030/bill_detail?id=00000001
+
 
 * Lưu ý: - không hỗ trợ trường hợp truyền biến nào khác ngoài các dạng bên trên
          - chỉ cần thay biến phù hợp cho mục đích dùng là được.

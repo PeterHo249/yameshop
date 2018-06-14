@@ -5,7 +5,6 @@ let url = require('url');
 let query = require('querystring');
 let dto_guest = require('./bussiness/data_guest');
 let dto_staff = require('./bussiness/data_staff');
-let dto_staff_bill = require('./bussiness/bill_data_staff');
 let bus = require('./bussiness/bussiness');
 
 let port = 3030;
@@ -83,7 +82,7 @@ app.createServer((req, res) => {
                     parameters = url.parse(req.url, true).query;
                     let month = parameters.month;
                     let year = parameters.year;
-                    res.end(dto_staff_bill.get_list_bill(month, year));
+                    res.end(dto_staff.get_list_order(month, year));
                     break;
                 case '/bill_detail':
                     res.writeHeader(200, {
@@ -93,7 +92,7 @@ app.createServer((req, res) => {
                     let _month = parameters.month;
                     let _year = parameters.year;
                     let _id = parameters.id;
-                    res.end(dto_staff_bill.get_list_bill(_month, _year, _id));
+                    res.end(dto_staff.get_list_order(_month, _year, _id));
                     break;
                 default:
                     res.writeHeader(404, {
