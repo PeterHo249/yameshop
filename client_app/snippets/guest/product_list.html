@@ -1,0 +1,17 @@
+<div id="product-list" class="container">
+    <div class="row">
+        {{content}}
+    </div>
+</div>
+
+<nav aria-label="product-pages">
+    <ul class="pagination justify-content-center">
+        <li class="page-item">
+            <a class="page-link" href="{{prev_link}}">Previous</a>
+        </li>
+        {{page_content}}
+        <li class="page-item">
+            <a class="page-link" href="{{next_link}}">Next</a>
+        </li>
+    </ul>
+</nav>
