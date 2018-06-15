@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bill_list>
-    <bill date="25/4/2018" id="00000000" revenue="" shop_id="29" staff_id="Nhan_Vien_11" total="-1483464782" type="in">
+<order_list>
+    <order date="25/4/2018" id="00000000" revenue="" shop_id="29" staff_id="Nhan_Vien_11" total="-1483464782" type="in">
         <item count="12" id="AK_AD_0047"/>
         <item count="13" id="AK_AD_0048"/>
         <item count="36" id="AK_AD_0049"/>
@@ -427,8 +427,8 @@
         <item count="1" id="ASM_NS_0043"/>
         <item count="14" id="ASM_NS_0044"/>
         <item count="27" id="ASM_NS_0045"/>
-    </bill>
-    <bill date="19/4/2018" id="00000000" revenue="" shop_id="7" staff_id="Nhan_Vien_8" total="1956683008" type="in">
+    </order>
+    <order date="19/4/2018" id="00000000" revenue="" shop_id="7" staff_id="Nhan_Vien_8" total="1956683008" type="in">
         <item count="19" id="AK_AD_0044"/>
         <item count="11" id="AK_AD_0045"/>
         <item count="32" id="AK_AD_0046"/>
@@ -698,8 +698,8 @@
         <item count="12" id="AK_MB_0194"/>
         <item count="15" id="AK_MB_0195"/>
         <item count="30" id="AK_MB_0196"/>
-    </bill>
-    <bill date="5/4/2018" id="00000000" revenue="" shop_id="4" staff_id="Nhan_Vien_14" total="-1106855349" type="in">
+    </order>
+    <order date="5/4/2018" id="00000000" revenue="" shop_id="4" staff_id="Nhan_Vien_14" total="-1106855349" type="in">
         <item count="12" id="AK_AD_0040"/>
         <item count="45" id="AK_AD_0041"/>
         <item count="19" id="AK_AD_0042"/>
@@ -1203,8 +1203,8 @@
         <item count="34" id="AT_AD_0036"/>
         <item count="23" id="AT_AD_0037"/>
         <item count="47" id="AT_AD_0038"/>
-    </bill>
-    <bill date="13/4/2018" id="00000000" revenue="" shop_id="4" staff_id="Nhan_Vien_25" total="180536000" type="out">
+    </order>
+    <order date="13/4/2018" id="00000000" revenue="" shop_id="4" staff_id="Nhan_Vien_25" total="180536000" type="out">
         <item count="4" id="AK_AD_0049"/>
         <item count="19" id="AK_AD_0050"/>
         <item count="41" id="AK_AD_0051"/>
@@ -1233,8 +1233,8 @@
         <item count="26" id="AK_AD_0074"/>
         <item count="19" id="AK_AD_0075"/>
         <item count="39" id="AK_AD_0076"/>
-    </bill>
-    <bill date="26/4/2018" id="00000000" revenue="" shop_id="13" staff_id="Nhan_Vien_22" total="618122023" type="in">
+    </order>
+    <order date="26/4/2018" id="00000000" revenue="" shop_id="13" staff_id="Nhan_Vien_22" total="618122023" type="in">
         <item count="38" id="AK_AD_0031"/>
         <item count="28" id="AK_AD_0032"/>
         <item count="37" id="AK_AD_0033"/>
@@ -1325,8 +1325,8 @@
         <item count="21" id="AK_MB_0002"/>
         <item count="32" id="AK_MB_0003"/>
         <item count="33" id="AK_MB_0004"/>
-    </bill>
-    <bill date="21/4/2018" id="00000000" revenue="" shop_id="21" staff_id="Nhan_Vien_8" total="1447388000" type="out">
+    </order>
+    <order date="21/4/2018" id="00000000" revenue="" shop_id="21" staff_id="Nhan_Vien_8" total="1447388000" type="out">
         <item count="17" id="AK_AD_0078"/>
         <item count="43" id="AK_AD_0079"/>
         <item count="29" id="AK_AD_0080"/>
@@ -1512,8 +1512,8 @@
         <item count="36" id="AK_MB_0144"/>
         <item count="0" id="AK_MB_0145"/>
         <item count="24" id="AK_MB_0146"/>
-    </bill>
-    <bill date="12/4/2018" id="00000000" revenue="" shop_id="18" staff_id="Nhan_Vien_13" total="-1863833926" type="in">
+    </order>
+    <order date="12/4/2018" id="00000000" revenue="" shop_id="18" staff_id="Nhan_Vien_13" total="-1863833926" type="in">
         <item count="16" id="AK_AD_0029"/>
         <item count="42" id="AK_AD_0030"/>
         <item count="37" id="AK_AD_0031"/>
@@ -1853,8 +1853,8 @@
         <item count="43" id="ASM_MB_0036"/>
         <item count="22" id="ASM_MB_0037"/>
         <item count="21" id="ASM_MB_0038"/>
-    </bill>
-    <bill date="4/4/2018" id="00000000" revenue="" shop_id="1" staff_id="Nhan_Vien_13" total="1070459586" type="in">
+    </order>
+    <order date="4/4/2018" id="00000000" revenue="" shop_id="1" staff_id="Nhan_Vien_13" total="1070459586" type="in">
         <item count="12" id="AK_AD_0043"/>
         <item count="1" id="AK_AD_0044"/>
         <item count="34" id="AK_AD_0045"/>
@@ -2005,8 +2005,8 @@
         <item count="0" id="AK_MB_0074"/>
         <item count="12" id="AK_MB_0075"/>
         <item count="35" id="AK_MB_0076"/>
-    </bill>
-    <bill date="9/4/2018" id="00000000" revenue="" shop_id="5" staff_id="Nhan_Vien_14" total="1532278145" type="in">
+    </order>
+    <order date="9/4/2018" id="00000000" revenue="" shop_id="5" staff_id="Nhan_Vien_14" total="1532278145" type="in">
         <item count="27" id="AK_AD_0073"/>
         <item count="6" id="AK_AD_0074"/>
         <item count="44" id="AK_AD_0075"/>
@@ -2191,8 +2191,8 @@
         <item count="17" id="AK_MB_0138"/>
         <item count="25" id="AK_MB_0139"/>
         <item count="40" id="AK_MB_0140"/>
-    </bill>
-    <bill date="3/4/2018" id="00000000" revenue="" shop_id="19" staff_id="Nhan_Vien_7" total="1166789000" type="out">
+    </order>
+    <order date="3/4/2018" id="00000000" revenue="" shop_id="19" staff_id="Nhan_Vien_7" total="1166789000" type="out">
         <item count="8" id="AK_AD_0073"/>
         <item count="44" id="AK_AD_0074"/>
         <item count="47" id="AK_AD_0075"/>
@@ -2344,8 +2344,8 @@
         <item count="3" id="AK_MB_0105"/>
         <item count="43" id="AK_MB_0106"/>
         <item count="31" id="AK_MB_0107"/>
-    </bill>
-    <bill date="6/5/2018" id="00000000" revenue="" shop_id="10" staff_id="Nhan_Vien_29" total="667208128" type="in">
+    </order>
+    <order date="6/5/2018" id="00000000" revenue="" shop_id="10" staff_id="Nhan_Vien_29" total="667208128" type="in">
         <item count="32" id="AK_AD_0081"/>
         <item count="15" id="AK_AD_0082"/>
         <item count="3" id="AK_AD_0083"/>
@@ -2432,8 +2432,8 @@
         <item count="27" id="AK_MB_0048"/>
         <item count="14" id="AK_MB_0049"/>
         <item count="28" id="AK_MB_0050"/>
-    </bill>
-    <bill date="21/1/2018" id="00000000" revenue="" shop_id="9" staff_id="Nhan_Vien_9" total="1429488000" type="out">
+    </order>
+    <order date="21/1/2018" id="00000000" revenue="" shop_id="9" staff_id="Nhan_Vien_9" total="1429488000" type="out">
         <item count="49" id="AK_AD_0088"/>
         <item count="47" id="AK_KM_0000"/>
         <item count="9" id="AK_KM_0001"/>
@@ -2604,8 +2604,8 @@
         <item count="19" id="AK_MB_0139"/>
         <item count="34" id="AK_MB_0140"/>
         <item count="42" id="AK_MB_0141"/>
-    </bill>
-    <bill date="14/4/2018" id="00000000" revenue="" shop_id="11" staff_id="Nhan_Vien_4" total="-1870454365" type="in">
+    </order>
+    <order date="14/4/2018" id="00000000" revenue="" shop_id="11" staff_id="Nhan_Vien_4" total="-1870454365" type="in">
         <item count="49" id="AK_NS_0002"/>
         <item count="18" id="AK_NS_0003"/>
         <item count="13" id="AK_NS_0004"/>
@@ -2989,8 +2989,8 @@
         <item count="26" id="ASM_NS_0051"/>
         <item count="0" id="ASM_NS_0052"/>
         <item count="4" id="ASM_NS_0053"/>
-    </bill>
-    <bill date="25/4/2018" id="00000000" revenue="" shop_id="11" staff_id="Nhan_Vien_26" total="2100728071" type="in">
+    </order>
+    <order date="25/4/2018" id="00000000" revenue="" shop_id="11" staff_id="Nhan_Vien_26" total="2100728071" type="in">
         <item count="16" id="AK_AD_0011"/>
         <item count="2" id="AK_AD_0012"/>
         <item count="16" id="AK_AD_0013"/>
@@ -3283,8 +3283,8 @@
         <item count="7" id="AK_MB_0184"/>
         <item count="39" id="AK_MB_0185"/>
         <item count="12" id="AK_MB_0186"/>
-    </bill>
-    <bill date="6/4/2018" id="00000000" revenue="" shop_id="12" staff_id="Nhan_Vien_28" total="2137645244" type="in">
+    </order>
+    <order date="6/4/2018" id="00000000" revenue="" shop_id="12" staff_id="Nhan_Vien_28" total="2137645244" type="in">
         <item count="5" id="AK_KM_0001"/>
         <item count="23" id="AK_KM_0002"/>
         <item count="6" id="AK_KM_0003"/>
@@ -3616,8 +3616,8 @@
         <item count="19" id="ASM_MB_0089"/>
         <item count="15" id="ASM_MB_0090"/>
         <item count="18" id="ASM_MB_0091"/>
-    </bill>
-    <bill date="29/4/2018" id="00000000" revenue="" shop_id="26" staff_id="Nhan_Vien_5" total="-1889068271" type="in">
+    </order>
+    <order date="29/4/2018" id="00000000" revenue="" shop_id="26" staff_id="Nhan_Vien_5" total="-1889068271" type="in">
         <item count="32" id="AK_AD_0076"/>
         <item count="23" id="AK_AD_0077"/>
         <item count="27" id="AK_AD_0078"/>
@@ -3982,8 +3982,8 @@
         <item count="11" id="ASM_NS_0010"/>
         <item count="7" id="ASM_NS_0011"/>
         <item count="35" id="ASM_NS_0012"/>
-    </bill>
-    <bill date="26/4/2018" id="00000000" revenue="" shop_id="21" staff_id="Nhan_Vien_17" total="-1501447395" type="in">
+    </order>
+    <order date="26/4/2018" id="00000000" revenue="" shop_id="21" staff_id="Nhan_Vien_17" total="-1501447395" type="in">
         <item count="48" id="AK_KM_0000"/>
         <item count="41" id="AK_KM_0001"/>
         <item count="42" id="AK_KM_0002"/>
@@ -4427,8 +4427,8 @@
         <item count="6" id="AT_AD_0025"/>
         <item count="35" id="AT_AD_0026"/>
         <item count="35" id="AT_AD_0027"/>
-    </bill>
-    <bill date="7/4/2018" id="00000000" revenue="" shop_id="23" staff_id="Nhan_Vien_28" total="220116506" type="in">
+    </order>
+    <order date="7/4/2018" id="00000000" revenue="" shop_id="23" staff_id="Nhan_Vien_28" total="220116506" type="in">
         <item count="36" id="AK_AD_0026"/>
         <item count="10" id="AK_AD_0027"/>
         <item count="5" id="AK_AD_0028"/>
@@ -4459,8 +4459,8 @@
         <item count="23" id="AK_AD_0053"/>
         <item count="7" id="AK_AD_0054"/>
         <item count="19" id="AK_AD_0055"/>
-    </bill>
-    <bill date="25/4/2018" id="00000000" revenue="" shop_id="1" staff_id="Nhan_Vien_4" total="-1158240996" type="in">
+    </order>
+    <order date="25/4/2018" id="00000000" revenue="" shop_id="1" staff_id="Nhan_Vien_4" total="-1158240996" type="in">
         <item count="25" id="AK_AD_0030"/>
         <item count="27" id="AK_AD_0031"/>
         <item count="40" id="AK_AD_0032"/>
@@ -4973,8 +4973,8 @@
         <item count="11" id="AT_AD_0035"/>
         <item count="12" id="AT_AD_0036"/>
         <item count="0" id="AT_AD_0037"/>
-    </bill>
-    <bill date="4/4/2018" id="00000000" revenue="" shop_id="21" staff_id="Nhan_Vien_27" total="1454702000" type="out">
+    </order>
+    <order date="4/4/2018" id="00000000" revenue="" shop_id="21" staff_id="Nhan_Vien_27" total="1454702000" type="out">
         <item count="22" id="AK_KM_0003"/>
         <item count="43" id="AK_KM_0004"/>
         <item count="22" id="AK_KM_0005"/>
@@ -5143,8 +5143,8 @@
         <item count="26" id="AK_MB_0141"/>
         <item count="43" id="AK_MB_0142"/>
         <item count="9" id="AK_MB_0143"/>
-    </bill>
-    <bill date="6/4/2018" id="00000000" revenue="" shop_id="23" staff_id="Nhan_Vien_27" total="-1213878296" type="out">
+    </order>
+    <order date="6/4/2018" id="00000000" revenue="" shop_id="23" staff_id="Nhan_Vien_27" total="-1213878296" type="out">
         <item count="29" id="AK_AD_0031"/>
         <item count="6" id="AK_AD_0032"/>
         <item count="49" id="AK_AD_0033"/>
@@ -5546,8 +5546,8 @@
         <item count="31" id="ASM_NS_0002"/>
         <item count="46" id="ASM_NS_0003"/>
         <item count="5" id="ASM_NS_0004"/>
-    </bill>
-    <bill date="11/4/2018" id="00000000" revenue="" shop_id="28" staff_id="Nhan_Vien_12" total="-1417986241" type="in">
+    </order>
+    <order date="11/4/2018" id="00000000" revenue="" shop_id="28" staff_id="Nhan_Vien_12" total="-1417986241" type="in">
         <item count="7" id="AK_AD_0045"/>
         <item count="32" id="AK_AD_0046"/>
         <item count="11" id="AK_AD_0047"/>
@@ -5995,8 +5995,8 @@
         <item count="21" id="ASM_NS_0062"/>
         <item count="34" id="ASM_NS_0063"/>
         <item count="22" id="ASM_NS_0064"/>
-    </bill>
-    <bill date="26/4/2018" id="00000000" revenue="" shop_id="20" staff_id="Nhan_Vien_4" total="1490660996" type="in">
+    </order>
+    <order date="26/4/2018" id="00000000" revenue="" shop_id="20" staff_id="Nhan_Vien_4" total="1490660996" type="in">
         <item count="2" id="AK_AD_0060"/>
         <item count="27" id="AK_AD_0061"/>
         <item count="19" id="AK_AD_0062"/>
@@ -6193,5 +6193,5 @@
         <item count="34" id="AK_MB_0137"/>
         <item count="31" id="AK_MB_0138"/>
         <item count="31" id="AK_MB_0139"/>
-    </bill>
-</bill_list>
+    </order>
+</order_list>
