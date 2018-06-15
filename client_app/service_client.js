@@ -72,7 +72,8 @@ app.createServer((req, res) => {
             {
               res.setHeader('Content-type', header_type);
               let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateStaffProductList();
+              parameters = url.parse(req.url, true).query;
+              let html = present_generator.generateStaffProductList(parameters.category, parameters.brand);
               if (user_info != {}) {
                 html = present_generator.insertProperty(html, 'username', user_info.name);
               }
@@ -84,7 +85,8 @@ app.createServer((req, res) => {
             {
               res.setHeader('Content-type', header_type);
               let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateStaffOrderList();
+              parameters = url.parse(req.url, true).query;
+              let html = present_generator.generateStaffOrderList(parameters.year, parameters.month);
               if (user_info != {}) {
                 html = present_generator.insertProperty(html, 'username', user_info.name);
               }
@@ -96,7 +98,8 @@ app.createServer((req, res) => {
             {
               res.setHeader('Content-type', header_type);
               let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateStaffProductDetail();
+              parameters = url.parse(req.url, true).query;
+              let html = present_generator.generateStaffProductDetail(parameters.productid);
               if (user_info != {}) {
                 html = present_generator.insertProperty(html, 'username', user_info.name);
               }
@@ -108,7 +111,8 @@ app.createServer((req, res) => {
             {
               res.setHeader('Content-type', header_type);
               let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateStaffOrderDetail();
+              parameters = url.parse(req.url, true).query;
+              let html = present_generator.generateStaffOrderDetail(parameters.orderid);
               if (user_info != {}) {
                 html = present_generator.insertProperty(html, 'username', user_info.name);
               }
