@@ -201,6 +201,10 @@ body {
     padding: 20px;
     text-align: center;
 }
+
+.login-info {
+    padding: 15px;
+}
 /* End login */
 
 .select-control {

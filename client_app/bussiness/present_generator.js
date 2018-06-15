@@ -19,6 +19,10 @@ let generateGuestHomepage = function () {
     // Get data from server
     let new_trend_data = connection.get('/home_guest');
 
+    if (new_trend_data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
     // Generate new item carousel
     let new_item_carousel = '';
     
@@ -94,6 +98,9 @@ let generateGuestProductList = function (pageNo, category, brand) {
             request = 'localhost:3030/product_list?category=' + category + '&brand=' + brand;
         }
         data = connection.get(request);
+        if (data === null) {
+            return insertProperty(layout_html, 'body', 'Fail to get data');
+        }
         cache_product_list.data = data;
         cache_product_list.category = category;
         cache_product_list.brand = brand;
@@ -157,6 +164,9 @@ let generateGuestProductDetail = function (productId) {
 
     // TODO: Implement code here
     let data = connection.get('/product?productId=' + productId);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
     let tokens = productId.match(/([^_]+)/g);
     let product_id = tokens[0] + '_' + tokens[1] + '_' + tokens[2];
 
@@ -302,5 +312,7 @@ module.exports = {
     generateManagerOrderList: generateManagerOrderList,
     generateManagerOrderDetail: generateManagerOrderDetail,
     generateManagerShopList: generateManagerShopList,
-    generateManagerStaffList: generateManagerStaffList
+    generateManagerStaffList: generateManagerStaffList,
+
+    insertProperty: insertProperty
 };

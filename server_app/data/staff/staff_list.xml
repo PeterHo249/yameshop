@@ -1,35 +1,35 @@
 <staff_list>
-<!-- Mỗi cửa hàng có 1 tài khoản nhân viên -->
-    <staff id="Nhan_Vien_0" name="Trần Mạnh Chung" role="Nhân viên"/>
-    <staff id="Nhan_Vien_1" name="Hồ Xuân Dũng" role="Nhân viên"/>
-    <staff id="Nhan_Vien_2" name="Nguyễn Văn A" role="Nhân viên"/>
-    <staff id="Nhan_Vien_3" name="Nguyễn Văn B" role="Nhân viên"/>
-    <staff id="Nhan_Vien_4" name="Nguyễn Văn C" role="Nhân viên"/>
-    <staff id="Nhan_Vien_5" name="Nguyễn Văn D" role="Nhân viên"/>
-    <staff id="Nhan_Vien_6" name="Nguyễn Văn E" role="Nhân viên"/>
-    <staff id="Nhan_Vien_7" name="Nguyễn Văn F" role="Nhân viên"/>
-    <staff id="Nhan_Vien_8" name="Nguyễn Văn G" role="Nhân viên"/>
-    <staff id="Nhan_Vien_9" name="Nguyễn Văn H" role="Nhân viên"/>
-    <staff id="Nhan_Vien_10" name="Nguyễn Văn I" role="Nhân viên"/>
-    <staff id="Nhan_Vien_11" name="Nguyễn Văn J" role="Nhân viên"/>
-    <staff id="Nhan_Vien_12" name="Nguyễn Văn K" role="Nhân viên"/>
-    <staff id="Nhan_Vien_13" name="Nguyễn Văn L" role="Nhân viên"/>
-    <staff id="Nhan_Vien_14" name="Nguyễn Văn M" role="Nhân viên"/>
-    <staff id="Nhan_Vien_15" name="Nguyễn Văn N" role="Nhân viên"/>
-    <staff id="Nhan_Vien_16" name="Nguyễn Văn O" role="Nhân viên"/>
-    <staff id="Nhan_Vien_17" name="Nguyễn Văn P" role="Nhân viên"/>
-    <staff id="Nhan_Vien_18" name="Nguyễn Văn Q" role="Nhân viên"/>
-    <staff id="Nhan_Vien_19" name="Nguyễn Văn R" role="Nhân viên"/>
-    <staff id="Nhan_Vien_20" name="Nguyễn Văn S" role="Nhân viên"/>
-    <staff id="Nhan_Vien_21" name="Nguyễn Văn T" role="Nhân viên"/>
-    <staff id="Nhan_Vien_22" name="Nguyễn Văn U" role="Nhân viên"/>
-    <staff id="Nhan_Vien_23" name="Nguyễn Văn V" role="Nhân viên"/>
-    <staff id="Nhan_Vien_24" name="Nguyễn Văn W" role="Nhân viên"/>
-    <staff id="Nhan_Vien_25" name="Nguyễn Văn X" role="Nhân viên"/>
-    <staff id="Nhan_Vien_26" name="Nguyễn Văn Y" role="Nhân viên"/>
-    <staff id="Nhan_Vien_27" name="Nguyễn Văn Z" role="Nhân viên"/>
-    <staff id="Nhan_Vien_28" name="Nguyễn Thị A" role="Nhân viên"/>
-    <staff id="Nhan_Vien_29" name="Nguyễn Thị B" role="Nhân viên"/>
-<!-- Quản lý -->
-    <staff id="Quan_Ly" name="Cao Tiến D" role="Quản lý"/>
+<!-- Mỗi cửa hàng có 1 tài khoản staff -->
+    <staff id="Nhan_Vien_0" name="Trần Mạnh Chung" role="staff" username="user0" password="123456" shop="shop_0"/>
+    <staff id="Nhan_Vien_1" name="Hồ Xuân Dũng" role="staff" username="user1" password="123456" shop="shop_1"/>
+    <staff id="Nhan_Vien_2" name="Nguyễn Văn A" role="staff" username="user2" password="123456" shop="shop_2"/>
+    <staff id="Nhan_Vien_3" name="Nguyễn Văn B" role="staff" username="user3" password="123456" shop="shop_3"/>
+    <staff id="Nhan_Vien_4" name="Nguyễn Văn C" role="staff" username="user4" password="123456" shop="shop_4"/>
+    <staff id="Nhan_Vien_5" name="Nguyễn Văn D" role="staff" username="user5" password="123456" shop="shop_5"/>
+    <staff id="Nhan_Vien_6" name="Nguyễn Văn E" role="staff" username="user6" password="123456" shop="shop_6"/>
+    <staff id="Nhan_Vien_7" name="Nguyễn Văn F" role="staff" username="user7" password="123456" shop="shop_7"/>
+    <staff id="Nhan_Vien_8" name="Nguyễn Văn G" role="staff" username="user8" password="123456" shop="shop_8"/>
+    <staff id="Nhan_Vien_9" name="Nguyễn Văn H" role="staff" username="user9" password="123456" shop="shop_9"/>
+    <staff id="Nhan_Vien_10" name="Nguyễn Văn I" role="staff" username="user10" password="123456" shop="shop_10"/>
+    <staff id="Nhan_Vien_11" name="Nguyễn Văn J" role="staff" username="user11" password="123456" shop="shop_11"/>
+    <staff id="Nhan_Vien_12" name="Nguyễn Văn K" role="staff" username="user12" password="123456" shop="shop_12"/>
+    <staff id="Nhan_Vien_13" name="Nguyễn Văn L" role="staff" username="user13" password="123456" shop="shop_13"/>
+    <staff id="Nhan_Vien_14" name="Nguyễn Văn M" role="staff" username="user14" password="123456" shop="shop_14"/>
+    <staff id="Nhan_Vien_15" name="Nguyễn Văn N" role="staff" username="user15" password="123456" shop="shop_15"/>
+    <staff id="Nhan_Vien_16" name="Nguyễn Văn O" role="staff" username="user16" password="123456" shop="shop_16"/>
+    <staff id="Nhan_Vien_17" name="Nguyễn Văn P" role="staff" username="user17" password="123456" shop="shop_17"/>
+    <staff id="Nhan_Vien_18" name="Nguyễn Văn Q" role="staff" username="user18" password="123456" shop="shop_18"/>
+    <staff id="Nhan_Vien_19" name="Nguyễn Văn R" role="staff" username="user19" password="123456" shop="shop_19"/>
+    <staff id="Nhan_Vien_20" name="Nguyễn Văn S" role="staff" username="user20" password="123456" shop="shop_20"/>
+    <staff id="Nhan_Vien_21" name="Nguyễn Văn T" role="staff" username="user21" password="123456" shop="shop_21"/>
+    <staff id="Nhan_Vien_22" name="Nguyễn Văn U" role="staff" username="user22" password="123456" shop="shop_22"/>
+    <staff id="Nhan_Vien_23" name="Nguyễn Văn V" role="staff" username="user23" password="123456" shop="shop_23"/>
+    <staff id="Nhan_Vien_24" name="Nguyễn Văn W" role="staff" username="user24" password="123456" shop="shop_24"/>
+    <staff id="Nhan_Vien_25" name="Nguyễn Văn X" role="staff" username="user25" password="123456" shop="shop_25"/>
+    <staff id="Nhan_Vien_26" name="Nguyễn Văn Y" role="staff" username="user26" password="123456" shop="shop_26"/>
+    <staff id="Nhan_Vien_27" name="Nguyễn Văn Z" role="staff" username="user27" password="123456" shop="shop_27"/>
+    <staff id="Nhan_Vien_28" name="Nguyễn Thị A" role="staff" username="user28" password="123456" shop="shop_28"/>
+    <staff id="Nhan_Vien_29" name="Nguyễn Thị B" role="staff" username="user29" password="123456" shop="shop_29"/>
+<!-- manager -->
+    <staff id="Quan_Ly" name="Cao Tiến D" role="manager" username="user30" password="123456" shop="shop_0"/>
 </staff_list>
