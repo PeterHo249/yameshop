@@ -10,10 +10,10 @@ let insertProperty = function (string, prop_name, prop_value) {
 };
 
 let generateGuestHomepage = function () {
-    let layout_html = fs.readFileSync('./client_app/index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/guest/homepage.html', 'utf-8');
-    let carousel_snippet = fs.readFileSync('./client_app/snippets/guest/homepage_carousel_page.html', 'utf-8');
-    let carousel_item_snippet = fs.readFileSync('./client_app/snippets/guest/homepage_carousel_item.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/guest/homepage.html', 'utf-8');
+    let carousel_snippet = fs.readFileSync('./snippets/guest/homepage_carousel_page.html', 'utf-8');
+    let carousel_item_snippet = fs.readFileSync('./snippets/guest/homepage_carousel_item.html', 'utf-8');
 
     // TODO: Implement code here
     // Get data from server
@@ -76,10 +76,10 @@ let cache_product_list = {
 };
 
 let generateGuestProductList = function (pageNo, category, brand) {
-    let layout_html = fs.readFileSync('./client_app/index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/guest/product_list.html', 'utf-8');
-    let product_tile_snippet = fs.readFileSync('./client_app/snippets/guest/product_list_tile.html', 'utf-8');
-    let page_item_snippet = fs.readFileSync('./client_app/snippets/guest/product_list_page_item.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/guest/product_list.html', 'utf-8');
+    let product_tile_snippet = fs.readFileSync('./snippets/guest/product_list_tile.html', 'utf-8');
+    let page_item_snippet = fs.readFileSync('./snippets/guest/product_list_page_item.html', 'utf-8');
 
     // TODO: Implement code here
     // Get data
@@ -150,10 +150,10 @@ let generateGuestProductList = function (pageNo, category, brand) {
 };
 
 let generateGuestProductDetail = function (productId) {
-    let layout_html = fs.readFileSync('./client_app/index_guest.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/guest/product_detail.html', 'utf-8');
-    let row_snippet = fs.readFileSync('./client_app/snippets/guest/product_detail_row.html', 'utf-8');
-    let photo_snippet = fs.readFileSync('./client_app/snippets/guest/product_detail_photo.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_guest.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/guest/product_detail.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/guest/product_detail_row.html', 'utf-8');
+    let photo_snippet = fs.readFileSync('./snippets/guest/product_detail_photo.html', 'utf-8');
 
     // TODO: Implement code here
     let data = connection.get('/product?productId=' + productId);
@@ -205,80 +205,80 @@ let generateGuestProductDetail = function (productId) {
 };
 
 let generateStaffProductList = function () {
-    let layout_html = fs.readFileSync('./client_app/index_staff.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/staff/staff_product_list.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_product_list.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateStaffProductDetail = function () {
-    let layout_html = fs.readFileSync('./client_app/index_staff.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/staff/staff_product_detail.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_product_detail.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateStaffOrderList = function () {
-    let layout_html = fs.readFileSync('./client_app/index_staff.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/staff/staff_order_list.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_order_list.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateStaffOrderDetail = function () {
-    let layout_html = fs.readFileSync('./client_app/index_staff.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/staff/staff_order_detail.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_order_detail.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateManagerProductList = function () {
-    let layout_html = fs.readFileSync('./client_app/index_manager.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/manager/manager_product_list.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_product_list.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateManagerProductDetail = function () {
-    let layout_html = fs.readFileSync('./client_app/index_manager.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/manager/manager_product_Detail.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_product_Detail.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateManagerOrderList = function () {
-    let layout_html = fs.readFileSync('./client_app/index_manager.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/manager/manager_order_list.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_order_list.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateManagerOrderDetail = function () {
-    let layout_html = fs.readFileSync('./client_app/index_manager.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/manager/manager_order_Detail.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_order_Detail.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateManagerShopList = function () {
-    let layout_html = fs.readFileSync('./client_app/index_manager.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/manager/manager_shop_list.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_shop_list.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
 let generateManagerStaffList = function () {
-    let layout_html = fs.readFileSync('./client_app/index_manager.html', 'utf-8');
-    let content_html = fs.readFileSync('./client_app/snippets/manager/manager_staff_list.html', 'utf-8');
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_staff_list.html', 'utf-8');
 
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
