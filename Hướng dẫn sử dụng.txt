@@ -1,0 +1,26 @@
+----------------->OLD
+** D�ng postman d? ki?m tra c�c api v?i c�c url sau:
+    localhost:3030/home_guest
+    localhost:3030/product_list?category=AK
+    localhost:3030/product_list?category=AK&brand=AD
+    localhost:3030/product?productId=AK_MB_0000_L
+
+
+----------------->NEW
+** For staff
+    localhost:3030/product_list_staff
+    localhost:3030/product_list_staff?category=AK
+    localhost:3030/product_list_staff?brand=MB
+    localhost:3030/product_list_staff?category=AK&brand=AD
+    localhost:3030/product_staff?productId=AK_MB_0000
+
+------ bill
+    localhost:3030/bill_general
+    localhost:3030/bill_general?month=5
+    localhost:3030/bill_general?year=2018
+    localhost:3030/bill_general?month=1&year=2018
+    localhost:3030/bill_detail?id=00000001
+
+
+* Lưu ý: - không hỗ trợ trường hợp truyền biến nào khác ngoài các dạng bên trên
+         - chỉ cần thay biến phù hợp cho mục đích dùng là được.
