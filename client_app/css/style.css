@@ -146,6 +146,18 @@ body {
     color: white;
 }
 
+.table-control {
+    color: white;
+}
+
+.table-control a {
+    color: white;
+}
+
+.table-control a :link, .table-control a:visited, .table-control a:hover, .table-control a:active {
+    color: white;
+}
+
 /* End Product silder */
 
 .page-link {

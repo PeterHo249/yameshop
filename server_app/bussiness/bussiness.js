@@ -1,6 +1,7 @@
 /*jshint esversion: 6 */
 
 let JSONWebToken = require('jsonwebtoken');
+let cookie = require('cookie');
 let data = require('./data');
 
 let token_key = 'key for yameshop';
@@ -18,7 +19,14 @@ let isLogedIn = function (token) {
     return false;
 };
 
-let isAuth = function (token, role) {
+let isAuth = function (req, role) {
+    if (req.headers['cookie'] === undefined) {
+        return false;
+    }
+
+    let cookies = cookie.parse(req.headers['cookie']);
+    let token = cookies.usertoken;
+
     let user_role = isLogedIn(token);
 
     if (!user_role) {
