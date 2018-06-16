@@ -4,23 +4,36 @@ let JSONWebToken = require('jsonwebtoken');
 let cookie = require('cookie');
 let host = "http://localhost:3030";
 
-function getRequest(urlExtension) {
+function getRequest(urlExtension, usertoken) {
     let addressProcess = host + urlExtension;
     let processHttp = new XMLHttpRequest();
+    processHttp.setDisableHeaderCheck(true);
     processHttp.open("GET", addressProcess, false);
+    if (usertoken !== undefined) {
+        processHttp.setRequestHeader('Cookie', 'usertoken=' + usertoken);
+    }
     processHttp.send("");
     let str_JSON = processHttp.responseText;
     if (str_JSON == null) {
         return null;
     }
+
+    if (str_JSON === 'LogInRequire')
+    {
+        return 'LogInRequire';
+    }
+
     return JSON.parse(str_JSON);
 }
 
-function postRequest(url, body) {
+function postRequest(url, body, usertoken) {
     let addressProcess = host + url;
     let processHttp = new XMLHttpRequest();
     processHttp.open('POST', addressProcess, false);
     processHttp.setRequestHeader('Content-type', 'text/plain');
+    if (usertoken !== undefined) {
+        processHttp.setRequestHeader('Cookie', 'usertoken=' + usertoken);
+    }
     processHttp.send(body);
     let res_body = processHttp.responseText;
     if (res_body == null) {
@@ -31,6 +44,9 @@ function postRequest(url, body) {
 }
 
 function parseUserInfo(req) {
+    if (req.headers['cookie'] === undefined) {
+        return {};
+    }
     let cookies = cookie.parse(req.headers['cookie']);
     let token = cookies.usertoken;
     if (token === null) {

@@ -6,7 +6,7 @@ Url các trang web:
 * Productdetail - localhost:3000/productdetail.html?id=...
 
 ** Staff
-* Productlist - localhost:3000/staffproductlist.html
+* localhost:3000/staffproductlist.html?category=Ak&brand=AD
 * Productdetail - localhost:3000/staffproductdetail.html
 * Orderlist - localhost:3000/staffoerderlist.html
 * Orderdetail - localhost:3000/stafforderdetail.html

@@ -3,6 +3,8 @@
 const fs = require('fs');
 const connection = require('./connection');
 
+
+
 let insertProperty = function (string, prop_name, prop_value) {
     let prop_to_replace = '{{' + prop_name + '}}';
     string = string.replace(new RegExp(prop_to_replace, 'g'), prop_value);
@@ -214,34 +216,175 @@ let generateGuestProductDetail = function (productId) {
     return layout_html;
 };
 
-let generateStaffProductList = function () {
+let generateStaffProductList = function (category, brand, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_product_list.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/staff/staff_product_list_row.html', 'utf-8');
 
+    // Get data
+    let data = [];
+    let request = '';
+    if (brand === undefined) {
+        request = 'localhost:3030/product_list_staff?category=' + category;
+    } else {
+        request = 'localhost:3030/product_list_staff?category=' + category + '&brand=' + brand;
+    }
+    data = connection.get(request, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    let html_row_list = '';
+    for (let i = 0; i < data.length; i++) {
+        let snippet = row_snippet;
+        snippet = insertProperty(snippet, 'productid', data[i].id);
+        snippet = insertProperty(snippet, 'productname', data[i].name);
+        snippet = insertProperty(snippet, 'price', data[i].out_price);
+        snippet = insertProperty(snippet, 'inventory_num', data[i].inventory_num);
+        let sizelist = '';
+        for (let j = 0; j < data[i].list_size.length; j++) {
+            sizelist += data[i].list_size[j] + ' ';
+        }
+        snippet = insertProperty(snippet, 'size_list', sizelist);
+        let colorlist = '';
+        for (let j = 0; j < data[i].list_color.length; j++) {
+            colorlist += data[i].list_color[j] + ' ';
+        }
+        snippet = insertProperty(snippet, 'color_list', colorlist);
+        html_row_list += snippet;
+    }
+
+    content_html = insertProperty(content_html, 'category', category);
+    content_html = insertProperty(content_html, 'brand', brand);
+    content_html = insertProperty(content_html, 'table_body', html_row_list);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
-let generateStaffProductDetail = function () {
+let generateStaffProductDetail = function (product_id, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_product_detail.html', 'utf-8');
+    let section_snippet = fs.readFileSync('./snippets/staff/staff_product_detail_section.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/staff/staff_product_detail_row.html', 'utf-8');
 
+    let data = connection.get('localhost:3030/product_staff?productId=' + product_id, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    let section_list = '';
+    for (let i = 0; i < data.size_list.length; i++) {
+        let snippet = section_snippet;
+        let row_list = '';
+        snippet = insertProperty(snippet, 'size', data.size_list[i].size);
+        for (let j = 0; j < data.size_list[i].color.length; j++) {
+            let row = row_snippet;
+            row = insertProperty(row, 'colorid', data.size_list[i].color[j].id);
+            row = insertProperty(row, 'colorname', data.size_list[i].color[j].name);
+            for (let x = 0; x < data.size_list[i].color[j].shops.length; x++) {
+                let row_shop = row;
+                row_shop = insertProperty(row_shop, 'shopname', data.size_list[i].color[j].shops[x].name);
+                row_shop = insertProperty(row_shop, 'inventorynum', data.size_list[i].color[j].shops[x].inventory_num);
+                row_list += row_shop;
+            }
+        }
+        snippet = insertProperty(snippet, 'table_list', row_list);
+        section_list += snippet;
+    }
+
+    content_html = insertProperty(content_html, 'productid', data.id);
+    content_html = insertProperty(content_html, 'productname', data.name);
+    content_html = insertProperty(content_html, 'price', data.out_price);
+    content_html = insertProperty(content_html, 'inventory_num', data.inventory_num);
+    content_html = insertProperty(content_html, 'description', data.description);
+    content_html = insertProperty(content_html, 'section_list', section_list);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
-let generateStaffOrderList = function () {
+let generateStaffOrderList = function (year, month, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_order_list.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/staff/staff_order_list_row.html', 'utf-8');
 
+    let data = [];
+    let request = '';
+    let year_string = '';
+    if (month === undefined) {
+        request = 'localhost:3030/bill_general?year=' + year;
+        year_string += year;
+    } else {
+        request = 'localhost:3030/bill_general?month=' + month + '&year=' + year;
+        year_string += month + '/' + year;
+    }
+
+    data = connection.get(request, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    let row_list = '';
+    for (let i = 0; i < data.length; i++) {
+        let snippet = row_snippet;
+        snippet = insertProperty(snippet, 'id', data[i].id);
+        snippet = insertProperty(snippet, 'date', data[i].date);
+        snippet = insertProperty(snippet, 'quantity', data[i].total);
+        snippet = insertProperty(snippet, 'revenue', data[i].revenue);
+        row_list += snippet;
+    }
+
+    content_html = insertProperty(content_html, 'year_string', year_string);
+    content_html = insertProperty(content_html, 'table_body', row_list);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
-let generateStaffOrderDetail = function () {
+let generateStaffOrderDetail = function (orderid, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_order_detail.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/staff/staff_order_detail_row.html', 'utf-8');
 
+    let data = connection.get('localhost:3030/bill_detail?id=' + orderid, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    let row_list = '';
+    for (let i = 0; i < data[0].list_item.length; i++) {
+        let snippet = row_snippet;
+        snippet = insertProperty(snippet, 'id', data[0].list_item[i].id);
+        snippet = insertProperty(snippet, 'name', data[0].list_item[i].name);
+        snippet = insertProperty(snippet, 'price', data[0].list_item[i].price);
+        snippet = insertProperty(snippet, 'quantity', data[0].list_item[i].count);
+        snippet = insertProperty(snippet, 'total', data[0].list_item[i].sum_price);
+        row_list += snippet;
+    }
+
+    content_html = insertProperty(content_html, 'id', data[0].id);
+    content_html = insertProperty(content_html, 'date', data[0].date);
+    content_html = insertProperty(content_html, 'quantity', data[0].total);
+    content_html = insertProperty(content_html, 'price', data[0].revenue);
+    content_html = insertProperty(content_html, 'staffid', data[0].staff_id);
+    content_html = insertProperty(content_html, 'staffname', data[0].name_of_staff);
+    content_html = insertProperty(content_html, 'shopid', data[0].shop_id);
+    content_html = insertProperty(content_html, 'shopname', data[0].name_of_shop);
+    content_html = insertProperty(content_html, 'table_body', row_list);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
