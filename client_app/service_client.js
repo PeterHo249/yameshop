@@ -68,7 +68,6 @@ app.createServer((req, res) => {
             // TODO: Implement code here
             break;
           case '/staffproductlist.html':
-            // Testing purpose
             {
               parameters = url.parse(req.url, true).query;
               let cookies = cookie.parse(req.headers['cookie']);
@@ -91,7 +90,6 @@ app.createServer((req, res) => {
             }
             break;
           case '/stafforderlist.html':
-            // Testing purpose
             {
               parameters = url.parse(req.url, true).query;
               let year = (new Date()).getFullYear();
@@ -118,7 +116,6 @@ app.createServer((req, res) => {
             }
             break;
           case '/staffproductdetail.html':
-            // Testing purpose
             {
               parameters = url.parse(req.url, true).query;
               let cookies = cookie.parse(req.headers['cookie']);
@@ -141,7 +138,6 @@ app.createServer((req, res) => {
             }
             break;
           case '/stafforderdetail.html':
-            // Testing purpose
             {
               let cookies = cookie.parse(req.headers['cookie']);
               let token = cookies.usertoken;
@@ -164,75 +160,137 @@ app.createServer((req, res) => {
             }
             break;
           case '/managerproductlist.html':
-            // Testing purpose
             {
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              parameters = url.parse(req.url, true).query;
+              let html = present_generator.generateManagerProductList(parameters.category, parameters.brand, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
               res.setHeader('Content-type', header_type);
               let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateManagerProductList();
               if (user_info != {}) {
                 html = present_generator.insertProperty(html, 'username', user_info.name);
               }
               res.end(html);
+            }
             }
             break;
           case '/managerproductdetail.html':
-            // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateManagerProductDetail();
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              parameters = url.parse(req.url, true).query;
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerProductDetail(parameters.productid, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/managerorderlist.html':
-            // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateManagerOrderList();
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              parameters = url.parse(req.url, true).query;
+              let year = (new Date()).getFullYear();
+              if (parameters.year !== undefined) {
+                year = parameters.year;
               }
-              res.end(html);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerOrderList(year, parameters.month, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
             }
             break;
           case '/managerorderdetail.html':
-            // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateManagerOrderDetail();
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              parameters = url.parse(req.url, true).query;
+              let html = present_generator.generateManagerOrderDetail(parameters.orderid, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/managerstafflist.html':
-            // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateManagerStaffList();
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerStaffList(token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                let user_info = connection.parseUserInfo(req);
+                res.setHeader('Content-type', header_type);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/managershoplist.html':
-            // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              let html = present_generator.generateManagerShopList();
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerShopList(token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/logout.html':
@@ -308,7 +366,7 @@ app.createServer((req, res) => {
                   maxAge: 60 * 60 * 24
                 }));
                 res.writeHead(302, {
-                  'Location': 'http://' + req.headers['host'] + '/managerproductlist.html'
+                  'Location': 'http://' + req.headers['host'] + '/managerproductlist.html?category=AK&brand=AD'
                 });
                 res.end();
               }

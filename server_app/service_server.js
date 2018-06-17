@@ -113,51 +113,93 @@ app.createServer((req, res) => {
                     }
                     break;
                 case '/manager_shop_list':
-                    res.writeHeader(200, {
-                        'Content-Type': 'text/json'
-                    });
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
 
-                    res.end(dto_manager.get_all_shop());
+                        res.end(dto_manager.get_all_shop());
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/manager_staff_list':
-                    res.writeHeader(200, {
-                        'Content-Type': 'text/json'
-                    });
-                    res.end(dto_manager.get_all_staff());
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        res.end(dto_manager.get_all_staff());
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/manager_product_list':
-                    res.writeHeader(200, {
-                        'Content-Type': 'text/json'
-                    });
-                    parameters = url.parse(req.url, true).query;
-                    category = parameters.category;
-                    brand = parameters.brand;
-                    res.end(dto_manager.get_product_list(category, brand));
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        parameters = url.parse(req.url, true).query;
+                        category = parameters.category;
+                        brand = parameters.brand;
+                        res.end(dto_manager.get_product_list(category, brand));
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/manager_product_detail':
-                    res.writeHeader(200, {
-                        'Content-Type': 'text/json'
-                    });
-                    parameters = url.parse(req.url, true).query;
-                    id = parameters.id;
-                    res.end(dto_manager.get_product_detail(id));
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        parameters = url.parse(req.url, true).query;
+                        id = parameters.id;
+                        res.end(dto_manager.get_product_detail(id));
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/manager_order_list':
-                    res.writeHeader(200, {
-                        'Content-Type': 'text/json'
-                    });
-                    parameters = url.parse(req.url, true).query;
-                    month = parameters.month;
-                    year = parameters.year;
-                    res.end(dto_manager.get_order_list(month, year));
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        parameters = url.parse(req.url, true).query;
+                        month = parameters.month;
+                        year = parameters.year;
+                        res.end(dto_manager.get_order_list(month, year));
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/manager_order_detail':
-                    res.writeHeader(200, {
-                        'Content-Type': 'text/json'
-                    });
-                    parameters = url.parse(req.url, true).query;
-                    id = parameters.id;
-                    res.end(dto_manager.get_order_detail(id));
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        parameters = url.parse(req.url, true).query;
+                        id = parameters.id;
+                        res.end(dto_manager.get_order_detail(id));
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
                     break;
                 default:
                     res.writeHeader(404, {

@@ -4,22 +4,18 @@
     </div>
     <div>
         <h4>Bộ lọc thông tin:</h4>
-        <form action="#" method="get">
+        <form action="/managerorderlist.html" method="get">
             <div class="form-row">
                 <div class="form-group col-md-5 align-middle">
                     <label for="category-droplist">Năm:</label>
-                    <select name="category" id="category-droplist" class="select-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                    <select name="category" id="year-droplist" class="select-control">
+                        
                     </select>
                 </div>
                 <div class="form-group col-md-5 align-middle">
                     <label for="brand-droplist">Tháng:</label>
-                    <select name="brand" id="brand-droplist" class="select-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                    <select name="brand" id="month-droplist" class="select-control">
+                        
                     </select>
                 </div>
                 <div class="form-group col-md-2">
@@ -28,6 +24,9 @@
             </div>
         </form>
     </div>
+    <div>
+            <p>Danh sách hóa đơn {{year_string}}</p>
+        </div>
     <table class="table">
         <thead class="thead-light">
             <tr>
@@ -37,17 +36,11 @@
                 <th scope="col">Tổng giá</th>
                 <th scope="col">Doanh thu</th>
                 <th scope="col">Loại hóa đơn</th>
+                <th scope="col">Điều khiển</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">id1</th>
-                <td>ngày 1</td>
-                <td>số lượng</td>
-                <td>16548vnd</td>
-                <td>643126vnd</td>
-                <td>Xuất</td>
-            </tr>
+            {{table_body}}
         </tbody>
     </table>
 </div>

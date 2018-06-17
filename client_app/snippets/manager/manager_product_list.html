@@ -4,22 +4,30 @@
     </div>
     <div>
         <h4>Bộ lọc thông tin:</h4>
-        <form action="#" method="get">
+        <form action="/managerproductlist.html" method="get">
             <div class="form-row">
                 <div class="form-group col-md-5 align-middle">
                     <label for="category-droplist">Danh mục:</label>
                     <select name="category" id="category-droplist" class="select-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="AK">Áo khoác</option>
+                        <option value="ASM">Áo sơmi</option>
+                        <option value="AT">Áo thun</option>
+                        <option value="BL">Balo</option>
+                        <option value="DS">Dép - Sandal</option>
+                        <option value="GN1">Giày nam</option>
+                        <option value="GN2">Giày nữ</option>
+                        <option value="PK">Phụ kiện</option>
+                        <option value="QD">Quần dài</option>
+                        <option value="QS">Quần short</option>
                     </select>
                 </div>
                 <div class="form-group col-md-5 align-middle">
                     <label for="brand-droplist">Nhãn hiệu:</label>
                     <select name="brand" id="brand-droplist" class="select-control">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
+                        <option value="AD">Adachi</option>
+                        <option value="KM">Kirimaru</option>
+                        <option value="MB">Mabu</option>
+                        <option value="NS">No Style</option>
                     </select>
                 </div>
                 <div class="form-group col-md-2">
@@ -27,6 +35,9 @@
                 </div>
             </div>
         </form>
+    </div>
+    <div>
+        <p>Danh sách hiện tại: {{category}}/{{brand}}</p>
     </div>
     <table class="table">
         <thead class="thead-light">
@@ -39,22 +50,11 @@
                 <th scope="col">Giá bán</th>
                 <th scope="col">Số lượng tồn</th>
                 <th scope="col">Đang kinh doanh</th>
+                <th scope="col">Điều khiển</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">id1</th>
-                <td>sản phẩm 1</td>
-                <td>danh sách màu</td>
-                <td>danh sách size</td>
-                <td>1234568vnd</td>
-                <td>165489vnd</td>
-                <td>45613 sản phẩm</td>
-                <td>
-                    <i class="fas fa-check"></i>
-                    <i class="fas fa-times"></i>
-                </td>
-            </tr>
+            {{table_body}}
         </tbody>
     </table>
 </div>

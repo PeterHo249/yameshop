@@ -5,27 +5,27 @@
     <div class="row">
         <div class="col-md-6">
             <h3 class="product-description-header">Mã số:</h3>
-            <p class="product-description-body">ma1</p>
+            <p class="product-description-body">{{id}}</p>
             <h3 class="product-description-header">Ngày:</h3>
-            <p class="product-description-body">ngay 1</p>
+            <p class="product-description-body">{{date}}</p>
             <h3 class="product-description-header">Số lượng:</h3>
-            <p class="product-description-body">1654</p>
+            <p class="product-description-body">{{quantity}}</p>
             <h3 class="product-description-header">Tổng giá:</h3>
-            <p class="product-description-body">1654vnd</p>
+            <p class="product-description-body">{{price}}vnd</p>
             <h3 class="product-description-header">Doanh thu:</h3>
-            <p class="product-description-body">1654vnd</p>
+            <p class="product-description-body">{{revenue}}vnd</p>
             <h3 class="product-description-header">Loại hóa đơn:</h3>
-            <p class="product-description-body">Xuất</p>
+            <p class="product-description-body">{{type}}</p>
         </div>
         <div class="col-md-6">
             <h3 class="product-description-header">Mã nhân viên:</h3>
-            <p class="product-description-body">ma nv 1</p>
+            <p class="product-description-body">{{staffid}}</p>
             <h3 class="product-description-header">Tên nhân viên:</h3>
-            <p class="product-description-body">ten 1</p>
+            <p class="product-description-body">{{staffname}}</p>
             <h3 class="product-description-header">Mã cửa hàng:</h3>
-            <p class="product-description-body">ma ch 1</p>
+            <p class="product-description-body">{{shopid}}</p>
             <h3 class="product-description-header">Tên cửa hàng:</h3>
-            <p class="product-description-body">ch 1</p>
+            <p class="product-description-body">{{shopname}}</p>
         </div>
     </div>
 
@@ -40,13 +40,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">id1</th>
-                <td>ten 1</td>
-                <td>5164vnd</td>
-                <td>189465</td>
-                <td>54231vnd</td>
-            </tr>
+            {{table_body}}
         </tbody>
     </table>
 

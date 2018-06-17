@@ -25,7 +25,7 @@ let get_all_shop = () => {
     });
     shop_list = data;
     return JSON.stringify(data);
-}
+};
 
 function find_shop_name(idShop) {
     if (shop_list == undefined) {
@@ -59,7 +59,7 @@ let get_all_staff = () => {
         });
     });
     return JSON.stringify(data);
-}
+};
 
 let get_all_product = () => {
     let parser = new xml2js.Parser();
@@ -92,7 +92,7 @@ let get_all_product = () => {
     });
     list_product = data;
     return JSON.stringify(data);
-}
+};
 
 function get_list_product_with_brand(brand) {
 
@@ -210,7 +210,7 @@ let get_product_list = (category, brand) => {
         result = get_list_product_with_category_and_brand(category, brand);
     }
     return result;
-}
+};
 
 let get_order_list = (month, year) => {
     let result;
@@ -224,7 +224,7 @@ let get_order_list = (month, year) => {
         result = get_list_order_with_month_and_year(month, year);
     }
     return result;
-}
+};
 
 let get_product_detail = (product_id) => {
 
@@ -274,7 +274,7 @@ let get_product_detail = (product_id) => {
                         inventory_num: data.size[i].color[j].$.inventory_num,
                         name: data.size[i].color[j].$.name,
                         shops: []
-                    }
+                    };
 
                     for (let k = 0; k < data.size[i].color[j].shop.length; k++) {
                         let node_shop;
@@ -301,7 +301,7 @@ let get_product_detail = (product_id) => {
     });
 
     return JSON.stringify(data);
-}
+};
 
 let get_all_order = () => {
     let parser = new xml2js.Parser();
@@ -338,7 +338,7 @@ let get_all_order = () => {
     });
     list_order = data;
     return JSON.stringify(data);
-}
+};
 
 function get_list_order_with_month(month) {
     let parser = new xml2js.Parser();
@@ -516,7 +516,7 @@ let get_order_detail = (id_order) => {
         });
     });
     return JSON.stringify(data);
-}
+};
 
 function find_revenue(item) {
     if (list_product == '') {
@@ -587,4 +587,4 @@ module.exports = {
     get_product_detail: get_product_detail,
     get_order_detail: get_order_detail,
     get_order_list: get_order_list
-}
+};
