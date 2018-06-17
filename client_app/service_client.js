@@ -70,53 +70,97 @@ app.createServer((req, res) => {
           case '/staffproductlist.html':
             // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
               parameters = url.parse(req.url, true).query;
-              let html = present_generator.generateStaffProductList(parameters.category, parameters.brand);
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateStaffProductList(parameters.category, parameters.brand, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/stafforderlist.html':
             // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
               parameters = url.parse(req.url, true).query;
-              let html = present_generator.generateStaffOrderList(parameters.year, parameters.month);
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let year = (new Date()).getFullYear();
+              if (parameters.year !== undefined) {
+                year = parameters.year;
               }
-              res.end(html);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateStaffOrderList(year, parameters.month, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
             }
             break;
           case '/staffproductdetail.html':
             // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
               parameters = url.parse(req.url, true).query;
-              let html = present_generator.generateStaffProductDetail(parameters.productid);
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateStaffProductDetail(parameters.productid, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/stafforderdetail.html':
             // Testing purpose
             {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
               parameters = url.parse(req.url, true).query;
-              let html = present_generator.generateStaffOrderDetail(parameters.orderid);
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+              let html = present_generator.generateStaffOrderDetail(parameters.orderid, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
             }
             break;
           case '/managerproductlist.html':
@@ -250,7 +294,11 @@ app.createServer((req, res) => {
                   maxAge: 60 * 60 * 24
                 }));
                 res.writeHead(302, {
-                  'Location': 'http://' + req.headers['host'] + '/staffproductlist.html'
+                  'Location': 'http://' + req.headers['host'] + '/staffproductlist.html?category=AK&brand=AD',
+                  'Cookie': cookie.serialize('usertoken', login_res, {
+                    httpOnly: true,
+                    maxAge: 60 * 60 * 24
+                  })
                 });
                 res.end();
               } else {

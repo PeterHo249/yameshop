@@ -3,6 +3,8 @@
 const fs = require('fs');
 const connection = require('./connection');
 
+
+
 let insertProperty = function (string, prop_name, prop_value) {
     let prop_to_replace = '{{' + prop_name + '}}';
     string = string.replace(new RegExp(prop_to_replace, 'g'), prop_value);
@@ -214,7 +216,7 @@ let generateGuestProductDetail = function (productId) {
     return layout_html;
 };
 
-let generateStaffProductList = function (category, brand) {
+let generateStaffProductList = function (category, brand, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_product_list.html', 'utf-8');
     let row_snippet = fs.readFileSync('./snippets/staff/staff_product_list_row.html', 'utf-8');
@@ -227,9 +229,13 @@ let generateStaffProductList = function (category, brand) {
     } else {
         request = 'localhost:3030/product_list_staff?category=' + category + '&brand=' + brand;
     }
-    data = connection.get(request);
+    data = connection.get(request, token);
     if (data === null) {
         return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
     }
 
     let html_row_list = '';
@@ -252,20 +258,26 @@ let generateStaffProductList = function (category, brand) {
         html_row_list += snippet;
     }
 
+    content_html = insertProperty(content_html, 'category', category);
+    content_html = insertProperty(content_html, 'brand', brand);
     content_html = insertProperty(content_html, 'table_body', html_row_list);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
-let generateStaffProductDetail = function (product_id) {
+let generateStaffProductDetail = function (product_id, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_product_detail.html', 'utf-8');
     let section_snippet = fs.readFileSync('./snippets/staff/staff_product_detail_section.html', 'utf-8');
     let row_snippet = fs.readFileSync('./snippets/staff/staff_product_detail_row.html', 'utf-8');
 
-    let data = connection.get('localhost:3030/product_staff?productId=' + product_id);
+    let data = connection.get('localhost:3030/product_staff?productId=' + product_id, token);
     if (data === null) {
         return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
     }
 
     let section_list = '';
@@ -298,22 +310,29 @@ let generateStaffProductDetail = function (product_id) {
     return layout_html;
 };
 
-let generateStaffOrderList = function (year, month) {
+let generateStaffOrderList = function (year, month, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_order_list.html', 'utf-8');
     let row_snippet = fs.readFileSync('./snippets/staff/staff_order_list_row.html', 'utf-8');
 
     let data = [];
     let request = '';
+    let year_string = '';
     if (month === undefined) {
         request = 'localhost:3030/bill_general?year=' + year;
+        year_string += year;
     } else {
         request = 'localhost:3030/bill_general?month=' + month + '&year=' + year;
+        year_string += month + '/' + year;
     }
 
-    data = connection.get(request);
+    data = connection.get(request, token);
     if (data === null) {
         return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
     }
 
     let row_list = '';
@@ -326,19 +345,24 @@ let generateStaffOrderList = function (year, month) {
         row_list += snippet;
     }
 
+    content_html = insertProperty(content_html, 'year_string', year_string);
     content_html = insertProperty(content_html, 'table_body', row_list);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
 
-let generateStaffOrderDetail = function (orderid) {
+let generateStaffOrderDetail = function (orderid, token) {
     let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/staff/staff_order_detail.html', 'utf-8');
     let row_snippet = fs.readFileSync('./snippets/staff/staff_order_detail_row.html', 'utf-8');
 
-    let data = connection.get('localhost:3030/bill_detail?id=' + orderid);
+    let data = connection.get('localhost:3030/bill_detail?id=' + orderid, token);
     if (data === null) {
         return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
     }
 
     let row_list = '';
