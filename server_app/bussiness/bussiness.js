@@ -63,7 +63,6 @@ function extractPostBody(req, callback) {
     const FORM_URLENCODED = 'text/plain;charset=UTF-8';
     if (req.headers['content-type'] === FORM_URLENCODED) {
         let body = '';
-        let result = {};
         req.on('data', chunk => {
             body += chunk.toString();
         });

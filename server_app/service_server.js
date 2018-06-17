@@ -11,7 +11,7 @@ let bus = require('./bussiness/bussiness');
 let port = 3030;
 
 app.createServer((req, res) => {
-    console.log('--------------------------------------' + req.method + " " + req.url);
+    console.log('--------------------------------------> ' + req.method + " " + req.url);
 
     let data = '';
     let parameters = {};
@@ -111,6 +111,53 @@ app.createServer((req, res) => {
                         });
                         res.end('LogInRequire');
                     }
+                    break;
+                case '/manager_shop_list':
+                    res.writeHeader(200, {
+                        'Content-Type': 'text/json'
+                    });
+
+                    res.end(dto_manager.get_all_shop());
+                    break;
+                case '/manager_staff_list':
+                    res.writeHeader(200, {
+                        'Content-Type': 'text/json'
+                    });
+                    res.end(dto_manager.get_all_staff());
+                    break;
+                case '/manager_product_list':
+                    res.writeHeader(200, {
+                        'Content-Type': 'text/json'
+                    });
+                    parameters = url.parse(req.url, true).query;
+                    category = parameters.category;
+                    brand = parameters.brand;
+                    res.end(dto_manager.get_product_list(category, brand));
+                    break;
+                case '/manager_product_detail':
+                    res.writeHeader(200, {
+                        'Content-Type': 'text/json'
+                    });
+                    parameters = url.parse(req.url, true).query;
+                    id = parameters.id;
+                    res.end(dto_manager.get_product_detail(id));
+                    break;
+                case '/manager_order_list':
+                    res.writeHeader(200, {
+                        'Content-Type': 'text/json'
+                    });
+                    parameters = url.parse(req.url, true).query;
+                    month = parameters.month;
+                    year = parameters.year;
+                    res.end(dto_manager.get_order_list(month, year));
+                    break;
+                case '/manager_order_detail':
+                    res.writeHeader(200, {
+                        'Content-Type': 'text/json'
+                    });
+                    parameters = url.parse(req.url, true).query;
+                    id = parameters.id;
+                    res.end(dto_manager.get_order_detail(id));
                     break;
                 default:
                     res.writeHeader(404, {

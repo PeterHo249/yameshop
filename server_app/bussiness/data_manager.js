@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 let fs = require('fs');
 let xml2js = require('xml2js');
 let path = __dirname + '/../data';
