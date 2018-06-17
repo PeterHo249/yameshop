@@ -581,7 +581,7 @@ let generateManagerOrderDetail = function (orderid, token) {
 let generateManagerShopList = function (token) {
     let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/manager/manager_shop_list.html', 'utf-8');
-    let row_snippet = fs.readFileSync('./snippets/manager/manager_shop_list_row.html', 'uft-8');
+    let row_snippet = fs.readFileSync('./snippets/manager/manager_shop_list_row.html', 'utf-8');
 
     let data = connection.get('localhost:3030/manager_shop_list', token);
     if (data === null) {
@@ -609,7 +609,7 @@ let generateManagerShopList = function (token) {
 let generateManagerStaffList = function (token) {
     let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/manager/manager_staff_list.html', 'utf-8');
-    let row_snippet = fs.readFileSync('./snippets/manager/manager_staff_list_row.html', 'uft-8');
+    let row_snippet = fs.readFileSync('./snippets/manager/manager_staff_list_row.html', 'utf-8');
 
     let data = connection.get('localhost:3030/manager_staff_list', token);
     if (data === null) {
