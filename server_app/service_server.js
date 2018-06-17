@@ -5,6 +5,7 @@ let url = require('url');
 let query = require('querystring');
 let dto_guest = require('./bussiness/data_guest');
 let dto_staff = require('./bussiness/data_staff');
+let dto_manager = require('./bussiness/data_manager');
 let bus = require('./bussiness/bussiness');
 
 let port = 3030;
@@ -14,6 +15,7 @@ app.createServer((req, res) => {
 
     let data = '';
     let parameters = {};
+    let category, brand, id, month, year;
 
     switch (req.method) {
         case 'GET':
@@ -30,8 +32,8 @@ app.createServer((req, res) => {
                         'Content-Type': 'text/json'
                     });
                     parameters = url.parse(req.url, true).query;
-                    let category = parameters.category;
-                    let brand = parameters.brand;
+                    category = parameters.category;
+                    brand = parameters.brand;
                     data = dto_guest.get_product_list_guest(category, brand);
                     res.end(data);
                     break;
