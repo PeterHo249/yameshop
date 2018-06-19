@@ -27,7 +27,7 @@ Các api server cung cấp hiện tại:
 
 ------ bill
     localhost:3030/bill_general
-    localhost:3030/bill_general?month=5
+    localhost:3030/bill_general?month=1
     localhost:3030/bill_general?year=2018
     localhost:3030/bill_general?month=1&year=2018
     localhost:3030/bill_detail?id=00000001
@@ -36,12 +36,12 @@ Các api server cung cấp hiện tại:
     localhost:3030/manager_shop_list
     localhost:3030/manager_staff_list
 
-    localhost:3030/manager_produc_list
-    localhost:3030/manager_produc_list?category=AK
-    localhost:3030/manager_produc_list?category=AK&brand=MB
-    localhost:3030/manager_produc_list?brand=MB
+    localhost:3030/manager_product_list
+    localhost:3030/manager_product_list?category=AK
+    localhost:3030/manager_product_list?category=AK&brand=MB
+    localhost:3030/manager_product_list?brand=MB
 
-    localhost:3030/manager_produc_detail?id=AK_MB_0000
+    localhost:3030/manager_product_detail?id=AK_MB_0000
 
     localhost:3030/manager_order_list
     localhost:3030/manager_order_list?month=1

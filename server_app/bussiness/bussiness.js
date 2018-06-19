@@ -7,6 +7,84 @@ let data = require('./data');
 let token_key = 'key for yameshop';
 let sessions = [];
 
+var DOMParser = require("xmldom").DOMParser;
+
+let model_product = require('../model/product');
+let model_shop = require('../model/shop');
+let model_order = require('../model/order');
+let model_staff = require('../model/staff');
+
+let file_content_all_product = model_product.read_all_file_product();
+let file_content_all_staff = model_staff.read_file_staff();
+let file_content_all_shop = model_shop.read_file_shop();
+let file_content_all_order = model_order.read_all_file_order();
+
+let xml_product = new DOMParser().parseFromString(file_content_all_product, "text/xml").documentElement;
+let xml_shop = new DOMParser().parseFromString(file_content_all_shop, "text/xml").documentElement;
+let xml_staff = new DOMParser().parseFromString(file_content_all_staff, "text/xml").documentElement;
+let xml_order = new DOMParser().parseFromString(file_content_all_order, "text/xml").documentElement;
+
+//SHOP
+let get_file_content_all_shop = () =>{
+    return file_content_all_shop;
+}
+let add_new_shop = (id,name,address,xml_shop) =>{
+    model_shop.add_new_shop(id,name,address,xml_shop);
+    file_content_all_shop = new XMLSerializer().serializeToString(xml_shop);
+}
+let change_info_shop = (id,name,address,xml_shop)=>{
+    model_shop.change_info_shop(id,name,address,xml_shop);
+    file_content_all_shop = new XMLSerializer().serializeToString(xml_shop);
+}
+let delete_shop = (id,xml_shop) =>{
+    model_shop.delete_shop(id,xml_shop);
+    file_content_all_shop = new XMLSerializer().serializeToString(xml_shop);
+}
+//END SHOP
+//ORDER
+let get_file_content_all_order = () =>{
+    return file_content_all_order;
+}
+let add_new_order = (obj, xml_order) => {
+    model_order.add_new_order(obj,xml_order);
+    file_content_all_order = new XMLSerializer().serializeToString(xml_order);
+}
+let change_info_order = (obj, xml_order) => {
+    model_order.change_info_order(obj,xml_order);
+    file_content_all_order = new XMLSerializer().serializeToString(xml_order);
+}
+let delete_order = (id, xml_order) => {
+    model_order.delete_order(id,xml_order);
+    file_content_all_order = new XMLSerializer().serializeToString(xml_order);
+}
+//END ORDER
+//PRODUCT
+let get_file_content_all_product = () =>{
+    return file_content_all_product;
+}
+let delete_product = (id, xml_product) => {
+    model_product.delete_product(id,xml_product);
+    file_content_all_product = new XMLSerializer().serializeToString(xml_product);
+}
+//END PRODUCT
+//STAFF
+let get_file_content_all_staff = () =>{
+    return file_content_all_staff;
+}
+let add_new_staff = (id, name, role, username, password, shop, xml_staff) => {
+    model_staff.add_new_staff(id, name, role, username, password, shop, xml_staff);
+    file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
+}
+let change_info_staff = (id, name, role, username, password, shop, xml_staff) => {
+    model_staff.change_info_staff(id, name, role, username, password, shop, xml_staff);
+    file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
+}
+let delete_staff = (id, xml_staff) => {
+    model_staff.delete_staff(id,xml_staff);
+    file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
+}
+//END STAFF
+
 // return false if not login
 // return role of user: staff or manager
 let isLogedIn = function (token) {
@@ -79,5 +157,9 @@ module.exports = {
     logIn: logIn,
     logOut: logOut,
     extractPostBody: extractPostBody,
-    isAuth: isAuth
+    isAuth: isAuth,
+    get_file_content_all_order: get_file_content_all_order,
+    get_file_content_all_product: get_file_content_all_product,
+    get_file_content_all_shop: get_file_content_all_shop,
+    get_file_content_all_staff: get_file_content_all_staff
 };

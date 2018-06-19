@@ -1,0 +1,49 @@
+let fs = require('fs');
+let xml2js = require('xml2js');
+let path = __dirname + '/../data';
+
+var DOMParser = require("xmldom").DOMParser;
+var XMLSerializer = require("xmldom").XMLSerializer;
+var xmlns_v = "urn:v";
+var Node_goc = new DOMParser().parseFromString("<Du_lieu />", "text/xml");
+
+function read_file_shop(){
+    return fs.readFileSync(path + '/shop/shop_list.xml', 'utf-8');
+}
+
+let add_new_shop = (id,name,address,xml_shop) =>{
+    
+    var shop = Node_goc.createElementNS(xmlns_v,"shop");
+    shop.setAttributeNS(xmlns_v,"id",id);
+    shop.setAttributeNS(xmlns_v,"name",name);
+    shop.setAttributeNS(xmlns_v,"address",address);
+
+    xml_shop.insertBefore(shop,xml_shop.getElementsByTagName('shop')[0]);  
+}
+let change_info_shop = (id,name,address,xml_shop)=>{
+    let danhSachShop = xml_shop.getElementsByTagName('shop');
+    for(let i=0;i<danhSachShop.length;i++){
+        if(danhSachShop[i].getAttribute('id')==id){
+            danhSachShop[i].setAttribute('name',name);
+            danhSachShop[i].setAttribute('address',address);
+            break;
+        }
+    }
+}
+let delete_shop = (id,xml_shop) =>{
+    let danhSachShop = xml_shop.getElementsByTagName('shop');
+    for(let i=0;i<danhSachShop.length;i++){
+        if(danhSachShop[i].getAttribute('id')==id){
+            var y = danhSachShop[i];
+            xml_shop.removeChild(y);
+            break;
+        }
+    }
+}
+
+module.exports = {
+    read_file_shop:read_file_shop,
+    add_new_shop:add_new_shop,
+    change_info_shop:change_info_shop,
+    delete_shop:delete_shop
+}
