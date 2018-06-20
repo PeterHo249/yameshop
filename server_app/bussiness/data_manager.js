@@ -10,15 +10,11 @@ var XMLSerializer = require("xmldom").XMLSerializer;
 
 let bus = require('../bussiness/bussiness');
 
-let file_content_all_product = bus.get_file_content_all_product();
-let file_content_all_staff = bus.get_file_content_all_staff();
-let file_content_all_shop = bus.get_file_content_all_shop();
-let file_content_all_order = bus.get_file_content_all_order();
-
 //PRODUCT
 let get_all_product = () => {
     let parser = new xml2js.Parser();
     let data = [];
+    let file_content_all_product = bus.get_file_content_all_product();
 
     parser.parseString(file_content_all_product, function (err, result) {
         let products = result.product_list.product;
@@ -49,6 +45,9 @@ let get_product_detail = (product_id) => {
     let data = {};
     let parser = new xml2js.Parser();
     let shop_list = {};
+    let file_content_all_shop = bus.get_file_content_all_shop();
+    let file_content_all_product = bus.get_file_content_all_product();
+
     parser.parseString(file_content_all_shop, function (err, result) {
         shop_list = result.shop_list.shop;
     });
@@ -124,30 +123,30 @@ function get_list_product_with_brand(brand) {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_product = bus.get_file_content_all_product();
+    parser.parseString(file_content_all_product, function (err, result) {
+        let products = result.product_list.product;
+        for (let i = 0; i < products.length; i++) {
+            tokens = products[i].$.id.match(/([^_]+)/g);
+            if (brand == tokens[1]) {
+                let product_info = {
+                    id: products[i].$.id,
+                    name: products[i].$.name,
+                    in_price: products[i].$.in_price,
+                    out_price: products[i].$.out_price,
+                    inventory_num: products[i].$.inventory_num,
+                    in_stock: products[i].$.in_stock,
+                    list_size: [],
+                    list_color: []
+                };
 
-        parser.parseString(file_content_all_product, function (err, result) {
-            let products = result.product_list.product;
-            for(let i=0;i<products.length;i++){
-                tokens = products[i].$.id.match(/([^_]+)/g);
-                if(brand==tokens[1]){
-                    let product_info = {
-                        id: products[i].$.id,
-                        name: products[i].$.name,
-                        in_price: products[i].$.in_price,
-                        out_price: products[i].$.out_price,
-                        inventory_num: products[i].$.inventory_num,
-                        in_stock: products[i].$.in_stock,
-                        list_size: [],
-                        list_color: []
-                    };
-    
-                    get_list_color_or_size(product_info.list_size, products[i].size);
-                    get_list_color_or_size(product_info.list_color, products[i].size[0].color);
-                    data.push(product_info);
-                }
+                get_list_color_or_size(product_info.list_size, products[i].size);
+                get_list_color_or_size(product_info.list_color, products[i].size[0].color);
+                data.push(product_info);
             }
-        });
- 
+        }
+    });
+
     return JSON.stringify(data);
 }
 
@@ -156,28 +155,29 @@ function get_list_product_with_category(category) {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_product = bus.get_file_content_all_product();
 
     parser.parseString(file_content_all_product, function (err, result) {
         let products = result.product_list.product;
-        for(let i=0;i<products.length;i++){
+        for (let i = 0; i < products.length; i++) {
             tokens = products[i].$.id.match(/([^_]+)/g);
-            if(category==tokens[0]){
-            let product_info = {
-                id: products[i].$.id,
-                name: products[i].$.name,
-                in_price: products[i].$.in_price,
-                out_price: products[i].$.out_price,
-                inventory_num: products[i].$.inventory_num,
-                in_stock: products[i].$.in_stock,
-                list_size: [],
-                list_color: []
-            };
+            if (category == tokens[0]) {
+                let product_info = {
+                    id: products[i].$.id,
+                    name: products[i].$.name,
+                    in_price: products[i].$.in_price,
+                    out_price: products[i].$.out_price,
+                    inventory_num: products[i].$.inventory_num,
+                    in_stock: products[i].$.in_stock,
+                    list_size: [],
+                    list_color: []
+                };
 
-            get_list_color_or_size(product_info.list_size, products[i].size);
-            get_list_color_or_size(product_info.list_color, products[i].size[0].color);
-            data.push(product_info);
+                get_list_color_or_size(product_info.list_size, products[i].size);
+                get_list_color_or_size(product_info.list_color, products[i].size[0].color);
+                data.push(product_info);
+            }
         }
-    }
     });
 
     return JSON.stringify(data);
@@ -188,28 +188,29 @@ function get_list_product_with_category_and_brand(category, brand) {
     let data = [];
     let tokens;
 
+    let file_content_all_product = bus.get_file_content_all_product();
     parser.parseString(file_content_all_product, function (err, result) {
         let products = result.product_list.product;
-        
-        for(let i=0;i<products.length;i++){
-            tokens = products[i].$.id.match(/([^_]+)/g);
-            if(category==tokens[0]&&brand==tokens[1]){
-            let product_info = {
-                id: products[i].$.id,
-                name: products[i].$.name,
-                in_price: products[i].$.in_price,
-                out_price: products[i].$.out_price,
-                inventory_num: products[i].$.inventory_num,
-                in_stock: products[i].$.in_stock,
-                list_size: [],
-                list_color: []
-            };
 
-            get_list_color_or_size(product_info.list_size, products[i].size);
-            get_list_color_or_size(product_info.list_color, products[i].size[0].color);
-            data.push(product_info);
+        for (let i = 0; i < products.length; i++) {
+            tokens = products[i].$.id.match(/([^_]+)/g);
+            if (category == tokens[0] && brand == tokens[1]) {
+                let product_info = {
+                    id: products[i].$.id,
+                    name: products[i].$.name,
+                    in_price: products[i].$.in_price,
+                    out_price: products[i].$.out_price,
+                    inventory_num: products[i].$.inventory_num,
+                    in_stock: products[i].$.in_stock,
+                    list_size: [],
+                    list_color: []
+                };
+
+                get_list_color_or_size(product_info.list_size, products[i].size);
+                get_list_color_or_size(product_info.list_color, products[i].size[0].color);
+                data.push(product_info);
+            }
         }
-    }
     });
     return JSON.stringify(data);
 }
@@ -240,6 +241,7 @@ let get_all_shop = () => {
 
     let parser = new xml2js.Parser();
     let data = [];
+    let file_content_all_shop = bus.get_file_content_all_shop();
 
     parser.parseString(file_content_all_shop, function (err, result) {
         let shops = result.shop_list.shop;
@@ -278,6 +280,7 @@ let get_all_staff = () => {
 
     let parser = new xml2js.Parser();
     let data = [];
+    let file_content_all_staff = bus.get_file_content_all_staff();
 
     parser.parseString(file_content_all_staff, function (err, result) {
         let staffs = result.staff_list.staff;
@@ -293,10 +296,6 @@ let get_all_staff = () => {
             data.push(staff_info);
         });
     });
-    model_staff.add_new_staff('1', '1', '1', '1', '1', '1', xml_staff);
-    // change_info_staff('Nhan_Vien_0','1','1','1','1','1',xml_staff);
-    // model_staff.delete_staff('Nhan_Vien_1',xml_staff);
-    // console.log (new XMLSerializer().serializeToString(xml_staff));
     return JSON.stringify(data);
 };
 //END STAFF
@@ -341,6 +340,7 @@ let get_order_list = (month, year) => {
 let get_all_order = () => {
     let parser = new xml2js.Parser();
     let data = [];
+    let file_content_all_order = bus.get_file_content_all_order();
 
     parser.parseString(file_content_all_order, function (err, result) {
         let orders = result.order_list.order;
@@ -370,6 +370,7 @@ function get_list_order_with_month(month) {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_order = bus.get_file_content_all_order();
     parser.parseString(file_content_all_order, function (err, result) {
         let orders = result.order_list.order;
 
@@ -404,6 +405,7 @@ function get_list_order_with_year(year) {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_order = bus.get_file_content_all_order();
     parser.parseString(file_content_all_order, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
@@ -436,6 +438,7 @@ function get_list_order_with_month_and_year(month, year) {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_order = bus.get_file_content_all_order();
     parser.parseString(file_content_all_order, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
@@ -467,6 +470,7 @@ let get_order_detail = (id_order) => {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_order = bus.get_file_content_all_order();
     parser.parseString(file_content_all_order, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
@@ -526,6 +530,7 @@ function find_name(id, type) {
     let file_content;
     switch (type) {
         case "staff":
+            let file_content_all_staff = bus.get_file_content_all_staff();
             parser.parseString(file_content_all_staff, function (err, result) {
 
                 let staffs = result.staff_list.staff;
@@ -538,6 +543,7 @@ function find_name(id, type) {
             });
             break;
         case "shop":
+            let file_content_all_shop = bus.get_file_content_all_shop();
             parser.parseString(file_content_all_shop, function (err, result) {
 
                 let shops = result.shop_list.shop;

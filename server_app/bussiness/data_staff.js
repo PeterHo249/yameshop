@@ -9,11 +9,6 @@ let product_path = path + '/product';
 
 let bus = require('../bussiness/bussiness');
 
-let file_content_all_product = bus.get_file_content_all_product();
-let file_content_all_staff = bus.get_file_content_all_staff();
-let file_content_all_shop = bus.get_file_content_all_shop();
-let file_content_all_order = bus.get_file_content_all_order();
-
 function find_name(id, type) {
     let parser = new xml2js.Parser();
     let _result;
@@ -21,6 +16,7 @@ function find_name(id, type) {
     let file_content;
     switch (type) {
         case "staff":
+            let file_content_all_staff = bus.get_file_content_all_staff();
             parser.parseString(file_content_all_staff, function (err, result) {
 
                 let staffs = result.staff_list.staff;
@@ -33,6 +29,7 @@ function find_name(id, type) {
             });
             break;
         case "shop":
+            let file_content_all_shop = bus.get_file_content_all_shop();
             parser.parseString(file_content_all_shop, function (err, result) {
 
                 let shops = result.shop_list.shop;
@@ -75,6 +72,7 @@ let get_list_order = (month, year, id_order) => {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_order = bus.get_file_content_all_order();
 
     if (id_order != undefined) {
         parser.parseString(file_content_all_order, function (err, result) {
@@ -205,6 +203,7 @@ let get_product_list_staff = (category, brand) => {
     let parser = new xml2js.Parser();
     let data = [];
     let tokens;
+    let file_content_all_product = bus.get_file_content_all_product();
 
     if (category != undefined && brand == undefined) {
 
@@ -307,6 +306,9 @@ let get_product_staff = (product_id) => {
     let data = {};
     let parser = new xml2js.Parser();
     let shop_list = {};
+    let file_content_all_shop = bus.get_file_content_all_shop();
+    let file_content_all_product = bus.get_file_content_all_product();
+
     parser.parseString(file_content_all_shop, function (err, result) {
         shop_list = result.shop_list.shop;
     });
