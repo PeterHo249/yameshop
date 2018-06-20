@@ -48,3 +48,21 @@ Các api server cung cấp hiện tại:
     localhost:3030/manager_order_list?year=2018
     localhost:3030/manager_order_list?month=1&year=2018
     localhost:3030/manager_order_detail?id=00000001
+
+
+    localhost:3030/add_new_staff : {"id":"Nhan_Vien_0","name":"Trần Mạnh Chung11","role":"staff","username":"user0","password":"123456", "shop":"shop_0"}
+    localhost:3030/update_staff_info : {"id":"Nhan_Vien_0","name":"Trần Mạnh Chung11","role":"staff","username":"user0","password":"123456", "shop":"shop_0"}
+    localhost:3030/delete_staff : {"id":"Nhan_Vien_0"}
+
+    localhost:3030/delete_product : {"id":"QS_NS_0020"}
+
+    localhost:3030/add_new_order : [{"id":"00000001","date":"17/1/2018","type":"in" ,"total":"1071720296","staff_id":"Nhan_Vien_5","shop_id":"shop_13","name_of_staff":"Nguyễn Văn D","name_of_shop":"Yame Q.9: 114 Đỗ Xuân Hợp (Sắp KT)","list_item":[{"id":"AK_AD_0057","count":"44","name":"Áo Khoác Nữ Adachi Thun G03","price":"165000","sum_price":7260000},{"id":"AK_AD_0058","count":"2","name":"Áo Khoác Nam Adachi Thun S02","price":"285000","sum_price":570000}],"revenue":7830000},{"id":"00000001","date":"17/1/2018","total":"1071720296","staff_id":"Nhan_Vien_5","shop_id":"shop_13","name_of_staff":"Nguyễn Văn D","name_of_shop":"Yame Q.9: 114 Đỗ Xuân Hợp (Sắp KT)","list_item":[{"id":"AK_AD_0057","count":"44","name":"Áo Khoác Nữ Adachi Thun G03","price":"165000","sum_price":7260000},{"id":"AK_AD_0058","count":"2","name":"Áo Khoác Nam Adachi Thun S02","price":"285000","sum_price":570000}],"revenue":7830000}]
+    localhost:3030/update_order_info : [{"id":"00000001","date":"17/1/2018","type":"in","total":"1071720296","staff_id":"Nhan_Vien_10000000000","shop_id":"shop_13","name_of_staff":"Nguyễn Văn D","name_of_shop":"Yame Q.9: 114 Đỗ Xuân Hợp (Sắp KT)","list_item":[{"id":"AK_AD_0057","count":"44","name":"Áo Khoác Nữ Adachi Thun G03","price":"165000","sum_price":7260000},{"id":"AK_AD_0058","count":"2","name":"Áo Khoác Nam Adachi Thun S02","price":"285000","sum_price":570000}],"revenue":7830000},{"id":"00000001","date":"17/1/2018","total":"1071720296","staff_id":"Nhan_Vien_5","shop_id":"shop_13","name_of_staff":"Nguyễn Văn D","name_of_shop":"Yame Q.9: 114 Đỗ Xuân Hợp (Sắp KT)","list_item":[{"id":"AK_AD_0057","count":"44","name":"Áo Khoác Nữ Adachi Thun G03","price":"165000","sum_price":7260000},{"id":"AK_AD_0058","count":"2","name":"Áo Khoác Nam Adachi Thun S02","price":"285000","sum_price":570000}],"revenue":7830000}]
+    localhost:3030/delete_order : {"id":"00000004"}
+    //nho goi kem type of order
+
+    localhost:3030/delete_shop : {"id":"shop_0"}
+    localhost:3030/add_new_shop : {"id":"shop_100000", "name":"YaMe Q.10: 770F, Sư Vạn Hạnh (nd), P.12 ", "address":"770F, Sư Vạn Hạnh (nd), P.12"}
+    localhost:3030/update_shop_info : {"id":"shop_1", "name": "TMC", "address":"TMC"}
+    
+

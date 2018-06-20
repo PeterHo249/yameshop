@@ -79,13 +79,14 @@ let get_list_order = (month, year, id_order) => {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
 
-                if (orders[i].$.id == id_order) {
+                if (orders[i].$.id == id_order&&orders[i].$.type=='out') {
                     let order_info = {
                         id: orders[i].$.id,
                         date: orders[i].$.date,
                         total: orders[i].$.total,
                         staff_id: orders[i].$.staff_id,
-                        shop_id: orders[i].$.shop_id
+                        shop_id: orders[i].$.shop_id,
+                        type: "out"
                     };
 
                     order_info.name_of_staff = find_name(orders[i].$.staff_id, "staff");
@@ -117,11 +118,12 @@ let get_list_order = (month, year, id_order) => {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 tokens = orders[i].$.date.match(/([^/]+)/g);
-                if (tokens[1] == month && tokens[2] == year) {
+                if (tokens[1] == month && tokens[2] == year&&orders[i].$.type=='out') {
                     let order_info = {
                         id: orders[i].$.id,
                         date: orders[i].$.date,
-                        total: orders[i].$.total
+                        total: orders[i].$.total,
+                        type: "out"
                     };
                     let sumary = 0;
                     for (let j = 0; j < orders[i].item.length; j++) {
@@ -137,7 +139,7 @@ let get_list_order = (month, year, id_order) => {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 tokens = orders[i].$.date.match(/([^/]+)/g);
-                if (tokens[1] == month) {
+                if (tokens[1] == month&&orders[i].$.type=='out') {
                     let order_info = {
                         id: orders[i].$.id,
                         date: orders[i].$.date,
@@ -159,7 +161,7 @@ let get_list_order = (month, year, id_order) => {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 tokens = orders[i].$.date.match(/([^/]+)/g);
-                if (tokens[2] == year) {
+                if (tokens[2] == year&&orders[i].$.type=='out') {
                     let order_info = {
                         id: orders[i].$.id,
                         date: orders[i].$.date,
@@ -180,17 +182,19 @@ let get_list_order = (month, year, id_order) => {
         parser.parseString(file_content_all_order, function (err, result) {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
-                let order_info = {
-                    id: orders[i].$.id,
-                    date: orders[i].$.date,
-                    total: orders[i].$.total
-                };
-                let sumary = 0;
-                for (let j = 0; j < orders[i].item.length; j++) {
-                    sumary += find_revenue(orders[i].item[j]);
+                if(orders[i].$.type=='out'){
+                    let order_info = {
+                        id: orders[i].$.id,
+                        date: orders[i].$.date,
+                        total: orders[i].$.total
+                    };
+                    let sumary = 0;
+                    for (let j = 0; j < orders[i].item.length; j++) {
+                        sumary += find_revenue(orders[i].item[j]);
+                    }
+                    order_info.revenue = sumary;
+                    data.push(order_info);
                 }
-                order_info.revenue = sumary;
-                data.push(order_info);
             }
         });
     }
