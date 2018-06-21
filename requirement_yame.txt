@@ -1,4 +1,4 @@
-api cần thiết:
+﻿api cần thiết:
 * Staff:
 	- Thêm, xóa, sửa order
 * Manager
@@ -18,4 +18,4 @@ Gửi request bằng phương thức post.
 Content-type: text/plain
 body theo format sau: {"key":"value","key":"value"}
 trong code thì dùng function extractPostBody. Xem ví dụ sử dụng của hàm trong service_server post login.
-f
+fa
