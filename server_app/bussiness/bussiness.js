@@ -23,8 +23,28 @@ let file_content_all_order = model_order.read_all_file_order();
 let xml_product = new DOMParser().parseFromString(file_content_all_product, "text/xml").documentElement;
 let xml_shop = new DOMParser().parseFromString(file_content_all_shop, "text/xml").documentElement;
 let xml_staff = new DOMParser().parseFromString(file_content_all_staff, "text/xml").documentElement;
-let xml_order = new DOMParser().parseFromString(file_content_all_order, "text/xml").documentElement;
+// let xml_order = new DOMParser().parseFromString(file_content_all_order, "text/xml").documentElement;
 
+let xml_order = arr_string_to_arr_xml(file_content_all_order);
+
+function arr_string_to_arr_xml(file_content_all_type){
+
+    let result = [];
+    for(let i=0;i<file_content_all_type.length;i++){
+        let temp = new DOMParser().parseFromString(file_content_all_type[i].content, "text/xml").documentElement;
+        result.push({path:file_content_all_type[i].path,content:temp});
+    }
+    return result;
+}
+function arr_xml_to_arr_string(xml_data){
+
+    let result = [];
+    for(let i=0;i<xml_data.length;i++){
+        let temp = new XMLSerializer().serializeToString(xml_data[i].content);
+        result.push({path:xml_data[i].path,content:temp});
+    }
+    return result;
+}
 //SHOP
 let get_file_content_all_shop = () =>{
     return file_content_all_shop;
@@ -51,18 +71,15 @@ let get_file_content_all_order = () =>{
 }
 let add_new_order = (obj) => {
     model_order.add_new_order(obj,xml_order);
-    file_content_all_order = new XMLSerializer().serializeToString(xml_order);
-    console.log(file_content_all_order);
+    file_content_all_order = arr_xml_to_arr_string(xml_order);
 }
 let change_info_order = (obj) => {
     model_order.change_info_order(obj,xml_order);
-    file_content_all_order = new XMLSerializer().serializeToString(xml_order);
-    console.log(file_content_all_order);
+    file_content_all_order = arr_xml_to_arr_string(xml_order);
 }
 let delete_order = (id) => {
     model_order.delete_order(id,xml_order);
-    file_content_all_order = new XMLSerializer().serializeToString(xml_order);
-    console.log(file_content_all_order);
+    file_content_all_order = arr_xml_to_arr_string(xml_order);
 }
 //END ORDER
 //PRODUCT
@@ -82,21 +99,20 @@ let get_file_content_all_staff = () =>{
 let add_new_staff = (id, name, role, username, password, shop) => {
     model_staff.add_new_staff(id, name, role, username, password, shop, xml_staff);
     file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
-    console.log(file_content_all_staff);
 }
 let change_info_staff = (id, name, role, username, password, shop) => {
     model_staff.change_info_staff(id, name, role, username, password, shop, xml_staff);
     file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
-    console.log(file_content_all_staff);
 }
 let delete_staff = (id) => {
     model_staff.delete_staff(id,xml_staff);
     file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
-    console.log(file_content_all_staff);
 }
 //END STAFF
 let update_all_file = () =>{
     model_order.update_file(xml_order);
+    model_staff.update_file(xml_staff);
+    model_shop.update_file(xml_shop);
 }
 
 // return false if not login
@@ -186,5 +202,6 @@ module.exports = {
     get_file_content_all_staff: get_file_content_all_staff,
     add_new_staff,
     change_info_staff,
-    delete_staff
+    delete_staff,
+    update_all_file:update_all_file
 };

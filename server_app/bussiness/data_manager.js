@@ -342,7 +342,8 @@ let get_all_order = () => {
     let data = [];
     let file_content_all_order = bus.get_file_content_all_order();
 
-    parser.parseString(file_content_all_order, function (err, result) {
+    for(let k=0;k<file_content_all_order.length;k++){
+    parser.parseString(file_content_all_order[k].content, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
             let order_info = {
@@ -362,7 +363,7 @@ let get_all_order = () => {
             data.push(order_info);
         }
     });
-
+    }
     return JSON.stringify(data);
 };
 
@@ -371,7 +372,8 @@ function get_list_order_with_month(month) {
     let data = [];
     let tokens;
     let file_content_all_order = bus.get_file_content_all_order();
-    parser.parseString(file_content_all_order, function (err, result) {
+    for(let k=0;k<file_content_all_order.length;k++){
+        parser.parseString(file_content_all_order[k].content, function (err, result) {
         let orders = result.order_list.order;
 
         for (let i = 0; i < orders.length; i++) {
@@ -396,7 +398,7 @@ function get_list_order_with_month(month) {
             }
         }
     });
-
+    }
     return JSON.stringify(data);
 }
 
@@ -406,7 +408,8 @@ function get_list_order_with_year(year) {
     let data = [];
     let tokens;
     let file_content_all_order = bus.get_file_content_all_order();
-    parser.parseString(file_content_all_order, function (err, result) {
+    for(let k=0;k<file_content_all_order.length;k++){
+        parser.parseString(file_content_all_order[k].content, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
             tokens = orders[i].$.date.match(/([^/]+)/g);
@@ -430,6 +433,7 @@ function get_list_order_with_year(year) {
 
         }
     });
+}
     return JSON.stringify(data);
 }
 
@@ -439,7 +443,8 @@ function get_list_order_with_month_and_year(month, year) {
     let data = [];
     let tokens;
     let file_content_all_order = bus.get_file_content_all_order();
-    parser.parseString(file_content_all_order, function (err, result) {
+    for(let k=0;k<file_content_all_order.length;k++){
+        parser.parseString(file_content_all_order[k].content, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
             tokens = orders[i].$.date.match(/([^/]+)/g);
@@ -462,6 +467,7 @@ function get_list_order_with_month_and_year(month, year) {
             }
         }
     });
+}
     return JSON.stringify(data);
 }
 
@@ -471,7 +477,8 @@ let get_order_detail = (id_order) => {
     let data = [];
     let tokens;
     let file_content_all_order = bus.get_file_content_all_order();
-    parser.parseString(file_content_all_order, function (err, result) {
+    for(let k=0;k<file_content_all_order.length;k++){
+        parser.parseString(file_content_all_order[k].content, function (err, result) {
         let orders = result.order_list.order;
         for (let i = 0; i < orders.length; i++) {
 
@@ -509,6 +516,7 @@ let get_order_detail = (id_order) => {
 
         }
     });
+}
     return JSON.stringify(data);
 };
 

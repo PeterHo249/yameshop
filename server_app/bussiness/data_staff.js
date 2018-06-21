@@ -75,7 +75,8 @@ let get_list_order = (month, year, id_order) => {
     let file_content_all_order = bus.get_file_content_all_order();
 
     if (id_order != undefined) {
-        parser.parseString(file_content_all_order, function (err, result) {
+        for(let k=0;k<file_content_all_order.length;k++){
+            parser.parseString(file_content_all_order[k].content, function (err, result) {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
 
@@ -112,9 +113,11 @@ let get_list_order = (month, year, id_order) => {
 
             }
         });
+    }
     } else if (year != undefined && month != undefined) {
 
-        parser.parseString(file_content_all_order, function (err, result) {
+        for(let k=0;k<file_content_all_order.length;k++){
+            parser.parseString(file_content_all_order[k].content, function (err, result) {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 tokens = orders[i].$.date.match(/([^/]+)/g);
@@ -134,8 +137,10 @@ let get_list_order = (month, year, id_order) => {
                 }
             }
         });
+    }
     } else if (year == undefined && month != undefined) {
-        parser.parseString(file_content_all_order, function (err, result) {
+        for(let k=0;k<file_content_all_order.length;k++){
+            parser.parseString(file_content_all_order[k].content, function (err, result) {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 tokens = orders[i].$.date.match(/([^/]+)/g);
@@ -154,10 +159,11 @@ let get_list_order = (month, year, id_order) => {
                 }
             }
         });
-
+    }
     } else if (year != undefined && month == undefined) {
 
-        parser.parseString(file_content_all_order, function (err, result) {
+        for(let k=0;k<file_content_all_order.length;k++){
+            parser.parseString(file_content_all_order[k].content, function (err, result) {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 tokens = orders[i].$.date.match(/([^/]+)/g);
@@ -176,10 +182,11 @@ let get_list_order = (month, year, id_order) => {
                 }
             }
         });
-
+    }
     } else if (year == undefined && month == undefined) {
 
-        parser.parseString(file_content_all_order, function (err, result) {
+        for(let k=0;k<file_content_all_order.length;k++){
+            parser.parseString(file_content_all_order[k].content, function (err, result) {
             let orders = result.order_list.order;
             for (let i = 0; i < orders.length; i++) {
                 if(orders[i].$.type=='out'){
@@ -198,7 +205,7 @@ let get_list_order = (month, year, id_order) => {
             }
         });
     }
-
+    }
     return JSON.stringify(data);
 } //change
 

@@ -41,9 +41,21 @@ let delete_shop = (id,xml_shop) =>{
     }
 }
 
+function update_file(xml_shop) {
+    var temp = new XMLSerializer().serializeToString(xml_shop); //chuyen sang dang chuoi
+    fs.writeFile(path+'/shop/shop_list.xml', temp, err => {
+        if (err != null) {
+            console.log("--> Cannot write data to file");
+        } else {
+            console.log("--> Write data to file successfully! <--");
+        }
+    });
+}
+
 module.exports = {
     read_file_shop:read_file_shop,
     add_new_shop:add_new_shop,
     change_info_shop:change_info_shop,
-    delete_shop:delete_shop
+    delete_shop:delete_shop,
+    update_file: update_file
 }

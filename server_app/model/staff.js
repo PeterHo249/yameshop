@@ -23,9 +23,9 @@ let add_new_staff = (id, name, role, username, password, shop, xml_staff) => {
     xml_staff.insertBefore(staff, xml_staff.getElementsByTagName('staff')[0]);
 }
 
-function GhiDuLieu() {
+function update_file(xml_staff) {
     var temp = new XMLSerializer().serializeToString(xml_staff); //chuyen sang dang chuoi
-    File.writeFile('../data/staff/xml/list_staff.xml', temp, err => {
+    fs.writeFile(path+'/staff/staff_list.xml', temp, err => {
         if (err != null) {
             console.log("--> Cannot write data to file");
         } else {
@@ -61,5 +61,6 @@ module.exports = {
     read_file_staff: read_file_staff,
     add_new_staff: add_new_staff,
     change_info_staff: change_info_staff,
-    delete_staff: delete_staff
+    delete_staff: delete_staff,
+    update_file: update_file
 }

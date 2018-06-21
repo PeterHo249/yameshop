@@ -254,6 +254,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -267,6 +268,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -280,6 +282,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_staff(result.id);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -293,6 +296,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_product(result.id);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -306,6 +310,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_order(result[0]);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -319,6 +324,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_order(result[0]);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -332,6 +338,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_order(result.id);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -345,6 +352,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_shop(result.id, result.name, result.address);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -358,6 +366,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_shop(result.id, result.name, result.address);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -371,6 +380,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_shop(result.id);
+                        bus.update_all_file();//------------
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
