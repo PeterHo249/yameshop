@@ -240,3 +240,20 @@ let cate_brand_ref = [{
         ]
     }
 ];
+
+function addRowItemList() {
+    var table = document.getElementById('item-table');
+    var rowCount = table.rows.length;
+    var row = table.insertRow(rowCount);
+
+    row.insertCell(0).innerHTML = '<input type="text" name="id" id="id-input" required>';
+    row.insertCell(1).innerHTML = '<input type="number" name="count" id="count-input" required>';
+    row.insertCell(2).innerHTML = '<p class="table-control"><i class="fas fa-times" onclick="deleteRow(this)"></i></p>';
+}
+
+function deleteRow(obj) {
+    var index = obj.parentNode.parentNode.parentNode.rowIndex;
+    console.log(index);
+    var table = document.getElementById('item-table');
+    table.deleteRow(index);
+}

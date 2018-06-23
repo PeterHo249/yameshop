@@ -643,8 +643,38 @@ let generateStaffAddOrder = function () {
     let now = new Date();
     let month = now.getMonth() + 1;
     let year = now.getFullYear();
-    let request = '/stafforderlist.html?year=' + year + '&month=' + month;
-    content_html = insertProperty(content_html, 'back-link', request);
+    let backlink = '/stafforderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerAddOrder = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_add_order.html', 'utf-8');
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    let backlink = '/managerorderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerAddShop = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_add_shop.html', 'utf-8');
+    let backlink = '/managershoplist.html';
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerAddStaff = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_add_staff.html', 'utf-8');
+    let backlink = '/managerstafflist.html';
+    content_html = insertProperty(content_html, 'back-link', backlink);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
 };
@@ -669,6 +699,9 @@ module.exports = {
     generateManagerOrderDetail: generateManagerOrderDetail,
     generateManagerShopList: generateManagerShopList,
     generateManagerStaffList: generateManagerStaffList,
+    generateManagerAddOrder: generateManagerAddOrder,
+    generateManagerAddShop: generateManagerAddShop,
+    generateManagerAddStaff: generateManagerAddStaff,
 
     insertProperty: insertProperty
 };

@@ -302,6 +302,10 @@ app.createServer((req, res) => {
                 res.end();
               } else {
                 res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
                 res.end(html);
               }
             }
@@ -313,7 +317,22 @@ app.createServer((req, res) => {
             break;
           case '/manageraddshop.html':
             {
-
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerAddShop();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
             }
             break;
           case '/managerupdateshop.html':
@@ -323,7 +342,22 @@ app.createServer((req, res) => {
             break;
           case '/manageraddstaff.html':
             {
-
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerAddStaff();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
             }
             break;
           case '/managerupdatestaff.html':
@@ -333,7 +367,22 @@ app.createServer((req, res) => {
             break;
           case '/manageraddorder.html':
             {
-
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerAddOrder();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
             }
             break;
           case '/managerupdateorder.html':
@@ -507,7 +556,41 @@ app.createServer((req, res) => {
           break;
         case '/manageraddorder.html':
           extractPostBody(req, result => {
-
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"date":"' + date_string + '","type":"in", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            for (let i = 0; i < result.id.length; i++) {
+              let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+              body += temp;
+              if (i !== (result.id.length - 1)) {
+                body += ',';
+              }
+            }
+            body += ']}';
+            let response = connection.post('/add_new_order', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/managerorderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
           });
           break;
         case '/managerupdateorder.html':
