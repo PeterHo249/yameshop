@@ -1,0 +1,21 @@
+﻿api cần thiết:
+* Staff:
+	- Thêm, xóa, sửa order
+* Manager
+	- Thêm, xóa, sửa thông tin nhân viên
+	- Thêm, xóa, sửa thông tin cửa hàng
+	- Thêm, xóa, sửa thông tin sản phẩm
+	- Thêm, xóa, sửa thông tin order
+
+** Chi tiết
+* Staff:
+	staff chỉ được thêm, xóa, sửa order loại xuất hàng. Khi cập nhật order thì cũng cần cập nhật thông tin hàng tồn của sản phẩm.
+* Manager:
+	khi cập nhật thông tin thì cần cập nhật các thông tin liên quan. order của manager là order nhập hàng.
+	
+** Cách kiểm tra bằng postman
+Gửi request bằng phương thức post.
+Content-type: text/plain
+body theo format sau: {"key":"value","key":"value"}
+trong code thì dùng function extractPostBody. Xem ví dụ sử dụng của hàm trong service_server post login.
+fa

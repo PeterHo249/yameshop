@@ -1,1 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<order_list>
+ <order date="12/6/2018" id="76" revenue="" shop_id="11" staff_id="Nhan_Vien_22" total="435444000" type="out">
+        <item count="43" id="AK_AD_0027"/>
+</order>
+</order_list>
