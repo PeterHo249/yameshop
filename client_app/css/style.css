@@ -199,6 +199,10 @@ body {
 }
 /* End Product detail page */
 
+.date-input-group {
+    padding: 15px;
+}
+
 /* Login */
 .login-box {
     background-color: #444444;

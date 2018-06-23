@@ -637,6 +637,18 @@ let generateManagerStaffList = function (token) {
     return layout_html;
 };
 
+let generateStaffAddOrder = function () {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_add_order.html', 'utf-8');
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    let request = '/stafforderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', request);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
 module.exports = {
     // Guest page
     generateGuestHomepage: generateGuestHomepage,
@@ -648,6 +660,7 @@ module.exports = {
     generateStaffOrderDetail: generateStaffOrderDetail,
     generateStaffProductList: generateStaffProductList,
     generateStaffProductDetail: generateStaffProductDetail,
+    generateStaffAddOrder: generateStaffAddOrder,
 
     // Manager page
     generateManagerProductList: generateManagerProductList,

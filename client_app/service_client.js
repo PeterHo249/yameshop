@@ -60,12 +60,9 @@ app.createServer((req, res) => {
             res.end(present_generator.generateGuestProductDetail(parameters.id));
             break;
           case '/login.html':
-            // Testing purpose
             res.setHeader('Content-type', header_type);
             let html_temp = fs.readFileSync('./login.html', 'utf-8');
             res.end(html_temp);
-
-            // TODO: Implement code here
             break;
           case '/staffproductlist.html':
             {
@@ -172,13 +169,13 @@ app.createServer((req, res) => {
                 });
                 res.end();
               } else {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
-            }
             }
             break;
           case '/managerproductdetail.html':
@@ -293,6 +290,62 @@ app.createServer((req, res) => {
               }
             }
             break;
+          case '/staffaddorder.html':
+            {
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateStaffAddOrder();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                res.end(html);
+              }
+            }
+            break;
+          case '/staffupdateorder.html':
+            {
+
+            }
+            break;
+          case '/manageraddshop.html':
+            {
+
+            }
+            break;
+          case '/managerupdateshop.html':
+            {
+
+            }
+            break;
+          case '/manageraddstaff.html':
+            {
+
+            }
+            break;
+          case '/managerupdatestaff.html':
+            {
+
+            }
+            break;
+          case '/manageraddorder.html':
+            {
+
+            }
+            break;
+          case '/managerupdateorder.html':
+            {
+
+            }
+            break;
+          case '/managerupdateproduct.html':
+            {
+
+            }
+            break;
           case '/logout.html':
             let cookies = cookie.parse(req.headers['cookie']);
             let token = cookies.usertoken;
@@ -373,6 +426,110 @@ app.createServer((req, res) => {
             }
           });
           break;
+        case '/staffaddorder.html':
+          extractPostBody(req, result => {
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"date":"' + date_string + '","type":"out", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            for (let i = 0; i < result.id.length; i++) {
+              let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+              body += temp;
+              if (i !== (result.id.length - 1)) {
+                body += ',';
+              }
+            }
+            body += ']}';
+            let response = connection.post('/add_new_order', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/stafforderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/staffupdateorder.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/staffdeleteorder.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/manageraddstaff.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerupdatestaff.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerdeletestaff.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/manageraddshop.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerupdateshop.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerdeleteshop.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/manageraddorder.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerupdateorder.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerdeleteorder.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerupdateproduct.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerdeleteproduct.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
       }
       break;
   }
@@ -385,6 +542,7 @@ app.createServer((req, res) => {
   }
 });
 
+// Post will send a form object
 function extractPostBody(req, callback) {
   const FORM_URLENCODED = 'application/x-www-form-urlencoded';
   if (req.headers['content-type'] === FORM_URLENCODED) {
