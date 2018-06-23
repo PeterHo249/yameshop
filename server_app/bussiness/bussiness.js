@@ -20,11 +20,12 @@ let file_content_all_staff = model_staff.read_file_staff();
 let file_content_all_shop = model_shop.read_file_shop();
 let file_content_all_order = model_order.read_all_file_order();
 
-let xml_product = new DOMParser().parseFromString(file_content_all_product, "text/xml").documentElement;
+// let xml_product = new DOMParser().parseFromString(file_content_all_product, "text/xml").documentElement;
 let xml_shop = new DOMParser().parseFromString(file_content_all_shop, "text/xml").documentElement;
 let xml_staff = new DOMParser().parseFromString(file_content_all_staff, "text/xml").documentElement;
 // let xml_order = new DOMParser().parseFromString(file_content_all_order, "text/xml").documentElement;
 
+let xml_product = arr_string_to_arr_xml(file_content_all_product);
 let xml_order = arr_string_to_arr_xml(file_content_all_order);
 
 function arr_string_to_arr_xml(file_content_all_type){
@@ -66,15 +67,37 @@ let delete_shop = (id) =>{
 }
 //END SHOP
 //ORDER
+function total_out_price (obj){
+    let tokenObj;
+    let result = 0;
+   
+    for(let j=0;j<xml_product.length;j++){
+        for(let i=0;i<obj.list_item.length;i++){
+            tokenObj = obj.list_item[i].id.match(/([^_]+)/g);
+            let strSearch = tokenObj[0]+'/'+tokenObj[1];
+            if(xml_product[j].path.search(strSearch)>-1){
+                let danhSachProduct = xml_product[j].content.getElementsByTagName('product');
+                for(let k=0;k<danhSachProduct.length;k++){
+                    if(danhSachProduct[k].getAttribute('id')==tokenObj[0]+'_'+tokenObj[1]+'_'+tokenObj[2]){
+                       result += parseInt(danhSachProduct[k].getAttribute('out_price'))*parseInt(obj.list_item[i].count);
+                    }
+                }
+            }
+        }
+    }
+    obj.total = result;
+}
+
 let get_file_content_all_order = () =>{
     return file_content_all_order;
 }
 let add_new_order = (obj) => {
+    total_out_price(obj);
     model_order.add_new_order(obj,xml_order);
     file_content_all_order = arr_xml_to_arr_string(xml_order);
 }
 let change_info_order = (obj) => {
-    model_order.change_info_order(obj,xml_order);
+    model_order.change_info_order(obj,xml_order,xml_product);
     file_content_all_order = arr_xml_to_arr_string(xml_order);
 }
 let delete_order = (id) => {
@@ -88,16 +111,21 @@ let get_file_content_all_product = () =>{
 }
 let delete_product = (id) => {
     model_product.delete_product(id,xml_product);
-    file_content_all_product = new XMLSerializer().serializeToString(xml_product);
-    console.log(file_content_all_product);
+    file_content_all_product = arr_xml_to_arr_string(xml_product);
+    model_product.update_file(file_content_all_product);
+}
+let change_info_product = (obj)=>{
+    model_product.change_info_product(obj,xml_product);
+    file_content_all_product = arr_xml_to_arr_string(xml_product);
+    model_product.update_file(file_content_all_product);
 }
 //END PRODUCT
 //STAFF
 let get_file_content_all_staff = () =>{
     return file_content_all_staff;
 }
-let add_new_staff = (id, name, role, username, password, shop) => {
-    model_staff.add_new_staff(id, name, role, username, password, shop, xml_staff);
+let add_new_staff = (name, role, username, password, shop) => {
+    model_staff.add_new_staff(name, role, username, password, shop, xml_staff);
     file_content_all_staff = new XMLSerializer().serializeToString(xml_staff);
 }
 let change_info_staff = (id, name, role, username, password, shop) => {
@@ -203,5 +231,6 @@ module.exports = {
     add_new_staff,
     change_info_staff,
     delete_staff,
-    update_all_file:update_all_file
+    update_all_file:update_all_file,
+    change_info_product:change_info_product
 };

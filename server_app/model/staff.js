@@ -6,21 +6,23 @@ var DOMParser = require("xmldom").DOMParser;
 var XMLSerializer = require("xmldom").XMLSerializer;
 var xmlns_v = "urn:v";
 var Node_goc = new DOMParser().parseFromString("<Du_lieu />", "text/xml");
+let id = 50;
 
 function read_file_staff() {
     return fs.readFileSync(path + '/staff/staff_list.xml', 'utf-8');
 }
 
-let add_new_staff = (id, name, role, username, password, shop, xml_staff) => {
+let add_new_staff = (name, role, username, password, shop, xml_staff) => {
 
     var staff = Node_goc.createElementNS(xmlns_v, "staff");
-    staff.setAttributeNS(xmlns_v, "id", id);
+    staff.setAttributeNS(xmlns_v, "id", 'Nhan_Vien_'+id);
     staff.setAttributeNS(xmlns_v, "name", name);
     staff.setAttributeNS(xmlns_v, "role", role);
     staff.setAttributeNS(xmlns_v, "username", username);
     staff.setAttributeNS(xmlns_v, "password", password);
     staff.setAttributeNS(xmlns_v, "shop", shop);
     xml_staff.insertBefore(staff, xml_staff.getElementsByTagName('staff')[0]);
+    id++;
 }
 
 function update_file(xml_staff) {

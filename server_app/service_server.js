@@ -11,7 +11,7 @@ let bus = require('./bussiness/bussiness');
 let port = 3030;
 
 app.createServer((req, res) => {
-    console.log('--------------------------------------> ' + req.method + " " + req.url);
+    console.log('--> ' + req.method + " " + req.url);
 
     let data = '';
     let parameters = {};
@@ -47,7 +47,7 @@ app.createServer((req, res) => {
                     res.end(data);
                     break;
                 case '/product_staff':
-                    // if (bus.isAuth(req, 'staff')) {
+                      if (bus.isAuth(req, 'staff')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
@@ -55,15 +55,15 @@ app.createServer((req, res) => {
                     let _product_id = parameters.productId;
                     data = dto_staff.get_product_staff(_product_id);
                     res.end(data);
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                     } else {
+                         res.writeHeader(200, {
+                             'Content-type': 'text/plain'
+                         });
+                         res.end('LogInRequire');
+                     }
                     break;
                 case '/product_list_staff':
-                    // if (bus.isAuth(req, 'staff')) {
+                      if (bus.isAuth(req, 'staff')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
@@ -72,15 +72,15 @@ app.createServer((req, res) => {
                     let _brand = parameters.brand;
                     data = dto_staff.get_product_list_staff(_category, _brand);
                     res.end(data);
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/bill_general':
-                    // if (bus.isAuth(req, 'staff')) {
+                      if (bus.isAuth(req, 'staff')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
@@ -88,15 +88,15 @@ app.createServer((req, res) => {
                     month = parameters.month;
                     year = parameters.year;
                     res.end(dto_staff.get_list_order(month, year));
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/bill_detail':
-                    // if (bus.isAuth(req, 'staff')) {
+                      if (bus.isAuth(req, 'staff')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
@@ -105,42 +105,42 @@ app.createServer((req, res) => {
                     let _year = parameters.year;
                     let _id = parameters.id;
                     res.end(dto_staff.get_list_order(_month, _year, _id));
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/manager_shop_list':
-                    // if (bus.isAuth(req, 'manager')) {
+                      if (bus.isAuth(req, 'manager')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
 
                     res.end(dto_manager.get_all_shop());
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/manager_staff_list':
-                    // if (bus.isAuth(req, 'manager')) {
+                      if (bus.isAuth(req, 'manager')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
                     res.end(dto_manager.get_all_staff());
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/manager_product_list':
-                    // if (bus.isAuth(req, 'manager')) {
+                      if (bus.isAuth(req, 'manager')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
@@ -148,30 +148,30 @@ app.createServer((req, res) => {
                     category = parameters.category;
                     brand = parameters.brand;
                     res.end(dto_manager.get_product_list(category, brand));
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/manager_product_detail':
-                    // if (bus.isAuth(req, 'manager')) {
+                      if (bus.isAuth(req, 'manager')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
                     parameters = url.parse(req.url, true).query;
                     id = parameters.id;
                     res.end(dto_manager.get_product_detail(id));
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/manager_order_list':
-                    // if (bus.isAuth(req, 'manager')) {
+                      if (bus.isAuth(req, 'manager')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
@@ -179,27 +179,27 @@ app.createServer((req, res) => {
                     month = parameters.month;
                     year = parameters.year;
                     res.end(dto_manager.get_order_list(month, year));
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 case '/manager_order_detail':
-                    // if (bus.isAuth(req, 'manager')) {
+                      if (bus.isAuth(req, 'manager')) {
                     res.writeHeader(200, {
                         'Content-Type': 'text/json'
                     });
                     parameters = url.parse(req.url, true).query;
                     id = parameters.id;
                     res.end(dto_manager.get_order_detail(id));
-                    // } else {
-                    //     res.writeHeader(200, {
-                    //         'Content-type': 'text/plain'
-                    //     });
-                    //     res.end('LogInRequire');
-                    // }
+                      } else {
+                          res.writeHeader(200, {
+                              'Content-type': 'text/plain'
+                          });
+                          res.end('LogInRequire');
+                      }
                     break;
                 default:
                     res.writeHeader(404, {
@@ -253,8 +253,8 @@ app.createServer((req, res) => {
                             console.log('------> Nothing in request body');
                             return;
                         }
-                        bus.add_new_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
-                        bus.update_all_file();//------------
+                        bus.add_new_staff( result.name, result.role, result.username, result.password, result.shop);
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -268,7 +268,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -282,11 +282,25 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_staff(result.id);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
                         res.end("done");
+                    });
+                    break;
+                case '/update_product':
+                    bus.extractPostBody(req, result => {
+                        if (result === null) {
+                            console.log('------> Nothing in request body');
+                            return;
+                        }
+                        bus.change_info_product(result);
+                         bus.update_all_file();
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('done');
                     });
                     break;
                 case '/delete_product':
@@ -296,7 +310,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_product(result.id);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -309,8 +323,8 @@ app.createServer((req, res) => {
                             console.log('------> Nothing in request body');
                             return;
                         }
-                        bus.add_new_order(result[0]);
-                        bus.update_all_file();//------------
+                        bus.add_new_order(result);
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -323,8 +337,8 @@ app.createServer((req, res) => {
                             console.log('------> Nothing in request body');
                             return;
                         }
-                        bus.change_info_order(result[0]);
-                        bus.update_all_file();//------------
+                        bus.change_info_order(result);
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -338,7 +352,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_order(result.id);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -352,7 +366,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_shop(result.id, result.name, result.address);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -366,7 +380,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_shop(result.id, result.name, result.address);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -380,7 +394,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_shop(result.id);
-                        bus.update_all_file();//------------
+                        bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });

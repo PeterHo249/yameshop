@@ -6,6 +6,7 @@ var DOMParser = require("xmldom").DOMParser;
 var XMLSerializer = require("xmldom").XMLSerializer;
 var xmlns_v = "urn:v";
 var Node_goc = new DOMParser().parseFromString("<Du_lieu />", "text/xml");
+let temp_id = 100;
 
 function read_file_shop(){
     return fs.readFileSync(path + '/shop/shop_list.xml', 'utf-8');
@@ -14,11 +15,12 @@ function read_file_shop(){
 let add_new_shop = (id,name,address,xml_shop) =>{
     
     var shop = Node_goc.createElementNS(xmlns_v,"shop");
-    shop.setAttributeNS(xmlns_v,"id",id);
+    shop.setAttributeNS(xmlns_v,"id",'shop_'+temp_id);
     shop.setAttributeNS(xmlns_v,"name",name);
     shop.setAttributeNS(xmlns_v,"address",address);
 
     xml_shop.insertBefore(shop,xml_shop.getElementsByTagName('shop')[0]);  
+    temp_id++;
 }
 let change_info_shop = (id,name,address,xml_shop)=>{
     let danhSachShop = xml_shop.getElementsByTagName('shop');
@@ -30,6 +32,7 @@ let change_info_shop = (id,name,address,xml_shop)=>{
         }
     }
 }
+
 let delete_shop = (id,xml_shop) =>{
     let danhSachShop = xml_shop.getElementsByTagName('shop');
     for(let i=0;i<danhSachShop.length;i++){

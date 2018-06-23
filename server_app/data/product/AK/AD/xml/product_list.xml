@@ -1,10 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <product_list>
-    <product id="AK_AD_0000" in_price="271946" in_stock="true" inventory_num="4980" name="Áo Khoác Nữ Adachi Thun X01" out_price="285000">
+    <product id="AK_AD_0000" in_price="271946" in_stock="true" inventory_num="4973" name="tranmanhchung" out_price="285000">
         <description/>
-        <size id="M" inventory_num="1128">
-            <color id="C" inventory_num="63" name="Cam">
-                <shop id="shop_8" inventory_num="8"/>
+        <size id="M" inventory_num="1121">
+            <color id="C" inventory_num="56" name="Cam">
+                <shop id="shop_8" inventory_num="1"/>
                 <shop id="shop_9" inventory_num="9"/>
                 <shop id="shop_10" inventory_num="10"/>
                 <shop id="shop_11" inventory_num="11"/>
