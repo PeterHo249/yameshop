@@ -203,6 +203,8 @@ body {
     padding: 15px;
 }
 
+
+
 /* Login */
 .login-box {
     background-color: #444444;
@@ -347,3 +349,7 @@ hr {
 }
 
 /* END POPUP */
+
+.vertical-middle {
+    vertical-align: middle;
+}
