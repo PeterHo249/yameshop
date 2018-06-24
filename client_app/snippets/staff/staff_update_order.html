@@ -1,0 +1,37 @@
+<div class="container">
+    <div>
+        <p class="mx-auto d-block login-header">Thêm Hóa Đơn Mới</p>
+    </div>
+    <form action="/staffaddorder.html" method="POST" class="form-inline">
+        <input type="hidden" name="orderid" value="{{id}}">
+        <div class="form-group date-input-group">
+            <label for="date-input">Ngày bán hàng:</label>
+            <input type="date" name="date" id="date-input" value="{{order_date}}">
+        </div>
+        <table class="table" id="item-table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Mã số</th>
+                    <th scope="col">Số lượng</th>
+                    <th scope="col">Điều khiển</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{table_body}}
+            </tbody>
+        </table>
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="{{back-link}}">
+                    <div class="btn btn-secondary">Quay về</div>
+                </a>
+            </div>
+            <div class="col-sm-4">
+                <div class="btn btn-secondary" onclick="addRowItemList()">Thêm</div>
+            </div>
+            <div class="col-sm-4">
+                <input type="submit" class="btn btn-secondary" value="Xác nhận">
+            </div>
+        </div>
+    </form>
+</div>

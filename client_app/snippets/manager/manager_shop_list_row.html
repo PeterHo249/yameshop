@@ -2,4 +2,12 @@
     <th scope="row">{{id}}</th>
     <td>{{name}}</td>
     <td>{{address}}</td>
+    <td>
+        <form action="/managerdeleteshop.html" method="post">
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="submit">
+                <i class="fas fa-times"></i>
+            </button>
+        </form>
+    </td>
 </tr>

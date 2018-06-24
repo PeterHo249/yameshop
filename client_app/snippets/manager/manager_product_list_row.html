@@ -8,8 +8,6 @@
     <td>{{inventory_num}}</td>
     <td>
         {{in_stock}}
-
-
     </td>
     <td>
         <a href="/managerproductdetail.html?productid={{productid}}">
@@ -17,5 +15,11 @@
                 <i class="fas fa-eye"></i>
             </p>
         </a>
+        <form action="/managerdeleteproduct.html" method="post">
+            <input type="hidden" name="id" value="{{productid}}">
+            <button type="submit">
+                <i class="fas fa-times"></i>
+            </button>
+        </form>
     </td>
 </tr>
