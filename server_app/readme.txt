@@ -34,7 +34,9 @@ Các api server cung cấp hiện tại:
 
 ** manager 
     localhost:3030/manager_shop_list
+    localhost:3030/manager_shop_detail?id=shop_1
     localhost:3030/manager_staff_list
+    localhost:3030/manager_staff_detail?id=Nhan_Vien_1
 
     localhost:3030/manager_product_list
     localhost:3030/manager_product_list?category=AK

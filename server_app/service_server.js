@@ -126,12 +126,42 @@ app.createServer((req, res) => {
                         res.end('LogInRequire');
                     }
                     break;
+                    case '/manager_shop_detail':
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        parameters = url.parse(req.url, true).query;
+                        id = parameters.id;
+                        res.end(dto_manager.get_shop_detail(id));
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
+                    break;
                 case '/manager_staff_list':
                     if (bus.isAuth(req, 'manager')) {
                         res.writeHeader(200, {
                             'Content-Type': 'text/json'
                         });
                         res.end(dto_manager.get_all_staff());
+                    } else {
+                        res.writeHeader(200, {
+                            'Content-type': 'text/plain'
+                        });
+                        res.end('LogInRequire');
+                    }
+                    break;
+                case '/manager_staff_detail':
+                    if (bus.isAuth(req, 'manager')) {
+                        res.writeHeader(200, {
+                            'Content-Type': 'text/json'
+                        });
+                        parameters = url.parse(req.url, true).query;
+                        id = parameters.id;
+                        res.end(dto_manager.get_staff_detail(id));
                     } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
@@ -254,7 +284,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_staff(result.name, result.role, result.username, result.password, result.shop);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -268,7 +298,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -282,7 +312,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_staff(result.id);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -296,7 +326,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_product(result);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -310,7 +340,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_product(result.id);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -324,7 +354,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_order(result);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -338,7 +368,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_order(result);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -352,7 +382,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_order(result.id);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -380,7 +410,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_shop(result.id, result.name, result.address);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -394,7 +424,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.delete_shop(result.id);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
