@@ -67,5 +67,7 @@ Các api server cung cấp hiện tại:
     localhost:3030/delete_shop : {"id":"shop_0"}
     localhost:3030/add_new_shop : {"name":"YaMe Q.10: 770F, Sư Vạn Hạnh (nd), P.12 ", "address":"770F, Sư Vạn Hạnh (nd), P.12"}
     localhost:3030/update_shop_info : {"id":"shop_1", "name": "TMC", "address":"TMC"}
+
+    data test add order: {"date":"17/3/2018","type":"in" ,"staff_id":"Nhan_Vien_5","shop_id":"shop_13","list_item":[{"id":"AK_AD_0000_M_C","count":"10"},{"id":"AK_AD_0000_M_XN","count":"10"}]}
     
 

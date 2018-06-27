@@ -11,7 +11,7 @@
                 <shop id="shop_13" inventory_num="13"/>
             </color>
             <color id="XN" inventory_num="159" name="Xanh Ngọc">
-                <shop id="shop_24" inventory_num="24"/>
+                <shop id="shop_13" inventory_num="24"/>
                 <shop id="shop_25" inventory_num="25"/>
                 <shop id="shop_26" inventory_num="26"/>
                 <shop id="shop_27" inventory_num="27"/>
