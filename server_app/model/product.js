@@ -72,13 +72,14 @@ let change_info_product = (obj, xml_product,type_order) => {//changed
                                                             inventory_num_size += parseInt(list_shop_obj[o].inventory_num);
                                                             inventory_num_product -= old;
                                                             inventory_num_product += parseInt(list_shop_obj[o].inventory_num);
+                                                            list_shop_product[n].setAttribute('inventory_num',list_shop_obj[o].inventory_num);
                                                         }
                                                         else{
                                                             inventory_num_color-=parseInt(list_shop_obj[o].inventory_num);
                                                             inventory_num_product -=parseInt(list_shop_obj[o].inventory_num);
                                                             inventory_num_size-=parseInt(list_shop_obj[o].inventory_num);
+                                                            list_shop_product[n].setAttribute('inventory_num',parseInt(list_shop_product[n].getAttribute('inventory_num')-parseInt(list_shop_obj[o].inventory_num)));
                                                         }
-                                                        list_shop_product[n].setAttribute('inventory_num',list_shop_obj[o].inventory_num);
                                                         break;
                                                     }
                                                 }
@@ -120,5 +121,5 @@ module.exports = {
     read_all_file_product: read_all_file_product,
     delete_product: delete_product,
     update_file: update_file,
-    change_info_product
+    change_info_product:change_info_product
 }

@@ -284,6 +284,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_staff(result.name, result.role, result.username, result.password, result.shop);
+
                         //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
@@ -326,7 +327,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.change_info_product(result);
-                        //bus.update_all_file();
+
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
@@ -396,7 +397,7 @@ app.createServer((req, res) => {
                             return;
                         }
                         bus.add_new_shop(result.id, result.name, result.address);
-                        bus.update_all_file();
+                        //bus.update_all_file();
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
