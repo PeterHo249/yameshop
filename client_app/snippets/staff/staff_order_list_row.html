@@ -1,13 +1,25 @@
 <tr>
-    <th scope="row">{{id}}</th>
-    <td>{{date}}</td>
-    <td>{{quantity}}</td>
-    <td>{{revenue}}vnd</td>
-    <td>
+    <th scope="row" style="vertical-align: middle;">{{id}}</th>
+    <td style="vertical-align: middle;">{{date}}</td>
+    <td style="vertical-align: middle;">{{quantity}}</td>
+    <td style="vertical-align: middle;">{{revenue}}vnd</td>
+    <td style="vertical-align: middle;">
+        <div>
+        <div class="d-inline">
         <a href="/stafforderdetail.html?orderid={{id}}">
             <p class="table-control">
                 <i class="fas fa-eye"></i>
             </p>
         </a>
+        </div>
+        <div class="d-inline">
+        <form action="/staffdeleteorder.html" method="post">
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="submit" class="btn btn-secondary">
+                <i class="fas fa-times"></i>
+            </button>
+        </form>
+        </div>
+        </div>
     </td>
 </tr>

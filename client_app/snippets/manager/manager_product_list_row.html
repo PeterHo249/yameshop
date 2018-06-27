@@ -1,21 +1,25 @@
 <tr>
-    <th scope="row">{{productid}}</th>
-    <td>{{productname}}</td>
-    <td>{{color_list}}</td>
-    <td>{{size_list}}</td>
-    <td>{{in_price}}vnd</td>
-    <td>{{price}}vnd</td>
-    <td>{{inventory_num}}</td>
-    <td>
+    <th scope="row" style="vertical-align: middle;">{{productid}}</th>
+    <td style="vertical-align: middle;">{{productname}}</td>
+    <td style="vertical-align: middle;">{{color_list}}</td>
+    <td style="vertical-align: middle;">{{size_list}}</td>
+    <td style="vertical-align: middle;">{{in_price}}vnd</td>
+    <td style="vertical-align: middle;">{{price}}vnd</td>
+    <td style="vertical-align: middle;">{{inventory_num}}</td>
+    <td style="vertical-align: middle;">
         {{in_stock}}
-
-
     </td>
-    <td>
+    <td style="vertical-align: middle;">
         <a href="/managerproductdetail.html?productid={{productid}}">
             <p class="table-control">
                 <i class="fas fa-eye"></i>
             </p>
         </a>
+        <form action="/managerdeleteproduct.html" method="post">
+            <input type="hidden" name="id" value="{{productid}}">
+            <button type="submit">
+                <i class="fas fa-times"></i>
+            </button>
+        </form>
     </td>
 </tr>

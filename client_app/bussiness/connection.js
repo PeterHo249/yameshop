@@ -4,6 +4,7 @@ let JSONWebToken = require('jsonwebtoken');
 let cookie = require('cookie');
 let host = "http://localhost:3030";
 
+// Get return a JSON object
 function getRequest(urlExtension, usertoken) {
     let addressProcess = host + urlExtension;
     let processHttp = new XMLHttpRequest();
@@ -26,6 +27,7 @@ function getRequest(urlExtension, usertoken) {
     return JSON.parse(str_JSON);
 }
 
+// Post return a string or null
 function postRequest(url, body, usertoken) {
     let addressProcess = host + url;
     let processHttp = new XMLHttpRequest();

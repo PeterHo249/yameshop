@@ -637,6 +637,142 @@ let generateManagerStaffList = function (token) {
     return layout_html;
 };
 
+let generateStaffAddOrder = function () {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_add_order.html', 'utf-8');
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    let backlink = '/stafforderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerAddOrder = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_add_order.html', 'utf-8');
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    let backlink = '/managerorderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerAddShop = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_add_shop.html', 'utf-8');
+    let backlink = '/managershoplist.html';
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerAddStaff = function () {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_add_staff.html', 'utf-8');
+    let backlink = '/managerstafflist.html';
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateStaffUpdateOrder = function(id, token) {
+    let layout_html = fs.readFileSync('./index_staff.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/staff/staff_update_order.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/staff/staff_update_order_row.html', 'utf-8');
+
+    let data = connection.get('localhost:3030/bill_detail?id=' + id, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    let row_list = '';
+    for (let i = 0; i < data[0].list_item.length; i++) {
+        let snippet = row_snippet;
+        snippet = insertProperty(snippet, 'id', data[0].list_item[i].id);
+        snippet = insertProperty(snippet, 'quantity', data[0].list_item[i].count);
+        row_list += snippet;
+    }
+
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    let backlink = '/stafforderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', backlink);
+
+    content_html = insertProperty(content_html, 'table_body', row_list);
+    content_html = insertProperty(content_html, 'order_date', data[0].date);
+    content_html = insertProperty(content_html, 'id', data[0].id);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generatemanagerUpdateOrder = function(id, token) {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_update_order.html', 'utf-8');
+    let row_snippet = fs.readFileSync('./snippets/manager/manager_update_order_row.html', 'utf-8');
+
+    let data = connection.get('localhost:3030/manager_order_detail?id=' + id, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    let row_list = '';
+    for (let i = 0; i < data[0].list_item.length; i++) {
+        let snippet = row_snippet;
+        snippet = insertProperty(snippet, 'id', data[0].list_item[i].id);
+        snippet = insertProperty(snippet, 'quantity', data[0].list_item[i].count);
+        row_list += snippet;
+    }
+
+    let now = new Date();
+    let month = now.getMonth() + 1;
+    let year = now.getFullYear();
+    let backlink = '/managerorderlist.html?year=' + year + '&month=' + month;
+    content_html = insertProperty(content_html, 'back-link', backlink);
+
+    content_html = insertProperty(content_html, 'table_body', row_list);
+    content_html = insertProperty(content_html, 'order_date', data[0].date);
+    content_html = insertProperty(content_html, 'id', data[0].id);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerUpdateShop = function (id, token) {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_update_shop.html', 'utf-8');
+    let backlink = '/managershoplist.html';
+    // add code here
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerUpdateStaff = function (id, token) {
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_update_staff.html', 'utf-8');
+    // add code here
+    let backlink = '/managerstafflist.html';
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
+};
+
+let generateManagerUpdateProduct = function (id, token) {
+    // nothing
+};
+
 module.exports = {
     // Guest page
     generateGuestHomepage: generateGuestHomepage,
@@ -648,6 +784,8 @@ module.exports = {
     generateStaffOrderDetail: generateStaffOrderDetail,
     generateStaffProductList: generateStaffProductList,
     generateStaffProductDetail: generateStaffProductDetail,
+    generateStaffAddOrder: generateStaffAddOrder,
+    generateStaffUpdateOrder: generateStaffUpdateOrder,
 
     // Manager page
     generateManagerProductList: generateManagerProductList,
@@ -656,6 +794,13 @@ module.exports = {
     generateManagerOrderDetail: generateManagerOrderDetail,
     generateManagerShopList: generateManagerShopList,
     generateManagerStaffList: generateManagerStaffList,
+    generateManagerAddOrder: generateManagerAddOrder,
+    generateManagerAddShop: generateManagerAddShop,
+    generateManagerAddStaff: generateManagerAddStaff,
+    generatemanagerUpdateOrder: generatemanagerUpdateOrder,
+    generateManagerUpdateShop: generateManagerUpdateShop,
+    generateManagerUpdateStaff: generateManagerUpdateStaff,
+    generateManagerUpdateProduct: generateManagerUpdateProduct,
 
     insertProperty: insertProperty
 };

@@ -60,12 +60,9 @@ app.createServer((req, res) => {
             res.end(present_generator.generateGuestProductDetail(parameters.id));
             break;
           case '/login.html':
-            // Testing purpose
             res.setHeader('Content-type', header_type);
             let html_temp = fs.readFileSync('./login.html', 'utf-8');
             res.end(html_temp);
-
-            // TODO: Implement code here
             break;
           case '/staffproductlist.html':
             {
@@ -172,13 +169,13 @@ app.createServer((req, res) => {
                 });
                 res.end();
               } else {
-              res.setHeader('Content-type', header_type);
-              let user_info = connection.parseUserInfo(req);
-              if (user_info != {}) {
-                html = present_generator.insertProperty(html, 'username', user_info.name);
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
               }
-              res.end(html);
-            }
             }
             break;
           case '/managerproductdetail.html':
@@ -293,6 +290,188 @@ app.createServer((req, res) => {
               }
             }
             break;
+          case '/staffaddorder.html':
+            {
+              let html = present_generator.generateStaffAddOrder();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
+            }
+            break;
+          case '/staffupdateorder.html':
+            {
+              parameters = url.parse(req.url, true).query;
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateStaffUpdateOrder(parameters.id, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
+            }
+            break;
+          case '/manageraddshop.html':
+            {
+              let html = present_generator.generateManagerAddShop();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
+            }
+            break;
+          case '/managerupdateshop.html':
+            {
+              parameters = url.parse(req.url, true).query;
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerUpdateShop(parameters.id, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
+            }
+            break;
+          case '/manageraddstaff.html':
+            {
+              let html = present_generator.generateManagerAddStaff();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
+            }
+            break;
+          case '/managerupdatestaff.html':
+            {
+              parameters = url.parse(req.url, true).query;
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerUpdateStaff(parameters.id, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
+            }
+            break;
+          case '/manageraddorder.html':
+            {
+              let html = present_generator.generateManagerAddOrder();
+              if (html === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                /* let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                } */
+                res.end(html);
+              }
+            }
+            break;
+          case '/managerupdateorder.html':
+            {
+              parameters = url.parse(req.url, true).query;
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerUpdateOrder(parameters.id, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
+            }
+            break;
+          case '/managerupdateproduct.html':
+            {
+              parameters = url.parse(req.url, true).query;
+              let cookies = cookie.parse(req.headers['cookie']);
+              let token = cookies.usertoken;
+              let html = present_generator.generateManagerUpdateProduct(parameters.id, token);
+              if (html === 'LogInRequire') {
+                // redirect to login
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                res.setHeader('Content-type', header_type);
+                let user_info = connection.parseUserInfo(req);
+                if (user_info != {}) {
+                  html = present_generator.insertProperty(html, 'username', user_info.name);
+                }
+                res.end(html);
+              }
+            }
+            break;
           case '/logout.html':
             let cookies = cookie.parse(req.headers['cookie']);
             let token = cookies.usertoken;
@@ -373,6 +552,396 @@ app.createServer((req, res) => {
             }
           });
           break;
+        case '/staffaddorder.html':
+          extractPostBody(req, result => {
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"date":"' + date_string + '","type":"out", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            for (let i = 0; i < result.id.length; i++) {
+              let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+              body += temp;
+              if (i !== (result.id.length - 1)) {
+                body += ',';
+              }
+            }
+            body += ']}';
+            let response = connection.post('/add_new_order', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/stafforderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/staffupdateorder.html':
+          extractPostBody(req, result => {
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"id":"' + result.id +  '","date":"' + date_string + '","type":"out", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            for (let i = 0; i < result.id.length; i++) {
+              let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+              body += temp;
+              if (i !== (result.id.length - 1)) {
+                body += ',';
+              }
+            }
+            body += ']}';
+            let response = connection.post('/update_order_info', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/stafforderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/staffdeleteorder.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '"}';
+            let response = connection.post('/delete_order', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/stafforderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/manageraddstaff.html':
+          extractPostBody(req, result => {
+            let body = '{"name":"' + result.name + '","role":"' + result.role + '","username":"' + result.username + '","password":"' + result.password + '", "shop":"' + result.shop + '"}';
+            let response = connection.post('/add_new_staff', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managerstafflist.html';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/managerupdatestaff.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '","name":"' + result.name + '","role":"' + result.role + '","username":"' + result.username + '","password":"' + result.password + '", "shop":"' + result.shop + '"}';
+            let response = connection.post('/update_staff_info', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managerstafflist.html';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/managerdeletestaff.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '"}';
+            let response = connection.post('/delete_staff', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managerstafflist.html';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/manageraddshop.html':
+          extractPostBody(req, result => {
+            let body = '{"name":"' + result.name + '", "address":"' + result.address + '"}';
+            let response = connection.post('/add_new_shop', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managershoplist.html';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/managerupdateshop.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '","name":"' + result.name + '", "address":"' + result.address + '"}';
+            let response = connection.post('/update_shop_info', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managershoplist.html';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/managerdeleteshop.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '"}';
+            let response = connection.post('/delete_shop', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managershoplist.html';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/manageraddorder.html':
+          extractPostBody(req, result => {
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"date":"' + date_string + '","type":"in", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            for (let i = 0; i < result.id.length; i++) {
+              let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+              body += temp;
+              if (i !== (result.id.length - 1)) {
+                body += ',';
+              }
+            }
+            body += ']}';
+            let response = connection.post('/add_new_order', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/managerorderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/managerupdateorder.html':
+          extractPostBody(req, result => {
+              let user_info = connection.parseUserInfo(req);
+              let sell_date = new Date(result.date);
+              let month = sell_date.getMonth() + 1;
+              let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+              let body = '{"id":"' + result.id +  '","date":"' + date_string + '","type":"in", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+              for (let i = 0; i < result.id.length; i++) {
+                let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+                body += temp;
+                if (i !== (result.id.length - 1)) {
+                  body += ',';
+                }
+              }
+              body += ']}';
+              let response = connection.post('/update_order_info', body);
+              if (response === 'LogInRequire') {
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                });
+                res.end();
+              } else {
+                if (response === 'done') {
+                  let now = new Date();
+                  let month = now.getMonth() + 1;
+                  let url = '/managerorderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                  res.writeHead(302, {
+                    'Location': 'http://' + req.headers['host'] + url
+                  });
+                  res.end();
+                } else {
+                  res.writeHeader(404, {
+                    'Content-Type': 'text/plain'
+                  });
+                  res.end("Your request failed!!!");
+                }
+              }
+          });
+          break;
+        case '/managerdeleteorder.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '"}';
+            let response = connection.post('/delete_order', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/managerorderlist.html?year=' + now.getFullYear() + '&month=' + month;
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
+        case '/managerupdateproduct.html':
+          extractPostBody(req, result => {
+
+          });
+          break;
+        case '/managerdeleteproduct.html':
+          extractPostBody(req, result => {
+            let body = '{"id":"' + result.id + '"}';
+            let response = connection.post('/delete_product', body);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let url = '/managerproductlist.html?category=AK&brand=AD'
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
+          });
+          break;
       }
       break;
   }
@@ -385,6 +954,7 @@ app.createServer((req, res) => {
   }
 });
 
+// Post will send a form object
 function extractPostBody(req, callback) {
   const FORM_URLENCODED = 'application/x-www-form-urlencoded';
   if (req.headers['content-type'] === FORM_URLENCODED) {

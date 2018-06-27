@@ -1,5 +1,13 @@
 <tr>
-    <th scope="row">{{id}}</th>
-    <td>{{name}}</td>
-    <td>{{address}}</td>
+    <th scope="row" style="vertical-align: middle;">{{id}}</th>
+    <td style="vertical-align: middle;">{{name}}</td>
+    <td style="vertical-align: middle;">{{address}}</td>
+    <td style="vertical-align: middle;">
+        <form action="/managerdeleteshop.html" method="post">
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="submit">
+                <i class="fas fa-times"></i>
+            </button>
+        </form>
+    </td>
 </tr>

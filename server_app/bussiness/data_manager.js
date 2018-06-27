@@ -5,6 +5,7 @@ var convert = require('xml-js');
 let path = __dirname + '/../data';
 let shop_list;
 let list_product = '';
+let staff_list='';
 var DOMParser = require("xmldom").DOMParser;
 var XMLSerializer = require("xmldom").XMLSerializer;
 
@@ -263,12 +264,6 @@ let get_all_shop = () => {
         });
     });
     shop_list = data;
-    //TEST
-    // model_shop.add_new_shop('1','1','1',xml_shop);
-    // model_shop.change_info_shop('shop_1','1','1',xml_shop);
-    // model_shop.delete_shop('shop_1',xml_shop);
-    // console.log (new XMLSerializer().serializeToString(xml_shop));
-    //END TEST
     return JSON.stringify(data);
 };
 
@@ -281,6 +276,39 @@ function find_shop_name(idShop) {
             return shop_list[i].name;
         }
     }
+}
+let get_shop_detail = (id)=>{
+    let parser = new xml2js.Parser();
+    let data;
+    let file_content_all_shop = bus.get_file_content_all_shop();
+
+    parser.parseString(file_content_all_shop, function (err, result) {
+        let shops = result.shop_list.shop;
+        shops.forEach(shop => {
+            if(shop.$.id==id){
+                data = {
+                    id: shop.$.id,
+                    name: shop.$.name,
+                    address: shop.$.address
+                };
+                data.list_staff = [];
+                if(staff_list==''){
+                    get_all_staff();
+                }
+                for(let i=0;i<staff_list.length;i++){
+                    if(staff_list[i].shop_name==shop.$.name){
+                        let staff_info = {
+                            id: staff_list[i].id,
+                            name: staff_list[i].name
+                        }
+                        data.list_staff.push(staff_info);
+                    }
+                }
+                return JSON.stringify(data);
+            }
+        });
+    });
+    return JSON.stringify(data);
 }
 //END SHOP
 //STAFF
@@ -304,8 +332,33 @@ let get_all_staff = () => {
             data.push(staff_info);
         });
     });
+    staff_list = data;
+    console.log('>>>>>>>>>>>'+staff_list.length);
     return JSON.stringify(data);
 };
+let get_staff_detail = (id)=>{
+    let parser = new xml2js.Parser();
+    let data;
+    let file_content_all_staff = bus.get_file_content_all_staff();
+
+    parser.parseString(file_content_all_staff, function (err, result) {
+        let staffs = result.staff_list.staff;
+        staffs.forEach(staff => {
+            if(staff.$.id == id){
+                data = {
+                    id: staff.$.id,
+                    name: staff.$.name,
+                    role: staff.$.role,
+                    user_name: staff.$.username,
+                    password: staff.$.password
+                };
+                data.shop_name = find_shop_name(staff.$.shop);
+                return JSON.stringify(data);
+            }
+        });
+    });
+    return JSON.stringify(data);
+}
 //END STAFF
 //ORDER
 let get_order_list = (month, year) => {
@@ -567,9 +620,11 @@ function find_name(id, type) {
 
 module.exports = {
     get_all_shop: get_all_shop,
+    get_shop_detail: get_shop_detail,
     get_all_staff: get_all_staff,
     get_product_list: get_product_list,
     get_product_detail: get_product_detail,
     get_order_detail: get_order_detail,
-    get_order_list: get_order_list
+    get_order_list: get_order_list,
+    get_staff_detail:get_staff_detail
 };
