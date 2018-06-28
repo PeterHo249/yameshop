@@ -350,9 +350,9 @@ let get_staff_detail = (id)=>{
                     name: staff.$.name,
                     role: staff.$.role,
                     user_name: staff.$.username,
-                    password: staff.$.password
+                    password: staff.$.password,
+                    shop_id: staff.$.shop
                 };
-                data.shop_name = find_shop_name(staff.$.shop);
                 return JSON.stringify(data);
             }
         });
