@@ -1,0 +1,29 @@
+<div class="container">
+        <div>
+            <p class="mx-auto d-block login-header">Cập Nhật Sản Phẩm</p>
+        </div>
+        <form action="/managerupdateshop.html" method="POST">
+            <input type="hidden" name="id" value="{{id}}">
+            <div class="form-group">
+                <label for="name-input" class="d-block">Tên sản phẩm</label>
+                <input type="text" name="name" id="name-input" required style="width: 100%;" value="{{name}}">
+            </div>
+            <div class="form-group">
+                    <label for="instock-input" class="d-block">Đang kinh doanh</label>
+                    <select name="instock" id="instock-input" required style="width: 100%;">
+                        <option value="true">Đang kinh doanh</option>
+                        <option value="false">Ngừng kinh doanh</option>
+                    </select>
+                </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a href="{{back-link}}">
+                        <div class="btn btn-secondary">Quay về</div>
+                    </a>
+                </div>
+                <div class="col-sm-3">
+                    <input type="submit" class="btn btn-secondary" value="Xác nhận">
+                </div>
+            </div>
+        </form>
+    </div>

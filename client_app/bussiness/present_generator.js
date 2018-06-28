@@ -722,7 +722,7 @@ let generateStaffUpdateOrder = function(id, token) {
     return layout_html;
 };
 
-let generatemanagerUpdateOrder = function(id, token) {
+let generateManagerUpdateOrder = function(id, token) {
     let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/manager/manager_update_order.html', 'utf-8');
     let row_snippet = fs.readFileSync('./snippets/manager/manager_update_order_row.html', 'utf-8');
@@ -740,7 +740,7 @@ let generatemanagerUpdateOrder = function(id, token) {
     for (let i = 0; i < data[0].list_item.length; i++) {
         let snippet = row_snippet;
         snippet = insertProperty(snippet, 'id', data[0].list_item[i].id);
-        snippet = insertProperty(snippet, 'quantity', data[0].list_item[i].count);
+        snippet = insertProperty(snippet, 'count', data[0].list_item[i].count);
         row_list += snippet;
     }
 
@@ -751,7 +751,15 @@ let generatemanagerUpdateOrder = function(id, token) {
     content_html = insertProperty(content_html, 'back-link', backlink);
 
     content_html = insertProperty(content_html, 'table_body', row_list);
-    content_html = insertProperty(content_html, 'order_date', data[0].date);
+    let date_token = data[0].date.match(/\d+/g);
+    if (date_token[0].length === 1) {
+        date_token[0] = '0' + date_token[0];
+    }
+    if (date_token[1].length === 1) {
+        date_token[1] = '0' + date_token[1];
+    }
+    let date_str = date_token[2] + '-' + date_token[1] + '-' + date_token[0];
+    content_html = insertProperty(content_html, 'order_date', date_str);
     content_html = insertProperty(content_html, 'id', data[0].id);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
@@ -761,7 +769,20 @@ let generateManagerUpdateShop = function (id, token) {
     let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/manager/manager_update_shop.html', 'utf-8');
     let backlink = '/managershoplist.html';
-    // add code here
+    
+    let data = connection.get('localhost:3030/manager_shop_detail?id=' + id, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    content_html = insertProperty(content_html, 'id', data.id);
+    content_html = insertProperty(content_html, 'name', data.name);
+    content_html = insertProperty(content_html, 'address', data.address);
+
     content_html = insertProperty(content_html, 'back-link', backlink);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;
@@ -770,7 +791,23 @@ let generateManagerUpdateShop = function (id, token) {
 let generateManagerUpdateStaff = function (id, token) {
     let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
     let content_html = fs.readFileSync('./snippets/manager/manager_update_staff.html', 'utf-8');
-    // add code here
+    
+    let data = connection.get('localhost:3030/manager_staff_detail?id=' + id, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    content_html = insertProperty(content_html, 'id', data.id);
+    content_html = insertProperty(content_html, 'name', data.name);
+    content_html = insertProperty(content_html, 'username', data.user_name);
+    content_html = insertProperty(content_html, 'password', data.password);
+    content_html = insertProperty(content_html, 'shop', data.shop_id);
+    content_html = insertProperty(content_html, 'role', data.role);
+
     let backlink = '/managerstafflist.html';
     content_html = insertProperty(content_html, 'back-link', backlink);
     layout_html = insertProperty(layout_html, 'body', content_html);
@@ -805,7 +842,7 @@ module.exports = {
     generateManagerAddOrder: generateManagerAddOrder,
     generateManagerAddShop: generateManagerAddShop,
     generateManagerAddStaff: generateManagerAddStaff,
-    generatemanagerUpdateOrder: generatemanagerUpdateOrder,
+    generateManagerUpdateOrder: generateManagerUpdateOrder,
     generateManagerUpdateShop: generateManagerUpdateShop,
     generateManagerUpdateStaff: generateManagerUpdateStaff,
     generateManagerUpdateProduct: generateManagerUpdateProduct,
