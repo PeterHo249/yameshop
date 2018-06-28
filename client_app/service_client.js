@@ -935,7 +935,35 @@ app.createServer((req, res) => {
           break;
         case '/managerupdateproduct.html':
           extractPostBody(req, result => {
-
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"id":"' + result.id + '","in_stock":"' + result.instock + '","name":"' + result.name + '"}';
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/update_product', body, token);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/managerproductlist.html?category=AK&brand=AD';
+                res.writeHead(302, {
+                  'Location': 'http://' + req.headers['host'] + url
+                });
+                res.end();
+              } else {
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
+              }
+            }
           });
           break;
         case '/managerdeleteproduct.html':

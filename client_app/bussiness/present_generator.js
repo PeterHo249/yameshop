@@ -815,7 +815,26 @@ let generateManagerUpdateStaff = function (id, token) {
 };
 
 let generateManagerUpdateProduct = function (id, token) {
-    // nothing
+    let layout_html = fs.readFileSync('./index_manager.html', 'utf-8');
+    let content_html = fs.readFileSync('./snippets/manager/manager_update_product.html', 'utf-8');
+    
+    let data = connection.get('localhost:3030/manager_product_detail?id=' + id, token);
+    if (data === null) {
+        return insertProperty(layout_html, 'body', 'Fail to get data');
+    }
+
+    if (data === 'LogInRequire') {
+        return 'LogInRequire';
+    }
+
+    content_html = insertProperty(content_html, 'id', data.id);
+    content_html = insertProperty(content_html, 'name', data.name);
+    content_html = insertProperty(content_html, data.in_stock.toString() + 'select', 'selected');
+
+    let backlink = '/managerproductlist.html?category=AK&brand=AD';
+    content_html = insertProperty(content_html, 'back-link', backlink);
+    layout_html = insertProperty(layout_html, 'body', content_html);
+    return layout_html;
 };
 
 module.exports = {
