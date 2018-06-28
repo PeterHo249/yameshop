@@ -6,9 +6,15 @@
     <td style="vertical-align: middle;">{{role}}</td>
     <td style="vertical-align: middle;">{{shop}}</td>
     <td style="vertical-align: middle;">
+            <form action="/managerupdatestaff.html" method="get">
+                <input type="hidden" name="id" value="{{id}}">
+                <button type="submit" class="btn btn-secondary">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+            </form>
         <form action="/managerdeletestaff.html" method="post">
             <input type="hidden" name="id" value="{{id}}">
-            <button type="submit">
+            <button type="submit" class="btn btn-secondary">
                 <i class="fas fa-times"></i>
             </button>
         </form>

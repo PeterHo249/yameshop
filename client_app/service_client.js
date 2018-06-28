@@ -1,6 +1,3 @@
-// goi man hinh dang nhap
-// dang nhap thanh cong thi tai trang tuong ung
-
 /*jshint esversion: 6 */
 
 let app = require('http');
@@ -300,10 +297,10 @@ app.createServer((req, res) => {
                 res.end();
               } else {
                 res.setHeader('Content-type', header_type);
-                /* let user_info = connection.parseUserInfo(req);
+                let user_info = connection.parseUserInfo(req);
                 if (user_info != {}) {
                   html = present_generator.insertProperty(html, 'username', user_info.name);
-                } */
+                }
                 res.end(html);
               }
             }
@@ -340,10 +337,10 @@ app.createServer((req, res) => {
                 res.end();
               } else {
                 res.setHeader('Content-type', header_type);
-                /* let user_info = connection.parseUserInfo(req);
+                let user_info = connection.parseUserInfo(req);
                 if (user_info != {}) {
                   html = present_generator.insertProperty(html, 'username', user_info.name);
-                } */
+                }
                 res.end(html);
               }
             }
@@ -380,10 +377,10 @@ app.createServer((req, res) => {
                 res.end();
               } else {
                 res.setHeader('Content-type', header_type);
-                /* let user_info = connection.parseUserInfo(req);
+                let user_info = connection.parseUserInfo(req);
                 if (user_info != {}) {
                   html = present_generator.insertProperty(html, 'username', user_info.name);
-                } */
+                }
                 res.end(html);
               }
             }
@@ -420,10 +417,10 @@ app.createServer((req, res) => {
                 res.end();
               } else {
                 res.setHeader('Content-type', header_type);
-                /* let user_info = connection.parseUserInfo(req);
+                let user_info = connection.parseUserInfo(req);
                 if (user_info != {}) {
                   html = present_generator.insertProperty(html, 'username', user_info.name);
-                } */
+                }
                 res.end(html);
               }
             }
@@ -567,7 +564,9 @@ app.createServer((req, res) => {
               }
             }
             body += ']}';
-            let response = connection.post('/add_new_order', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/add_new_order', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -597,7 +596,7 @@ app.createServer((req, res) => {
             let sell_date = new Date(result.date);
             let month = sell_date.getMonth() + 1;
             let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
-            let body = '{"id":"' + result.id +  '","date":"' + date_string + '","type":"out", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            let body = '{"id":"' + result.id + '","date":"' + date_string + '","type":"out", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
             for (let i = 0; i < result.id.length; i++) {
               let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
               body += temp;
@@ -606,7 +605,9 @@ app.createServer((req, res) => {
               }
             }
             body += ']}';
-            let response = connection.post('/update_order_info', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/update_order_info', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -633,7 +634,9 @@ app.createServer((req, res) => {
         case '/staffdeleteorder.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '"}';
-            let response = connection.post('/delete_order', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/delete_order', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -660,7 +663,9 @@ app.createServer((req, res) => {
         case '/manageraddstaff.html':
           extractPostBody(req, result => {
             let body = '{"name":"' + result.name + '","role":"' + result.role + '","username":"' + result.username + '","password":"' + result.password + '", "shop":"' + result.shop + '"}';
-            let response = connection.post('/add_new_staff', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/add_new_staff', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -685,7 +690,9 @@ app.createServer((req, res) => {
         case '/managerupdatestaff.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '","name":"' + result.name + '","role":"' + result.role + '","username":"' + result.username + '","password":"' + result.password + '", "shop":"' + result.shop + '"}';
-            let response = connection.post('/update_staff_info', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/update_staff_info', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -710,7 +717,9 @@ app.createServer((req, res) => {
         case '/managerdeletestaff.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '"}';
-            let response = connection.post('/delete_staff', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/delete_staff', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -735,7 +744,9 @@ app.createServer((req, res) => {
         case '/manageraddshop.html':
           extractPostBody(req, result => {
             let body = '{"name":"' + result.name + '", "address":"' + result.address + '"}';
-            let response = connection.post('/add_new_shop', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/add_new_shop', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -760,7 +771,9 @@ app.createServer((req, res) => {
         case '/managerupdateshop.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '","name":"' + result.name + '", "address":"' + result.address + '"}';
-            let response = connection.post('/update_shop_info', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/update_shop_info', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -785,7 +798,9 @@ app.createServer((req, res) => {
         case '/managerdeleteshop.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '"}';
-            let response = connection.post('/delete_shop', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/delete_shop', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -822,7 +837,9 @@ app.createServer((req, res) => {
               }
             }
             body += ']}';
-            let response = connection.post('/add_new_order', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/add_new_order', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -848,47 +865,51 @@ app.createServer((req, res) => {
           break;
         case '/managerupdateorder.html':
           extractPostBody(req, result => {
-              let user_info = connection.parseUserInfo(req);
-              let sell_date = new Date(result.date);
-              let month = sell_date.getMonth() + 1;
-              let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
-              let body = '{"id":"' + result.id +  '","date":"' + date_string + '","type":"in", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
-              for (let i = 0; i < result.id.length; i++) {
-                let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
-                body += temp;
-                if (i !== (result.id.length - 1)) {
-                  body += ',';
-                }
+            let user_info = connection.parseUserInfo(req);
+            let sell_date = new Date(result.date);
+            let month = sell_date.getMonth() + 1;
+            let date_string = sell_date.getDate() + '/' + month + '/' + sell_date.getFullYear();
+            let body = '{"id":"' + result.id + '","date":"' + date_string + '","type":"in", "staff_id":"' + user_info.id + '","shop_id":"' + user_info.shop + '","list_item":[';
+            for (let i = 0; i < result.id.length; i++) {
+              let temp = '{"id":"' + result.id[i] + '","count":"' + result.count[i] + '"}';
+              body += temp;
+              if (i !== (result.id.length - 1)) {
+                body += ',';
               }
-              body += ']}';
-              let response = connection.post('/update_order_info', body);
-              if (response === 'LogInRequire') {
+            }
+            body += ']}';
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/update_order_info', body, token);
+            if (response === 'LogInRequire') {
+              res.writeHead(302, {
+                'Location': 'http://' + req.headers['host'] + '/login.html'
+              });
+              res.end();
+            } else {
+              if (response === 'done') {
+                let now = new Date();
+                let month = now.getMonth() + 1;
+                let url = '/managerorderlist.html?year=' + now.getFullYear() + '&month=' + month;
                 res.writeHead(302, {
-                  'Location': 'http://' + req.headers['host'] + '/login.html'
+                  'Location': 'http://' + req.headers['host'] + url
                 });
                 res.end();
               } else {
-                if (response === 'done') {
-                  let now = new Date();
-                  let month = now.getMonth() + 1;
-                  let url = '/managerorderlist.html?year=' + now.getFullYear() + '&month=' + month;
-                  res.writeHead(302, {
-                    'Location': 'http://' + req.headers['host'] + url
-                  });
-                  res.end();
-                } else {
-                  res.writeHeader(404, {
-                    'Content-Type': 'text/plain'
-                  });
-                  res.end("Your request failed!!!");
-                }
+                res.writeHeader(404, {
+                  'Content-Type': 'text/plain'
+                });
+                res.end("Your request failed!!!");
               }
+            }
           });
           break;
         case '/managerdeleteorder.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '"}';
-            let response = connection.post('/delete_order', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/delete_order', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'
@@ -920,7 +941,9 @@ app.createServer((req, res) => {
         case '/managerdeleteproduct.html':
           extractPostBody(req, result => {
             let body = '{"id":"' + result.id + '"}';
-            let response = connection.post('/delete_product', body);
+            let cookies = cookie.parse(req.headers['cookie']);
+            let token = cookies.usertoken;
+            let response = connection.post('/delete_product', body, token);
             if (response === 'LogInRequire') {
               res.writeHead(302, {
                 'Location': 'http://' + req.headers['host'] + '/login.html'

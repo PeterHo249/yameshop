@@ -3,9 +3,15 @@
     <td style="vertical-align: middle;">{{name}}</td>
     <td style="vertical-align: middle;">{{address}}</td>
     <td style="vertical-align: middle;">
+        <form action="/managerupdateshop.html" method="get">
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="submit" class="btn btn-secondary">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+        </form>
         <form action="/managerdeleteshop.html" method="post">
             <input type="hidden" name="id" value="{{id}}">
-            <button type="submit">
+            <button type="submit" class="btn btn-secondary">
                 <i class="fas fa-times"></i>
             </button>
         </form>

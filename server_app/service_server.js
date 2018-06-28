@@ -126,7 +126,7 @@ app.createServer((req, res) => {
                         res.end('LogInRequire');
                     }
                     break;
-                    case '/manager_shop_detail':
+                case '/manager_shop_detail':
                     if (bus.isAuth(req, 'manager')) {
                         res.writeHeader(200, {
                             'Content-Type': 'text/json'
@@ -278,159 +278,236 @@ app.createServer((req, res) => {
                     });
                     break;
                 case '/add_new_staff':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.add_new_staff(result.name, result.role, result.username, result.password, result.shop);
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.add_new_staff(result.name, result.role, result.username, result.password, result.shop);
 
-                        //bus.update_all_file();
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/update_staff_info':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.change_info_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.change_info_staff(result.id, result.name, result.role, result.username, result.password, result.shop);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/delete_staff':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.delete_staff(result.id);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.delete_staff(result.id);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end("done");
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end("done");
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/update_product':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.change_info_product(result);
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.change_info_product(result);
 
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/delete_product':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.delete_product(result.id);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.delete_product(result.id);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/add_new_order':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.add_new_order(result);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager') || bus.isAuth(req, 'staff')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.add_new_order(result);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/update_order_info':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.change_info_order(result);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager') || bus.isAuth(req, 'staff')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.change_info_order(result);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/delete_order':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.delete_order(result.id);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager') || bus.isAuth(req, 'staff')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.delete_order(result.id);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/add_new_shop':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.add_new_shop(result.id, result.name, result.address);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.add_new_shop(result.id, result.name, result.address);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/update_shop_info':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.change_info_shop(result.id, result.name, result.address);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.change_info_shop(result.id, result.name, result.address);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
                 case '/delete_shop':
-                    bus.extractPostBody(req, result => {
-                        if (result === null) {
-                            console.log('------> Nothing in request body');
-                            return;
-                        }
-                        bus.delete_shop(result.id);
-                        //bus.update_all_file();
+                    if (bus.isAuth(req, 'manager')) {
+                        bus.extractPostBody(req, result => {
+                            if (result === null) {
+                                console.log('------> Nothing in request body');
+                                return;
+                            }
+                            bus.delete_shop(result.id);
+                            //bus.update_all_file();
+                            res.writeHeader(200, {
+                                'Content-type': 'text/plain'
+                            });
+                            res.end('done');
+                        });
+                    } else {
                         res.writeHeader(200, {
                             'Content-type': 'text/plain'
                         });
-                        res.end('done');
-                    });
+                        res.end('LogInRequire');
+                    }
                     break;
             }
             break;

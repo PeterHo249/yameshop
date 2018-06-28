@@ -6,14 +6,21 @@
     <td style="vertical-align: middle;">{{revenue}}vnd</td>
     <td style="vertical-align: middle;">{{type}}</td>
     <td style="vertical-align: middle;">
-        <a href="/managerorderdetail.html?orderid={{id}}">
-            <p class="table-control">
-                <i class="fas fa-eye"></i>
-            </p>
-        </a>
+        <form action="/managerorderdetail.html" method="get">
+            <input type="hidden" name="orderid" value="{{id}}">
+            <button type="submit" class="btn btn-secondary">
+                    <i class="fas fa-eye"></i>
+            </button>
+        </form>
+        <form action="/managerupdateorder.html" method="get">
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="submit" class="btn btn-secondary">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+        </form>
         <form action="/managerdeleteorder.html" method="post">
             <input type="hidden" name="id" value="{{id}}">
-            <button type="submit">
+            <button type="submit" class="btn btn-secondary">
                 <i class="fas fa-times"></i>
             </button>
         </form>

@@ -697,7 +697,7 @@ let generateStaffUpdateOrder = function(id, token) {
     for (let i = 0; i < data[0].list_item.length; i++) {
         let snippet = row_snippet;
         snippet = insertProperty(snippet, 'id', data[0].list_item[i].id);
-        snippet = insertProperty(snippet, 'quantity', data[0].list_item[i].count);
+        snippet = insertProperty(snippet, 'count', data[0].list_item[i].count);
         row_list += snippet;
     }
 
@@ -708,7 +708,15 @@ let generateStaffUpdateOrder = function(id, token) {
     content_html = insertProperty(content_html, 'back-link', backlink);
 
     content_html = insertProperty(content_html, 'table_body', row_list);
-    content_html = insertProperty(content_html, 'order_date', data[0].date);
+    let date_token = data[0].date.match(/\d+/g);
+    if (date_token[0].length === 1) {
+        date_token[0] = '0' + date_token[0];
+    }
+    if (date_token[1].length === 1) {
+        date_token[1] = '0' + date_token[1];
+    }
+    let date_str = date_token[2] + '-' + date_token[1] + '-' + date_token[0];
+    content_html = insertProperty(content_html, 'order_date', date_str);
     content_html = insertProperty(content_html, 'id', data[0].id);
     layout_html = insertProperty(layout_html, 'body', content_html);
     return layout_html;

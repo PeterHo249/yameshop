@@ -31,6 +31,7 @@ function getRequest(urlExtension, usertoken) {
 function postRequest(url, body, usertoken) {
     let addressProcess = host + url;
     let processHttp = new XMLHttpRequest();
+    processHttp.setDisableHeaderCheck(true);
     processHttp.open('POST', addressProcess, false);
     processHttp.setRequestHeader('Content-type', 'text/plain');
     if (usertoken !== undefined) {
