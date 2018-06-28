@@ -155,19 +155,19 @@ app.createServer((req, res) => {
                     }
                     break;
                 case '/manager_staff_detail':
-                    if (bus.isAuth(req, 'manager')) {
+                    // if (bus.isAuth(req, 'manager')) {
                         res.writeHeader(200, {
                             'Content-Type': 'text/json'
                         });
                         parameters = url.parse(req.url, true).query;
                         id = parameters.id;
                         res.end(dto_manager.get_staff_detail(id));
-                    } else {
-                        res.writeHeader(200, {
-                            'Content-type': 'text/plain'
-                        });
-                        res.end('LogInRequire');
-                    }
+                    // } else {
+                    //     res.writeHeader(200, {
+                    //         'Content-type': 'text/plain'
+                    //     });
+                    //     res.end('LogInRequire');
+                    // }
                     break;
                 case '/manager_product_list':
                     if (bus.isAuth(req, 'manager')) {
